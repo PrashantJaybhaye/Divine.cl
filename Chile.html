@@ -145,7 +145,7 @@
                         </ul>
                     </div>
                     <div class="links-column">
-                        <h3>Idiomas</h3>
+                        <h3 data-i18n="footer.languages">Idiomas</h3>
                         <ul>
                             <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a></li>
                             <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a></li>
@@ -153,16 +153,16 @@
                     </div>
                 </div>
 
-               <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
+   <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
     <!-- Form Inputs -->
-    <input type="text" name="name" placeholder="Nombre" required>
-    <input type="email" name="email" placeholder="Correo electrónico" required>
-    <textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea>
+    <input type="text" name="name" placeholder="Nombre" required data-i18n="form.name" data-i18n-attr="placeholder">
+    <input type="email" name="email" placeholder="Correo electrónico" required data-i18n="form.email" data-i18n-attr="placeholder">
+    <textarea name="message" placeholder="Tu mensaje" rows="4" required data-i18n="form.message" data-i18n-attr="placeholder"></textarea>
 
     <!-- Hidden FormSubmit Config -->
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="_honey" style="display:none">
-    <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
+    <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto." data-i18n="form.autoresponse" data-i18n-attr="value">
 
     <!-- Success Message -->
     <div id="form-success" style="display: none;">
@@ -170,8 +170,8 @@
     </div>
 
     <div class="form-actions">
-        <button type="submit" class="submit-btn">Enviar mensaje</button>
-        <button type="reset" class="reset-btn">Reiniciar</button>
+        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
+        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
     </div>
 </form>
 

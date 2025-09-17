@@ -27,6 +27,7 @@
       'home.video.cta': 'Conozca más sobre nosotros',
       'home.video.fallback': 'Su navegador no soporta la etiqueta de video.',
       'home.about.p': 'Divine HealthCare es una empresa líder en el sector salud con sede en Chile, dedicada a obtener productos de empresas manufactureras líderes en investigación que ofrecen medicamentos de alta calidad. Brindamos a profesionales de la salud y pacientes medicamentos innovadores que salvan vidas. Nuestras dos décadas de experiencia en el mercado chileno nos han permitido comprender a fondo las necesidades de salud en diferentes regiones. Nuestros estrictos estándares de calidad y prácticas sostenibles, conforme a las directrices chilenas, garantizan la confianza en cada producto que creamos.',
+      'home.long_para': '<b>Divine Health</b><span class="highlight-blue"><b>Care</b></span> es una empresa líder en el sector salud con sede en Chile, dedicada a obtener productos de empresas manufactureras líderes en investigación que ofrecen medicamentos de alta calidad. Brindamos a profesionales de la salud y pacientes medicamentos innovadores que salvan vidas. Nuestras dos décadas de experiencia en el mercado chileno nos han permitido comprender a fondo las necesidades de salud en diferentes regiones. Nuestros estrictos estándares de calidad y prácticas sostenibles, conforme a las directrices chilenas, garantizan la confianza en cada producto que creamos.',
       'home.parallax.h3': 'Profesionales con amplia experiencia en el sector Salud aseguran la gestión de su necesidad.',
       'home.parallax.btn': 'Nos encargamos de la importación de medicamentos que no están disponibles en Chile, así como de fármacos de alto costo que nos ayudan a acercar a los pacientes a recuperar su salud.',
 
@@ -211,6 +212,7 @@
       'home.video.cta': 'Learn more about us',
       'home.video.fallback': 'Your browser does not support the video tag.',
       'home.about.p': 'Divine HealthCare is a leading healthcare company based in Chile, sourcing products from research-led manufacturers that offer high-quality medicines. We provide healthcare professionals and patients with innovative, life-saving medicines. Our two decades of experience in the Chilean market have enabled us to deeply understand healthcare needs across regions. Our strict quality standards and sustainable practices, in line with Chilean guidelines, ensure trust in every product we create.',
+      'home.long_para': '<b>Divine Health</b><span class="highlight-blue"><b>Care</b></span> is a leading healthcare company based in Chile, sourcing products from research-led manufacturers that offer high-quality medicines. We provide healthcare professionals and patients with innovative, life-saving medicines. Our two decades of experience in the Chilean market have enabled us to deeply understand healthcare needs across regions. Our strict quality standards and sustainable practices, in line with Chilean guidelines, ensure trust in every product we create.',
       'home.parallax.h3': 'Experienced healthcare professionals ensure your needs are managed.',
       'home.parallax.btn': 'We handle the import of medicines unavailable in Chile, as well as high-cost drugs that help bring patients closer to recovery.',
 
@@ -387,7 +389,11 @@
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) {
-        el.textContent = dict[key];
+        if (el.hasAttribute('data-i18n-html')) {
+          el.innerHTML = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
       }
     });
 
