@@ -40,9 +40,9 @@
         <section class="hero-section">
             <div class="hero-container container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Póngase en contacto con Divine Healthcare</h1>
-                    <h2 class="hero-subtitle">Estamos aquí para <span class="highlight-text">ayudarte</span></h2>
-                    <p class="hero-description">Comuníquese a través de cualquiera de nuestros convenientes métodos de contacto a continuación</p>
+                    <h1 class="hero-title" data-i18n="contact.hero.title">Póngase en contacto con Divine Healthcare</h1>
+                    <h2 class="hero-subtitle" data-i18n="contact.hero.subtitle">Estamos aquí para <span class="highlight-text">ayudarte</span></h2>
+                    <p class="hero-description" data-i18n="contact.hero.desc">Comuníquese a través de cualquiera de nuestros convenientes métodos de contacto a continuación</p>
                 </div>
                 <div class="hero-image">
                     <img src="support-min.png" alt="Customer support illustration" class="hero-img">
@@ -59,14 +59,14 @@
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
-                        <h3>Soporte telefónico</h3>
-                        <p>Hable directamente con nuestros representantes</p>
+                        <h3 data-i18n="contact.card.phone.h3">Soporte telefónico</h3>
+                        <p data-i18n="contact.card.phone.p">Hable directamente con nuestros representantes</p>
                         <div class="contact-details">
                            <strong>Chile:</strong> 
                            <p> +56 9 3399 0606</p>
                         </div>
                         <br>
-                        <a href="tel:+56212345678" class="contact-btn">Llame ahora</a>
+                        <a href="tel:+56212345678" class="contact-btn" data-i18n="contact.card.phone.btn">Llame ahora</a>
                     </div>
 
                     <!-- Contact Card 2 -->
@@ -74,15 +74,15 @@
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <h3>correo electrónico</h3>
-                        <p>Envíenos sus consultas y le responderemos.</p>
+                        <h3 data-i18n="contact.card.email.h3">correo electrónico</h3>
+                        <p data-i18n="contact.card.email.p">Envíenos sus consultas y le responderemos.</p>
                         <div class="contact-details">
                             <strong>Apoyo:</strong> 
                                 <p>contacto@divine.cl</p>
                         </div>
                         <br>
                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@divine.cl.com&su=Contact%20Request&body=Hello%20Team,%0A%0AI%20would%20like%20to%20contact%20you%20about..." 
-   class="contact-btn" 
+   class="contact-btn" data-i18n="contact.card.email.btn"
    target="_blank">
    correo electrónico
 </a>
@@ -93,13 +93,13 @@
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h3>Visítanos</h3>
-                        <p>Nuestra sede y oficinas regionales</p>
+                        <h3 data-i18n="contact.card.visit.h3">Visítanos</h3>
+                        <p data-i18n="contact.card.visit.p">Nuestra sede y oficinas regionales</p>
                         <div class="contact-details">
                            <strong>Sede de Chile:</strong> 
                                 <p> Av. Pedro de Valdivia 273, Oficina 1310, Providencia, Santiago </p>
                         </div>
-                        <a href="#locations" class="contact-btn">Ver ubicaciones</a>
+                        <a href="#locations" class="contact-btn" data-i18n="contact.card.visit.btn">Ver ubicaciones</a>
                     </div>
                 </div>
             </div>
@@ -107,8 +107,8 @@
 <section class="contact-form-section">
     <div class="container">
         <div class="section-header">
-            <h2>Envíanos un mensaje</h2>
-            <p>Complete el siguiente formulario y nos pondremos en contacto con usted dentro de las 24 horas</p>
+            <h2 data-i18n="contact.form.h2">Envíanos un mensaje</h2>
+            <p data-i18n="contact.form.p">Complete el siguiente formulario y nos pondremos en contacto con usted dentro de las 24 horas</p>
         </div>
         <div class="form-container">
             <form id="contactForm" action="https://formsubmit.co/contacto@divine.cl" method="POST">
@@ -120,17 +120,17 @@
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Nombre completo*</label>
+                        <label for="name" data-i18n="contact.form.label.name">Nombre completo*</label>
                         <input type="text" id="name" name="Full Name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Correo electrónico*</label>
+                        <label for="email" data-i18n="contact.form.label.email">Correo electrónico*</label>
                         <input type="email" id="email" name="Email" required>
                     </div>
                 </div>
                 
                 <div class="form-group full-width">
-                    <label for="phone">Número de teléfono*</label>
+                    <label for="phone" data-i18n="contact.form.label.phone">Número de teléfono*</label>
                     <div class="phone-input-wrapper">
                         <input type="text" id="country-code" name="Country code" placeholder="+1" class="country-code" maxlength="4" required>
                         <input type="tel" id="phone" name="WhatsApp Number" class="phone-number" required>
@@ -138,32 +138,32 @@
                 </div>
                 
                 <div class="form-group">
-                        <label for="subject">Asunto*</label>
+                        <label for="subject" data-i18n="contact.form.label.subject">Asunto*</label>
                         <select id="subject" name="Subject" required>
-                    <option value="" disabled selected>Seleccione un tema</option>
-                    <option value="General inquiry">Consulta general</option>
-                    <option value="Product Information">Información del producto</option>
-                    <option value="Partnership opportunities">Oportunidades de asociación</option>
-                    <option value="Technical Support">Soporte técnico</option>
+                    <option value="" disabled selected data-i18n="contact.form.option.placeholder">Seleccione un tema</option>
+                    <option value="General inquiry" data-i18n="contact.form.option.general">Consulta general</option>
+                    <option value="Product Information" data-i18n="contact.form.option.product">Información del producto</option>
+                    <option value="Partnership opportunities" data-i18n="contact.form.option.partner">Oportunidades de asociación</option>
+                    <option value="Technical Support" data-i18n="contact.form.option.tech">Soporte técnico</option>
                          </select>
                     </div>
                 <div class="form-group full-width">
-                    <label for="message">Su mensaje*</label>
+                    <label for="message" data-i18n="contact.form.label.message">Su mensaje*</label>
                     <textarea id="message" name="Message" rows="6" required></textarea>
                 </div>
                 
                 <div class="form-footer">
-                    <button type="submit" class="submit-btn">Enviar mensaje</button>
+                    <button type="submit" class="submit-btn" data-i18n="contact.form.submit">Enviar mensaje</button>
                     <div class="form-note">
-                        <p>* Campos requeridos</p>
+                        <p data-i18n="contact.form.note">* Campos requeridos</p>
                     </div>
                 </div>
             </form>
             
             <div class="direct-contact">
-                <p>O contáctenos directamente:</p>
+                <p data-i18n="contact.direct.p">O contáctenos directamente:</p>
                 <a href="https://wa.me/56933990606" class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Envíanos un mensaje por WhatsApp
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="contact.direct.whatsapp">Envíanos un mensaje por WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -248,8 +248,8 @@
         <section class="locations-section" id="locations">
             <div class="container">
                 <div class="section-header">
-                    <h2>Nuestras ubicaciones</h2>
-                    <p>Encuentra nuestras oficinas en todo el mundo</p>
+                    <h2 data-i18n="contact.locations.h2">Nuestras ubicaciones</h2>
+                    <p data-i18n="contact.locations.p">Encuentra nuestras oficinas en todo el mundo</p>
                 </div>
                 
                     <!-- Location 1 -->
@@ -266,11 +266,11 @@
 </iframe>
                         </div>
                         <div class="location-info">
-                            <h3>Chile</h3>
-                            <p><i class="fas fa-map-marker-alt"></i> Av. Pedro de Valdivia 273, Oficina 1304/1305, Providencia, Santiago</p>
+                            <h3 data-i18n="contact.locations.country">Chile</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="contact.locations.addr">Av. Pedro de Valdivia 273, Oficina 1304/1305, Providencia, Santiago</span></p>
                             <p><i class="fas fa-phone"></i> +56 9 3399 0606</p>
                             <p><i class="fas fa-envelope"></i>contacto@divine.cl</p>
-                            <p><i class="fas fa-clock"></i> Lunes a viernes: 9.30 a.m. a 5.30</p>
+                            <p><i class="fas fa-clock"></i> <span data-i18n="contact.locations.hours">Lunes a viernes: 9.30 a.m. a 5.30</span></p>
                         </div>
                     </div>
                 </div>
@@ -289,7 +289,7 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         Nuestra Visión es que nuestros productos posean certificación emitida por 
                      las más altas agencias reguladoras manteniendo precios asequibles para las 
                      instituciones y pacientes con más de 2 décadas de experiencia en el campo.
@@ -311,16 +311,16 @@
 
                 <div class="footer-links">
                     <div class="links-column">
-                        <h3>Enlaces rápidos</h3>
+                        <h3 data-i18n="footer.quick_links">Enlaces rápidos</h3>
                         <ul>
-                           <li><a href="#">Importación uso Personal</a></li>
-                            <li><a href="index.html">Hogar</a></li>
-                            <li><a href="about.html">Sobre nosotros</a></li>
-                            <li><a href="#">Verticales de negocios</a></li>
-                            <li><a href="#">Nuestro portafolio</a></li>
-                            <li><a href="infrastructure.html">Infraestructura</a></li>
-                            <li><a href="Chile.html">Presencia en Chile</a></li>
-                            <li><a href="contact.html">Contáctenos</a></li>
+                           <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso Personal</a></li>
+                            <li><a href="index.html" data-i18n="footer.link.home">Hogar</a></li>
+                            <li><a href="about.html" data-i18n="footer.link.about">Sobre nosotros</a></li>
+                            <li><a href="#" data-i18n="footer.link.business">Verticales de negocios</a></li>
+                            <li><a href="#" data-i18n="footer.link.portfolio">Nuestro portafolio</a></li>
+                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a></li>
+                            <li><a href="Chile.html" data-i18n="footer.link.chile">Presencia en Chile</a></li>
+                            <li><a href="contact.html" data-i18n="footer.link.contact">Contáctenos</a></li>
                         </ul>
                     </div>
                     <div class="links-column">
@@ -435,8 +435,8 @@ const scrollToTopBtn = document.getElementById('scrollToTop');
         });
 </script>
             </div>
-            <div class="footer-bottom">
-                <p class="copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+                <div class="footer-bottom">
+                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

@@ -17,7 +17,7 @@
     <div class="social-bar">
         <div class="container">
             <div class="social-links">
-                <span>Síganos:</span>
+                <span data-i18n="import.social.follow">Síganos:</span>
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -75,13 +75,13 @@
     </div>
 
     <div class="overlay">
-      <h1>Importamos medicamentos de Estados Unidos, Europa y la India.</h1>
-      <p>Nosotros los importamos para usted.</p>
+      <h1 data-i18n="import.hero.h1">Importamos medicamentos de Estados Unidos, Europa y la India.</h1>
+      <p data-i18n="import.hero.p">Nosotros los importamos para usted.</p>
 
    <!--======================
           QUOTE BUTTON
     ====================== -->
-    <button id="quoteButton" class="quote-button">¡SOLICITE UNA COTIZACIÓN AQUÍ!</button>
+    <button id="quoteButton" class="quote-button" data-i18n="import.hero.cta">¡SOLICITE UNA COTIZACIÓN AQUÍ!</button>
     </div>
     <!-- Modal-->
     <div id="quoteModal" class="modal">
@@ -90,42 +90,42 @@
         <span class="close">&times;</span>
         
         <div class="form-header">
-            <h2>Solicitar una cotización</h2>
-            <p>Por favor, rellene todos los campos obligatorios (*)</p>
+            <h2 data-i18n="import.modal.h2">Solicitar una cotización</h2>
+            <p data-i18n="import.modal.p">Por favor, rellene todos los campos obligatorios (*)</p>
         </div>
             
             <form id="quoteForm">
                 <div class="form-group">
-                    <label for="name">Nombre*</label>
+                    <label for="name" data-i18n="import.form.label.name">Nombre*</label>
                     <input type="text" id="name" name="name" required>
                     <div class="error-message">Por favor ingresa tu nombre</div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Correo electrónico*</label>
+                    <label for="email" data-i18n="import.form.label.email">Correo electrónico*</label>
                     <input type="email" id="email" name="email" required>
                     <div class="error-message">Por favor introduce un correo electrónico válido</div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone">Número de teléfono*</label>
+                    <label for="phone" data-i18n="import.form.label.phone">Número de teléfono*</label>
                     <input type="tel" id="phone" name="phone" required>
                     <div class="error-message">Por favor ingresa tu número de teléfono</div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="type">Tipo*</label>
+                    <label for="type" data-i18n="import.form.label.type">Tipo*</label>
                     <select id="type" name="type" required>
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="Paciente">Paciente</option>
-                        <option value="Padre o madre">Padre o madre</option>
-                        <option value="Hijo o hija">Hijo o hija</option>
-                        <option value="Cónyuge">Cónyuge</option>
-                        <option value="Hermano o hermana">Hermano o hermana</option>
-                        <option value="Otro">Otro (Especificar)</option>
+                        <option value="" disabled selected data-i18n="import.form.option.placeholder">Seleccione una opción</option>
+                        <option value="Paciente" data-i18n="import.form.option.patient">Paciente</option>
+                        <option value="Padre o madre" data-i18n="import.form.option.parent">Padre o madre</option>
+                        <option value="Hijo o hija" data-i18n="import.form.option.child">Hijo o hija</option>
+                        <option value="Cónyuge" data-i18n="import.form.option.spouse">Cónyuge</option>
+                        <option value="Hermano o hermana" data-i18n="import.form.option.sibling">Hermano o hermana</option>
+                        <option value="Otro" data-i18n="import.form.option.other">Otro (Especificar)</option>
                     </select>
                    <div id="other-specify-container" style="display: none; margin-top: 10px;">
-        <input type="text" id="other-specify" name="other_specify" placeholder="Por favor especifique">
+        <input type="text" id="other-specify" name="other_specify" placeholder="Por favor especifique" data-i18n="import.form.other.placeholder" data-i18n-attr="placeholder">
     </div>
     <div class="error-message">Por favor seleccione un tipo</div>
       <script>
@@ -356,10 +356,10 @@ Message: ${formData.message || 'N/A'}`;
 </script>
                
     <div class="form-group">
-    <label for="message">Tu mensaje</label>
+    <label for="message" data-i18n="import.form.message.label">Tu mensaje</label>
     <textarea id="message" name="message"></textarea>
     </div>
-    <button type="submit" class="submit-btn">ENVIAR SOLICITUD</button>
+    <button type="submit" class="submit-btn" data-i18n="import.form.submit">ENVIAR SOLICITUD</button>
    </form>
     </div>
     </div>
@@ -370,15 +370,15 @@ Message: ${formData.message || 'N/A'}`;
     ====================== -->
   <!-- imported medicine -->
   <section class="imported-medicines">
-  <h2>Medicamentos importados</h2>
+  <h2 data-i18n="import.section.imported.h2">Medicamentos importados</h2>
   <div class="medicine-categories">
 
     <!-- Natural Persons -->
     <div class="medicine-box">
       <i class="fas fa-user icon"></i>
       <div>
-        <h3>Personas físicas</h3>
-        <p>¿Su tratamiento médico en Chile no está disponible o es demasiado costoso?</p>
+        <h3 data-i18n="import.cat.natural.h3">Personas físicas</h3>
+        <p data-i18n="import.cat.natural.p">¿Su tratamiento médico en Chile no está disponible o es demasiado costoso?</p>
       </div>
     </div>
 
@@ -386,8 +386,8 @@ Message: ${formData.message || 'N/A'}`;
     <div class="medicine-box">
       <i class="fas fa-user-md icon"></i>
       <div>
-        <h3>Profesionales de la salud</h3>
-        <p>¿El tratamiento que usted quiere recetar a su paciente no está disponible en Chile o es demasiado caro?</p>
+        <h3 data-i18n="import.cat.prof.h3">Profesionales de la salud</h3>
+        <p data-i18n="import.cat.prof.p">¿El tratamiento que usted quiere recetar a su paciente no está disponible en Chile o es demasiado caro?</p>
       </div>
     </div>
 
@@ -395,8 +395,8 @@ Message: ${formData.message || 'N/A'}`;
     <div class="medicine-box">
       <i class="fas fa-hospital icon"></i>
       <div>
-        <h3> Hospitales y clínicas</h3>
-        <p>¿Buscas un tratamiento para un paciente de tu institución que no está disponible en Chile?</p>
+        <h3 data-i18n="import.cat.hosp.h3"> Hospitales y clínicas</h3>
+        <p data-i18n="import.cat.hosp.p">¿Buscas un tratamiento para un paciente de tu institución que no está disponible en Chile?</p>
       </div>
     </div>
 
@@ -1392,7 +1392,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-main">
                 <div class="footer-brand">
                     <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         Nuestra Visión es que nuestros productos posean certificación emitida
                         por las más altas agencias reguladoras manteniendo precios asequibles 
                         para las instituciones y pacientes con más de 2 décadas de experiencia en el campo.
@@ -1414,16 +1414,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <div class="footer-links">
                     <div class="links-column">
-                        <h3>Enlaces rápidos</h3>
+                        <h3 data-i18n="footer.quick_links">Enlaces rápidos</h3>
                         <ul>
-                            <li><a href="import.html">Importación uso Personal</a></li>
-                            <li><a href="index.html">Hogar</a></li>
-                            <li><a href="about.html">Sobre nosotros</a></li>
-                            <li><a href="#">Verticales de negocios</a></li>
-                            <li><a href="#">Nuestro portafolio</a></li>
-                            <li><a href="infrastructure.html">Infraestructura</a></li>
-                            <li><a href="Chile.html">Presencia en Chile</a></li>
-                            <li><a href="contact.html">Contáctenos</a></li>
+                            <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso Personal</a></li>
+                            <li><a href="index.html" data-i18n="footer.link.home">Hogar</a></li>
+                            <li><a href="about.html" data-i18n="footer.link.about">Sobre nosotros</a></li>
+                            <li><a href="#" data-i18n="footer.link.business">Verticales de negocios</a></li>
+                            <li><a href="#" data-i18n="footer.link.portfolio">Nuestro portafolio</a></li>
+                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a></li>
+                            <li><a href="Chile.html" data-i18n="footer.link.chile">Presencia en Chile</a></li>
+                            <li><a href="contact.html" data-i18n="footer.link.contact">Contáctenos</a></li>
                         </ul>
                     </div>
                     <div class="links-column">
@@ -1622,7 +1622,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
             </div>
 
             <div class="footer-bottom">
-                <p class="copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
