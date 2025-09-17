@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Importation | Divine Healthcare</title>
+  <link rel="stylesheet" href="import.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+ <!--======================
+             HEADER
+    ====================== -->
+<header class="header">
+    <!-- Top Social Bar -->
+    <div class="social-bar">
+        <div class="container">
+            <div class="social-links">
+                <span>Síganos:</span>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
+                   aria-label="WhatsApp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="contact-info">
+                <div><i class="fas fa-phone"></i> +56 9 3399 0606 <br><small> contacto@divine.cl </small></div>
+                <div><i class="fas fa-map-marker-alt"></i> Av. Pedro de Valdivia 273, Oficina 1310 <br><small>Providencia, Santiago</small></div>
+                <div><i class="fas fa-clock"></i> De lunes a viernes de 9.30 a 17.30 horas<br><small>Cerrado sábados y domingos.</small></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+   <!--======================
+           NAVIGATION
+    ====================== -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="brand-logo">
+                    <img src="logo.png" alt="Divine Healthcare Logo">
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <ul>
+                        <li><button onclick = "window.location.href='import.html'" class="med-import-btn" data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
+                        <li><a href="index.html" data-i18n="nav.home">Hogar</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">Sobre nosotros</a></li>
+                        <li><a href="#" data-i18n="nav.business">Verticales de negocios</a></li>
+                        <li><a href="#" data-i18n="nav.portfolio">Nuestro portafolio</a></li>
+                        <li><a href="infrastructure.html" data-i18n="nav.infrastructure">Infraestructura</a></li>
+                        <li><a href="Chile.html" data-i18n="nav.chile">Presencia en Chile</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contáctenos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+   <!--======================
+         HERO SECTION
+    ====================== -->
+  <header class="hero">
+    <div class="hero-image">
+      <img src="home-img.avif" alt="Doctor writing prescription">
+    </div>
+
+    <div class="overlay">
+      <h1>Importamos medicamentos de Estados Unidos, Europa y la India.</h1>
+      <p>Nosotros los importamos para usted.</p>
+
+   <!--======================
+          QUOTE BUTTON
+    ====================== -->
+    <button id="quoteButton" class="quote-button">¡SOLICITE UNA COTIZACIÓN AQUÍ!</button>
+    </div>
+    <!-- Modal-->
+    <div id="quoteModal" class="modal">
+    <div class="modal-content">
+        <!-- Move the close button outside the form-header -->
+        <span class="close">&times;</span>
+        
+        <div class="form-header">
+            <h2>Solicitar una cotización</h2>
+            <p>Por favor, rellene todos los campos obligatorios (*)</p>
+        </div>
+            
+            <form id="quoteForm">
+                <div class="form-group">
+                    <label for="name">Nombre*</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message">Por favor ingresa tu nombre</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico*</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message">Por favor introduce un correo electrónico válido</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Número de teléfono*</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <div class="error-message">Por favor ingresa tu número de teléfono</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="type">Tipo*</label>
+                    <select id="type" name="type" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Paciente">Paciente</option>
+                        <option value="Padre o madre">Padre o madre</option>
+                        <option value="Hijo o hija">Hijo o hija</option>
+                        <option value="Cónyuge">Cónyuge</option>
+                        <option value="Hermano o hermana">Hermano o hermana</option>
+                        <option value="Otro">Otro (Especificar)</option>
+                    </select>
+                   <div id="other-specify-container" style="display: none; margin-top: 10px;">
+        <input type="text" id="other-specify" name="other_specify" placeholder="Por favor especifique">
+    </div>
+    <div class="error-message">Por favor seleccione un tipo</div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Your existing validation code...
+
+            document.getElementById('quoteForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    type: document.getElementById('type').value,
+                    other_specify: document.getElementById('other-specify').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Create key-value pair structure
+                const kvStructure = `
+                <div class="kv-box">
+                    <div class="kv-title">New Quote Request</div>
+                    <div class="kv-row">
+                        <div class="kv-key">Name:</div>
+                        <div class="kv-value">${formData.name}</div>
+                    </div>
+                    <div class="kv-row">
+                        <div class="kv-key">Email:</div>
+                        <div class="kv-value">${formData.email}</div>
+                    </div>
+                    <div class="kv-row">
+                        <div class="kv-key">Phone:</div>
+                        <div class="kv-value">${formData.phone}</div>
+                    </div>
+                    <div class="kv-row">
+                        <div class="kv-key">Type:</div>
+                        <div class="kv-value">${formData.type}${formData.other_specify ? ' (' + formData.other_specify + ')' : ''}</div>
+                    </div>
+                    <div class="kv-row">
+                        <div class="kv-key">Message:</div>
+                        <div class="kv-value">${formData.message || 'N/A'}</div>
+                    </div>
+                </div>
+                `;
+
+                // Plain text version for WhatsApp
+                const whatsappMessage = `*New Quote Request*
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Type: ${formData.type}${formData.other_specify ? ' (' + formData.other_specify + ')' : ''}
+Message: ${formData.message || 'N/A'}`;
+
+                // 1. Send to Email with HTML structure
+                const emailSubject = `New Quote Request from ${formData.name}`;
+                
+                fetch('https://formsubmit.co/ajax/contacto@divine.cl', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: emailSubject,
+                        _replyto: formData.email,
+                        name: formData.name,
+                        email: formData.email,
+                        phone: formData.phone,
+                        type: formData.type + (formData.other_specify ? ' (' + formData.other_specify + ')' : ''),
+                        message: formData.message || 'N/A',
+                        _template: 'table' // This will format as key-value pairs in email
+                    })
+                })
+                .then(response => response.json())
+                .then(data => console.log('Email sent:', data))
+                .catch(error => console.error('Email error:', error));
+
+
+                // Show success message with the key-value structure
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message';
+                successDiv.innerHTML = `
+                    <strong>✓ Request Submitted Successfully!</strong>
+                    <p>We've received your details:</p>
+                    ${kvStructure}
+                `;
+                
+                document.querySelector('#quoteForm').parentNode.insertBefore(successDiv, document.querySelector('#quoteForm'));
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    document.getElementById('quoteModal').style.display = 'none';
+                    this.reset();
+                    successDiv.remove();
+                }, 5000);
+            });
+        });
+    </script>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get all form fields
+    const formFields = [
+        document.getElementById('name'),
+        document.getElementById('email'),
+        document.getElementById('phone'),
+        document.getElementById('other-specify')
+    ];
+
+    // Special handling for Type dropdown
+    const typeSelect = document.getElementById('type');
+    const otherInput = document.getElementById('other-specify');
+    const otherContainer = document.getElementById('other-specify-container');
+
+    // Set up field validation for regular inputs
+    formFields.forEach(field => {
+        if (!field) return;
+        
+        // Blue while typing
+        field.addEventListener('input', function() {
+            this.classList.add('typing');
+            this.classList.remove('valid', 'invalid');
+        });
+
+        // Validate on blur (when leaving field)
+        field.addEventListener('blur', function() {
+            this.classList.remove('typing');
+            validateField(this);
+        });
+
+        // Initialize validation state
+        if (field.value.trim() !== '') {
+            field.dispatchEvent(new Event('blur'));
+        }
+    });
+
+    // Custom validation for Type dropdown
+    typeSelect.addEventListener('change', function() {
+        if (this.value === 'Otro') {
+            otherContainer.style.display = 'block';
+            otherInput.required = true;
+            // Only validate if other-specify is empty
+            if (otherInput.value.trim() === '') {
+                this.classList.add('invalid');
+                otherInput.classList.add('invalid');
+            } else {
+                this.classList.remove('invalid');
+                this.classList.add('valid');
+                otherInput.classList.remove('invalid');
+                otherInput.classList.add('valid');
+            }
+        } else {
+            otherContainer.style.display = 'none';
+            otherInput.required = false;
+            otherInput.value = '';
+            otherInput.classList.remove('typing', 'valid', 'invalid');
+            // Type is valid if any non-Otro option is selected
+            this.classList.remove('invalid');
+            this.classList.add('valid');
+        }
+    });
+
+    // Validate other-specify field when typing
+    otherInput.addEventListener('input', function() {
+        this.classList.add('typing');
+        this.classList.remove('valid', 'invalid');
+        if (typeSelect.value === 'Otro') {
+            typeSelect.classList.remove('invalid', 'valid');
+        }
+    });
+
+    otherInput.addEventListener('blur', function() {
+        this.classList.remove('typing');
+        if (typeSelect.value === 'Otro') {
+            if (this.value.trim() === '') {
+                this.classList.add('invalid');
+                typeSelect.classList.add('invalid');
+            } else {
+                this.classList.add('valid');
+                typeSelect.classList.add('valid');
+            }
+        }
+    });
+
+    // Generic field validation function
+    function validateField(field) {
+        if (field.value.trim() === '') {
+            field.classList.add('invalid');
+            field.classList.remove('valid');
+            return;
+        }
+
+        let isValid = true;
+        
+        if (field.type === 'email' && !field.checkValidity()) {
+            isValid = false;
+        }
+        
+        if (field.id === 'phone' && !/^\d{10,15}$/.test(field.value)) {
+            isValid = false;
+        }
+        
+        if (isValid) {
+            field.classList.add('valid');
+            field.classList.remove('invalid');
+        } else {
+            field.classList.add('invalid');
+            field.classList.remove('valid');
+        }
+    }
+
+    // Initialize type select
+    if (typeSelect.value === 'Otro') {
+        otherContainer.style.display = 'block';
+        otherInput.required = true;
+        if (otherInput.value.trim() === '') {
+            typeSelect.classList.add('invalid');
+            otherInput.classList.add('invalid');
+        } else {
+            typeSelect.classList.add('valid');
+            otherInput.classList.add('valid');
+        }
+    } else if (typeSelect.value) {
+        typeSelect.classList.add('valid');
+    }
+});
+</script>
+               
+    <div class="form-group">
+    <label for="message">Tu mensaje</label>
+    <textarea id="message" name="message"></textarea>
+    </div>
+    <button type="submit" class="submit-btn">ENVIAR SOLICITUD</button>
+   </form>
+    </div>
+    </div>
+  </header>
+
+  <!--======================
+       IMPORTED MEDICINES
+    ====================== -->
+  <!-- imported medicine -->
+  <section class="imported-medicines">
+  <h2>Medicamentos importados</h2>
+  <div class="medicine-categories">
+
+    <!-- Natural Persons -->
+    <div class="medicine-box">
+      <i class="fas fa-user icon"></i>
+      <div>
+        <h3>Personas físicas</h3>
+        <p>¿Su tratamiento médico en Chile no está disponible o es demasiado costoso?</p>
+      </div>
+    </div>
+
+    <!-- Health Professionals -->
+    <div class="medicine-box">
+      <i class="fas fa-user-md icon"></i>
+      <div>
+        <h3>Profesionales de la salud</h3>
+        <p>¿El tratamiento que usted quiere recetar a su paciente no está disponible en Chile o es demasiado caro?</p>
+      </div>
+    </div>
+
+    <!-- Hospitals and Clinics -->
+    <div class="medicine-box">
+      <i class="fas fa-hospital icon"></i>
+      <div>
+        <h3> Hospitales y clínicas</h3>
+        <p>¿Buscas un tratamiento para un paciente de tu institución que no está disponible en Chile?</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--======================
+         QUOTE STRIP
+    ====================== -->
+<section class="quote-section">
+    <!-- Company Logos (replacing circles) -->
+    <!-- <img src="strip1.png" alt="Company Logo" class="quote-logo top-left">
+    <img src="strip2.png" alt="Company Logo" class="quote-logo bottom-right">
+    <img src="strip3.png" alt="Company Logo" class="quote-logo center"> -->
+   
+    <div class="quote-content">
+        <h2>Quienes somos</h2>
+        <button class="btn" id="scrollToWhoWeAre">Inicio > quienes somos</button>
+    </div>
+</section>
+
+   <script>     
+    document.getElementById ('scrollToWhoWeAre').addEventListener('click', function() {
+        document.getElementById('who-we-are').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+    </script>
+
+<!--======================
+         WHO WE ARE
+    ====================== -->
+  <section class="features-section" id="who-we-are">
+  <div class="features-header">
+    <p>
+        Divine es una empresa con sede en Chile que se centra en ayudar a los pacientes 
+        a acceder a tratamientos inaccesibles o de costo prohibitivo a nivel local. 
+        Con más de 25 años de experiencia, nuestra misión es conectar a las personas 
+        con las soluciones médicas globales más efectivas.
+    </p>
+  </div>
+
+  <div class="about-cards">
+      <div class="card">
+        <img src="parcels.png" alt="Health Authority" />
+        <p><strong>Recibe tu producto</strong> en un plazo de 15 a 21 días laborables.</p>
+      </div>
+
+      <div class="card">
+        <img src="tick.png" alt="Health Authority" />
+        <p><strong>Cumple </strong> con la normativa establecida por el Instituto de Salud Pública de Chile.</p>
+      </div>
+
+      <div class="card">
+        <img src="international.png" alt="International Supply" />
+        <p><strong>Proveedores internacionales autorizados</strong> y aprobados por las autoridades sanitarias de sus respectivos países.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2897/2897990.png" alt="Specialty Meds" />
+        <p><strong>Importamos medicamentos</strong> para enfermedades raras o especializadas (hasta 6 meses de tratamiento).</p>
+      </div>
+
+    <div class="card">
+        <img src="badge.png" alt="Specialty Meds" />
+        <p><strong>25 años</strong> de experiencia importando</p>
+      </div>
+
+       <div class="card">
+        <img src="delivery.png" alt="Specialty Meds" />
+        <p><strong>Envíos a todo Chile</strong>con y sin cadena de frío.</p>
+      </div>
+
+    <div class="card">
+        <img src="doctor.png" alt="Specialty Meds" />
+        <p><strong>Contamos con un Químico Farmacéutico</strong> que supervisa el proceso.</p>
+      </div>
+
+      <div class="card">
+        <img src="hospital.png" alt="Specialty Meds" />
+        <p><strong>Atención</strong> a clínicas, hospitales y pacientes particulares.</p>
+      </div>
+</section>
+
+<!--======================
+       QUOTE STRIP
+    ====================== -->
+<section class="quote-section">
+   
+    <div class="quote-content">
+        <h2>A quién servimos</h2>
+        <button class="btn" id="scrollToWhoWeServe">Inicio > a quién servimos</button>
+    </div>
+</section>
+
+  <script>
+    document.getElementById('scrollToWhoWeServe').addEventListener('click', function() {
+        document.getElementById('who-we-serve').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+</script>
+
+<!--======================
+       WHO WE SERVE
+    ====================== -->
+  <section class="serve-section" id="who-we-serve">
+   <div class="serve-grid">
+    <div class="serve-card">
+      <img src="serve1.png" alt="Hospitals">
+      <p><strong>Hospitales</strong></p>
+    </div>
+    <div class="serve-card">
+      <img src="serve2.png" alt="Clinics">
+      <p><strong>Clínicas</strong></p>
+    </div>
+    <div class="serve-card">
+      <img src="serve3.png" alt="Groups">
+      <p><strong>Grupos o <br> asociaciones de pacientes</strong></p>
+    </div>
+    <div class="serve-card">
+      <img src="serve4.png" alt="Private Patients">
+      <p><strong>Pacientes privados</strong></p>
+    </div>
+    <div class="serve-card">
+      <img src="serve5.png" alt="Other Institutions">
+      <p><strong>Otras instituciones <br> de salud</strong></p>
+    </div>
+     <div class="serve-card">
+      <img src="serve6.png" alt="Other Institutions">
+      <p><strong>Farmacia</strong></p>
+    </div>
+  </div>
+</section>
+
+<!--======================
+       QUOTE STRIP
+    ====================== -->
+<section class="quote-section">
+  
+    <div class="quote-content">
+        <h2> Proceso de Importación </h2>
+        <button class="btn" id="scrollToImportationProcess">Inicio > Proceso de Importación</button>
+    </div>
+</section>
+
+<script>
+    document.getElementById('scrollToImportationProcess').addEventListener('click', function() {
+        document.getElementById('import-process').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+  </script>
+
+  <!--======================
+        IMPORT PROCESS
+    ====================== -->
+  <section class="import-process" id="import-process">
+  <div class="steps-grid">
+    <div class="step">
+      <img src="import2.png" alt="Quotation">
+      <h3>Solicitud de cotización</h3>
+    </div>
+    <div class="step">
+      <img src="import1.png" alt="Acceptance">
+      <h3>Aceptación de cotización</h3>
+    </div>
+    <div class="step">
+      <img src="import 3.png" alt="Documentation">
+      <h3>Presentar documentación <br> para la importación</h3>
+    </div>
+    <div class="step">
+      <img src="import4.png" alt="Progress">
+      <h3>Pedido en proceso</h3>
+    </div>
+    <div class="step">
+      <img src="import5.png" alt="Transport">
+      <h3>Transporte Internacional,<br>resolución de ISP y<br>despacho de aduanas</h3>
+    </div>
+    <div class="step">
+      <img src="import6.png" alt="Delivery">
+      <h3>Entrega</h3>
+    </div>
+  </div>
+
+  
+  <!--======================
+        DOCUMENTATION
+    ====================== -->
+  <div class="doc-header">
+    <h2>1. Documentación para realizar su Importación</h2>
+  </div>
+<!-- 1st card-->
+  <div class="doc-grid">
+  <div class="doc-item">
+    <div class="icon-circle"><img src="prescription.png" alt=""></div>
+    <h4>1. Receta médica</h4>
+  </div>
+  <!-- 2nd card-->
+  <div class="doc-item">
+    <div class="icon-circle"><img src="id.png" alt=""></div>
+    <h4>2. Fotocopia del documento de identidad</h4>
+  </div>
+  <!-- 3rd card-->
+  <div class="doc-item">
+    <div class="icon-circle"><img src="agreement.png" alt=""></div>
+    <h4>3. Poder notarial simple</h4>
+    <p>Firmado por el paciente o un miembro de la familia</p>
+  </div>
+  <!-- This is now the 4th card (originally 5th) -->
+  <button id="downloadPoaBtn" class="poa-download-btn doc-item">
+    <div class="icon-circle"><img src="download.png" alt=""></div>
+    <h4>4. Descargar Poder Notarial Simple</h4>
+  </button>
+</div>
+
+<!-- Modal -->
+<div id="prescriptionModal" class="modal">
+  <div class="modal-content">
+    <div class="form-header">
+      <h2>Ingreso de solicitud</h2>
+      <p>Complete todos los campos requeridos para iniciar su proceso</p>
+      <button id="closeModalBtn" class="close-modal-btn" type="button" title="Cerrar y reiniciar formulario">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Updated Form with FormSubmit Configuration -->
+    <form id="prescriptionForm" action="https://formsubmit.co/contacto@divine.cl" method="POST" enctype="multipart/form-data">
+      <!-- FormSubmit Configuration -->
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="Nueva Solicitud de Medicamentos - {{nombrePaciente}}">
+      <input type="hidden" name="_autoresponse" value="Hemos recibido su solicitud de medicamentos. Nos pondremos en contacto pronto.">
+      <input type="hidden" name="_next" value="#successMessage">
+      <input type="hidden" name="_captcha" value="false">
+
+
+      <!-- Row 1 -->
+      <div class="form-row">
+        <div class="form-group floating-label">
+          <input type="text" id="nombrePaciente" name="nombrePaciente" placeholder=" " required>
+          <label for="nombrePaciente">1. Nombre y apellido del paciente*</label>
+          <div class="error-message">Por favor ingrese el nombre del paciente</div>
+        </div>
+        <div class="form-group floating-label">
+          <input type="text" id="rutPaciente" name="rutPaciente" placeholder=" " required>
+          <label for="rutPaciente">2. Rut del paciente* (00000000-0)
+          </label>
+          <div class="error-message">El RUT ingresado es incorrecto</div>
+        </div>
+      </div>
+      
+      <!-- Row 2 -->
+      <div class="form-row">
+        <div class="form-group floating-label">
+          <input type="text" id="nombreMedicamento" name="nombreMedicamento" placeholder=" " required>
+          <label for="nombreMedicamento">3. Nombre del medicamento (principio)*</label>
+          <div class="error-message">Por favor ingrese el nombre del medicamento</div>
+        </div>
+        <div class="form-group floating-label">
+  <select id="prescripcionDiaria" name="prescripcionDiaria" required>
+    <option value="" disabled selected></option>
+    <option value="Once in a day">una vez al dia</option>
+    <option value="Twice in a day">dos veces en un dia</option>
+    <option value="Thrice in a day">tres veces en un dia</option>
+  </select>
+  <label for="prescripcionDiaria">4. Duración del tratamiento en meses*</label>
+  <div class="error-message">Por favor seleccione la prescripción diaria</div>
+</div>
+      </div>
+      
+      <!-- Row 3 -->
+      <div class="form-row">
+        <div class="form-group floating-label">
+          <input type="text" id="duracionTratamiento" name="duracionTratamiento" placeholder=" " required>
+          <label for="duracionTratamiento">5. Duración del tratamiento*</label>
+          <div class="error-message">Por favor ingrese la duración del tratamiento</div>
+        </div>
+        <div class="form-group floating-label">
+          <input type="text" id="cantidadTotal" name="cantidadTotal" placeholder=" " required>
+          <label for="cantidadTotal">6. Cantidad total solicitada*</label>
+          <div class="error-message">Por favor ingrese la cantidad total</div>
+        </div>
+      </div>
+      
+      <!-- Row 4 -->
+      <div class="form-row">
+        <div class="form-group floating-label">
+          <textarea id="diagnostico" name="diagnostico" placeholder=" " required></textarea>
+          <label for="diagnostico">7. Diagnóstico*</label>
+          <div class="error-message">Por favor ingrese el diagnóstico</div>
+        </div>
+        <div class="form-group floating-label">
+          <input type="date" id="fechaReceta" name="fechaReceta" placeholder=" " required>
+          <label for="fechaReceta">8. Fecha de la receta*</label>
+          <div class="error-message">Por favor seleccione una fecha</div>
+        </div>
+      </div>
+      
+      <!-- Row 5 -->
+      <div class="form-row">
+        <div class="form-group floating-label">
+          <input type="text" id="nombreMedico" name="nombreMedico" placeholder=" " required>
+          <label for="nombreMedico">9. Nombre y apellido del médico*</label>
+          <div class="error-message">Por favor ingrese su nombre</div>
+        </div>
+        <div class="form-group floating-label">
+          <input type="text" id="rutMedico" name="rutMedico" placeholder=" " required>
+          <label for="rutMedico">10. Rut del médico* (00000000-0)</label>
+          <div class="error-message">El RUT ingresado es incorrecto</div>
+        </div>
+      </div>
+      
+       <!-- Row 6 -->
+<div class="form-row">
+  <div class="form-group">
+    <div class="file-input-container">
+      <label for="firmaMedico">11. Cargar la receta del médico*</label>
+      <div class="file-input-wrapper">
+        <button type="button" class="file-input-button" onclick="document.getElementById('firmaMedico').click()">Seleccionar archivo</button>
+        <input type="file" id="firmaMedico" name="firmaMedico" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf,image/*" required>
+        <span class="file-name" id="fileName1">No se ha seleccionado ningún archivo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="file-input-container">
+      <label for="poderSimple">12. Cargar poder simple firmado*</label>
+      <div class="file-input-wrapper">
+        <button type="button" class="file-input-button" onclick="document.getElementById('poderSimple').click()">Seleccionar archivo</button>
+        <input type="file" id="poderSimple" name="poderSimple" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf,image/*" required>
+        <span class="file-name" id="fileName2">No se ha seleccionado ningún archivo</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Row 7 - Email and Phone -->
+<div class="form-row">
+  <!-- Email Field -->
+  <div class="form-group floating-label">
+    <input type="email" id="email" name="email" placeholder=" " required>
+    <label for="email">13. Correo electrónico*</label>
+    <div class="error-message">Por favor ingrese un email válido</div>
+  </div>
+
+  <!-- Phone Field -->
+  <div class="form-group floating-label">
+    <input type="tel" id="telefono" name="telefono" placeholder=" " required>
+    <label for="telefono">14. Número de teléfono*</label>
+    <div class="error-message">Introduce tu número de teléfono</div>
+  </div>
+</div>
+
+
+     <div class="form-footer">
+  <button type="submit" class="submit-btn">
+    <span class="submit-text"><h3>Divine</h3>
+    <p>Importación de Medicamentos</p>
+    </span>
+    <span class="loading-spinner" style="display:none;">Enviando...</span>
+  </button>
+  
+  <!-- Success message will appear here -->
+  <div class="success-message" id="successMessage" style="display:none;">
+    <h3>¡Gracias!</h3>
+    <p>Hemos recibido su solicitud. Nos pondremos en contacto con usted pronto.</p>
+  </div>
+</div>
+    </form>
+  </div>
+</div>
+
+ <div class="doc-footer">
+    <h2>2.  Envíe su solicitud para iniciar el proceso</h2>
+  </div>
+
+<button id="openModalBtn" style="color: white; border: none; cursor: pointer;">
+    <div class="doc-item" id="prescriptionBtn">
+     <div class="icon-circle"><img src="download.png" alt=""></div>
+    <h4>Información de carga</h4>
+  <p>que la receta debe incluir</p>
+</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('prescriptionForm');
+  
+  // Show selected file names
+  document.getElementById('firmaMedico').addEventListener('change', function(e) {
+    document.getElementById('fileName1').textContent = e.target.files[0]?.name || 'No se ha seleccionado ningún archivo';
+  });
+
+  document.getElementById('poderSimple').addEventListener('change', function(e) {
+    document.getElementById('fileName2').textContent = e.target.files[0]?.name || 'No se ha seleccionado ningún archivo';
+  });
+
+  // Form submission handling
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show loading spinner
+    document.querySelector('.loading-spinner').style.display = 'inline-block';
+    document.querySelector('.submit-text').style.display = 'none';
+    
+    // Validate form
+    let isValid = true;
+    const requiredFields = form.querySelectorAll('[required]');
+    
+    requiredFields.forEach(field => {
+      if (!field.value) {
+        isValid = false;
+        const errorMsg = field.closest('.form-group')?.querySelector('.error-message');
+        if (errorMsg) errorMsg.style.display = 'block';
+        field.style.borderColor = 'red';
+      }
+    });
+
+    if (!isValid) {
+      alert('Por favor complete todos los campos requeridos');
+      document.querySelector('.loading-spinner').style.display = 'none';
+      document.querySelector('.submit-text').style.display = 'block';
+      return;
+    }
+
+    // Submit form to FormSubmit with file attachments
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        // Show success popup above the form
+        const successPopup = document.createElement('div');
+        successPopup.className = 'success-popup';
+        successPopup.innerHTML = `
+          <h3>¡¡Gracias!!</h3>
+          <p>Hemos recibido su solicitud. Nos comunicaremos contigo pronto.</p>
+        `;
+        form.parentNode.insertBefore(successPopup, form);
+        
+        // Reset all form fields
+        form.reset();
+        document.getElementById('fileName1').textContent = 'No se ha seleccionado ningún archivo';
+        document.getElementById('fileName2').textContent = 'No se ha seleccionado ningún archivo';
+        
+        // Hide popup after 5 seconds
+        setTimeout(() => {
+          successPopup.style.opacity = '0';
+          setTimeout(() => successPopup.remove(), 500);
+        }, 5000);
+      } else {
+        throw new Error('Error en la red');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Hubo un error al enviar el formulario. Por favor intente nuevamente.');
+    })
+    .finally(() => {
+      // Hide loading spinner
+      document.querySelector('.loading-spinner').style.display = 'none';
+      document.querySelector('.submit-text').style.display = 'block';
+    });
+  });
+
+  // Clear error messages when user starts typing
+  const inputs = form.querySelectorAll('input, select, textarea');
+  inputs.forEach(input => {
+    input.addEventListener('input', function() {
+      const errorMsg = this.closest('.form-group')?.querySelector('.error-message');
+      if (errorMsg) errorMsg.style.display = 'none';
+      this.style.borderColor = '';
+    });
+  });
+
+  // Handle "Otro (Especificar)" field
+  const tipoRecetaSelect = document.getElementById('tipoReceta');
+  const otroContainer = document.getElementById('otroEspecificarContainer');
+  const otroInput = document.getElementById('otroEspecificar');
+
+  tipoRecetaSelect.addEventListener('change', function() {
+    if (this.value === 'receta-especial') {
+      otroContainer.style.display = 'block';
+      otroInput.required = true;
+    } else {
+      otroContainer.style.display = 'none';
+      otroInput.required = false;
+      otroInput.value = '';
+    }
+  });
+});
+</script>
+
+<style>
+.success-popup {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s;
+  transition: opacity 0.5s;
+}
+
+.success-popup h3 {
+  margin-top: 0;
+}
+
+.success-popup p {
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+
+<style>
+.success-popup {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s;
+  transition: opacity 0.5s;
+}
+
+.success-popup h3 {
+  margin-top: 0;
+}
+
+.success-popup p {
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+
+<style>
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.success-message h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+}
+
+.success-message p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<!--============================
+    POWER OF ATTORNEY (4th card)
+   ============================-->
+<div id="poaFormModal" class="poa-modal">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h3>Solicite su documento</h3>
+      <p>Le enviaremos un poder notarial a su número de registro.</p>
+      <button class="close-modal" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="modal-body">
+      <form id="poaForm" class="animated-form" action="https://formsubmit.co/contacto@divine.cl" method="POST">
+        <!-- Add these hidden fields for FormSubmit -->
+        <input type="hidden" name="_subject" value="New POA Document Request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you for your POA request. We'll process it shortly.">
+        <input type="hidden" name="_next" value="#">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <!-- Step 1 - Personal Info -->
+        <div class="form-step active" data-step="1">
+          <div class="floating-input">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Nombre completo*</label>
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </span>
+          </div>
+          
+          <div class="floating-input">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Correo electrónico*</label>
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </span>
+          </div>
+          
+          <div class="form-navigation">
+            <button type="button" class="next-step">Continuar</button>
+          </div>
+        </div>
+        
+        <!-- Step 2 - Contact Details -->
+        <div class="form-step" data-step="2">
+          <div class="floating-input">
+            <input type="tel" id="phone" name="phone" required>
+            <label for="phone">Número de teléfono*</label>
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+              </svg>
+            </span>
+          </div>
+          
+          <div class="floating-input">
+            <select id="purpose" name="purpose" required>
+              <option value="" disabled selected></option>
+              <option value="Paciente">Paciente</option>
+              <option value="Padre o madre">Padre o madre</option>
+              <option value="Hijo o hija">Hijo o hija</option>
+              <option value="Cónyuge">Cónyuge</option>
+              <option value="Hermano o hermana">Hermano o hermana</option>
+              <option value="Otro (Especificar)">Otro (Especificar)</option>
+            </select>
+            <label for="purpose">Poder legal*</label>
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </span>
+          </div>
+          
+          <div class="form-navigation">
+            <button type="button" class="prev-step">Atrás</button>
+            <button type="button" class="next-step">Continuar</button>
+          </div>
+        </div>
+        
+        <!-- Step 3 - Final Details -->
+        <div class="form-step" data-step="3">
+          <div class="floating-input">
+            <textarea id="message" name="message" rows="3"></textarea>
+            <label for="message">Notas adicionales</label>
+          </div>
+          
+          <div class="form-navigation">
+            <button type="button" class="prev-step">Atrás</button>
+            <button type="submit" class="submit-form">Enviar y descargar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('poaForm');
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    const submitBtn = form.querySelector('.submit-form');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Submit form to FormSubmit
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        // Close modal and reset form silently
+        document.getElementById('poaFormModal').style.display = 'none';
+        form.reset();
+        
+        // Optional: You could show a success message in the UI instead of alert
+        // For example, show a checkmark icon or brief text confirmation
+      }
+      return response;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Optional: Show subtle error indication if desired
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    });
+  });
+  
+  // Your existing multi-step form logic...
+});
+</script>
+
+
+<style>
+/* Add these styles to your existing CSS */
+.poa-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.floating-input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-input input,
+.floating-input select,
+.floating-input textarea {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.floating-input textarea {
+  padding-left: 15px;
+  min-height: 100px;
+}
+
+.floating-input label {
+  position: absolute;
+  top: 12px;
+  left: 40px;
+  color: #999;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input select:focus + label,
+.floating-input select:not([value=""]) + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  background: white;
+  padding: 0 5px;
+  color: #0066cc;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.input-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.next-step, .prev-step, .submit-form {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.next-step, .submit-form {
+  background: #0066cc;
+  color: white;
+}
+
+.prev-step {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+</style>
+  </div>
+</section>
+
+<!-- Quote -->
+ <section class="quote-section">
+
+    <div class="quote-content">
+      <h2> Preguntas frecuentes </h2>
+     <button class="btn" id="scrollToFAQ">Inicio > Preguntas frecuentes</button>
+  </section>
+
+  
+<script>
+    document.getElementById('scrollToFAQ').addEventListener('click', function() {
+        document.getElementById('faq').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+  </script>
+
+  <!-- FAQ -->
+   <div class="faq-container" id="faq">
+        <div class="faq-header">
+            <h1>Preguntas frecuentes</h1>
+            <p>Encuentre respuestas a preguntas comunes sobre nuestros servicios y procesos</p>
+        </div>
+        
+        <div class="faq-accordion" id="faqAccordion">
+            <div class="faq-item">
+                <div class="faq-question">¿Cuanto tiempo tarda la importación?</div>
+                <div class="faq-answer">
+                    <p>El proceso de importación suele tardar entre 5 y 10 días hábiles, dependiendo del tipo de producto y el país de origen. Le proporcionaremos un plazo más preciso una vez que tengamos todos los detalles necesarios.</p>
+                    <!-- Breakthrough Feature 3: Rating System -->
+                    <div class="faq-feedback">
+                        <p>¿Fue útil esto?</p>
+                        <div class="feedback-buttons">
+                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
+                            <button class="feedback-btn" data-value="no">👎 No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Qué se necesita para importar?</div>
+                <div class="faq-answer">
+                    <p>Para iniciar una importación, necesitaremos los detalles del producto, la cantidad, la receta y cualquier otra información y documentación relevante de los pacientes y el médico. Nuestro equipo le guiará con los requisitos específicos de su envío.</p>
+                    <div class="faq-feedback">
+                        <p>¿Fue útil esto?</p>
+                        <div class="feedback-buttons">
+                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
+                            <button class="feedback-btn" data-value="no">👎 No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿A quién servimos?</div>
+                <div class="faq-answer">
+                    <p>Atendemos a empresas de todos los tamaños y de diversos sectores, así como a particulares que necesitan servicios especiales de importación de medicamentos. Nuestros clientes son pacientes, minoristas, distribuidores, profesionales sanitarios y más.</p>
+                    <div class="faq-feedback">
+                        <p>¿Fue útil esto?</p>
+                        <div class="feedback-buttons">
+                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
+                            <button class="feedback-btn" data-value="no">👎 No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Importamos medicamentos con cadena de frío (2°C – 4°C)?</div>
+                <div class="faq-answer">
+                    <p>Sí, contamos con capacidades logísticas especializadas de cadena de frío para medicamentos sensibles a la temperatura. Nuestras instalaciones están equipadas con sistemas de almacenamiento y monitoreo de temperatura controlada para garantizar la integridad del producto.</p>
+                    <div class="faq-feedback">
+                        <p>¿Fue útil esto?</p>
+                        <div class="feedback-buttons">
+                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
+                            <button class="feedback-btn" data-value="no">👎 No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Hacemos envíos a todo Chile?</div>
+                <div class="faq-answer">
+                    <p>Ofrecemos cobertura nacional en Chile, incluyendo zonas remotas. Los tiempos de entrega pueden variar según la ubicación, pero garantizamos un servicio confiable en todo el país.</p>
+                    <div class="faq-feedback">
+                        <p>¿Fue útil esto?</p>
+                        <div class="feedback-buttons">
+                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
+                            <button class="feedback-btn" data-value="no">👎 No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Condiciones de pago?</div>
+                <div class="faq-answer">
+                    <p>Ofrecemos condiciones de pago flexibles, incluyendo pago por adelantado, pagos parciales y opciones de crédito para clientes habituales. Nuestras condiciones de pago estándar son: 50% por adelantado al confirmar el pedido y 50% después del envío. Puede contactar con nuestro equipo para obtener condiciones de pago flexibles.</p>
+                    <div class="faq-feedback">
+                        <p>¿Fue útil esto?</p>
+                        <div class="feedback-buttons">
+                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
+                            <button class="feedback-btn" data-value="no">👎 No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Breakthrough Feature 1: Ask Question Form -->
+        <div class="ask-question" id="askQuestion" style="display: none;">
+            <h3>Ask Your Question</h3>
+            <textarea placeholder="Type your question here..."></textarea>
+            <button class="submit-question">Submit Question</button>
+        </div>
+    </div>
+        
+    </div>
+
+     <button class="scroll-to-top" id="scrollToTop">
+        <div class="progress-circle"></div>
+        <span class="tooltip">Volver al principio</span>
+    </button>
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
+                    <p class="footer-description">
+                        Nuestra Visión es que nuestros productos posean certificación emitida
+                        por las más altas agencias reguladoras manteniendo precios asequibles 
+                        para las instituciones y pacientes con más de 2 décadas de experiencia en el campo.
+                    </p>
+                    <div class="footer-social">
+                       <ul class="social-links">
+    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+ <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
+                   aria-label="WhatsApp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+              </ul>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h3>Enlaces rápidos</h3>
+                        <ul>
+                            <li><a href="import.html">Importación uso Personal</a></li>
+                            <li><a href="index.html">Hogar</a></li>
+                            <li><a href="about.html">Sobre nosotros</a></li>
+                            <li><a href="#">Verticales de negocios</a></li>
+                            <li><a href="#">Nuestro portafolio</a></li>
+                            <li><a href="infrastructure.html">Infraestructura</a></li>
+                            <li><a href="Chile.html">Presencia en Chile</a></li>
+                            <li><a href="contact.html">Contáctenos</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Idiomas</h3>
+                        <ul>
+                            <li><a href="#">Español</a></li>
+                            <li><a href="#">Inglés</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+              <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
+    <!-- Form Inputs -->
+    <input type="text" name="name" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea>
+
+    <!-- Hidden FormSubmit Config -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We'll get back to you soon.">
+
+    <!-- Success Message -->
+    <div id="form-success" style="display: none;">
+        ¡Gracias! Su mensaje ha sido enviado exitosamente.
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="submit-btn">Enviar mensaje</button>
+        <button type="reset" class="reset-btn">Reiniciar</button>
+    </div>
+</form>
+
+<script>
+const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Show button when scrolling
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+                
+                // Update progress circle rotation based on scroll position
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPosition = window.pageYOffset;
+                const scrollPercentage = (scrollPosition / scrollHeight) * 360;
+                scrollToTopBtn.querySelector('.progress-circle').style.transform = rotate($,{scrollPercentage},deg);
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Scroll to top with smooth animation
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Add pulse animation when clicked
+            this.style.animation = 'pulse 0.5s';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+</script>
+<script>
+  // FAQ JS
+ document.addEventListener('DOMContentLoaded', function() {
+            // 1. Accordion Functionality with smooth scrolling
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const wasActive = item.classList.contains('active');
+                    
+                    // Close all items first
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Then open the clicked one if it wasn't active
+                    if (!wasActive) {
+                        item.classList.add('active');
+                        
+                        // Smooth scroll to the question if it's not fully visible
+                        setTimeout(() => {
+                            const rect = item.getBoundingClientRect();
+                            if (rect.bottom > window.innerHeight || rect.top < 0) {
+                                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }, 100);
+                    }
+                });
+            });
+            
+            // 2. Feedback System
+            const feedbackButtons = document.querySelectorAll('.feedback-btn');
+            
+            feedbackButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const value = this.getAttribute('data-value');
+                    const faqItem = this.closest('.faq-item');
+                    const question = faqItem.querySelector('.faq-question').textContent;
+                    
+                    // Remove active class from all buttons in this group
+                    const allButtons = this.parentElement.querySelectorAll('.feedback-btn');
+                    allButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Here you would typically send this feedback to your server
+                    console.log(`Feedback: ${value} for question: "${question}"`);
+                    
+                    // Show thank you message
+                    setTimeout(() => {
+                        const feedbackDiv = this.closest('.faq-feedback');
+                        feedbackDiv.innerHTML = '<p style="color: var(--primary-blue);">Thank you for your feedback!</p>';
+                    }, 500);
+                });
+            });
+            
+            // 3. Floating Button & Question Form
+            const floatingBtn = document.getElementById('floatingBtn');
+            const askQuestion = document.getElementById('askQuestion');
+            const submitQuestion = document.querySelector('.submit-question');
+            
+            floatingBtn.addEventListener('click', function() {
+                askQuestion.style.display = askQuestion.style.display === 'block' ? 'none' : 'block';
+                if (askQuestion.style.display === 'block') {
+                    askQuestion.scrollIntoView({ behavior: 'smooth' });
+                    askQuestion.querySelector('textarea').focus();
+                }
+            });
+            
+            submitQuestion.addEventListener('click', function() {
+                const textarea = askQuestion.querySelector('textarea');
+                if (textarea.value.trim() === '') {
+                    alert('Please enter your question');
+                    return;
+                }
+  // Reattach event listener
+                    document.querySelector('.submit-question').addEventListener('click', submitQuestion.click);
+                }, 3000);
+            });
+
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    // Fetch IP and location
+    let ip = "IP: Unknown";
+    let location = "Location: Not available";
+    try {
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
+        ip = `IP: ${data.ip}`;
+        location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
+    } catch (error) {
+        console.warn("Failed to fetch IP/location");
+    }
+
+    const timestamp = `Time: ${new Date().toLocaleString()}`;
+    const userDetails = `${ip} | ${location} | ${timestamp}`;
+
+    formData.append('user_details', userDetails);
+
+    // Send form data via fetch to FormSubmit
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            document.getElementById('form-success').style.display = 'block';
+            form.reset();
+        } else {
+            alert('Form submission failed. Please try again.');
+        }
+    } catch (err) {
+        alert('Error submitting form.');
+        console.error(err);
+    }
+});
+</script>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script src="lang.js"></script>
+   <script>
+        // Toggle mobile navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+// JavaScript to handle modal 4th 
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('prescriptionModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.querySelector('.close');
+        const form = document.getElementById('prescriptionForm');
+        const fileInput = document.getElementById('firmaMedico');
+        const fileName = document.getElementById('fileName');
+
+        // Open modal
+        openBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // File input display
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                fileName.textContent = this.files[0].name;
+            } else {
+                fileName.textContent = 'No se ha seleccionado ningún archivo';
+            }
+        });
+
+        // Form validation
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const inputs = form.querySelectorAll('input, textarea, select');
+            
+            // Reset errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            // Validate each field
+            inputs.forEach(input => {
+                if (input.required && !input.value.trim()) {
+                    input.closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                // Special validation for email
+                if (input.type === 'email' && input.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value)) {
+                        input.closest('.form-group').classList.add('error');
+                        input.closest('.form-group').querySelector('.error-message').textContent = 'Por favor ingrese un email válido';
+                        isValid = false;
+                    }
+                }
+                
+                // Special validation for RUT (simple version)
+                if ((input.id === 'rutPaciente' || input.id === 'rutMedico') && input.value.trim()) {
+                    const rutRegex = /^[0-9]{7,8}-[0-9kK]{1}$/;
+                    if (!rutRegex.test(input.value)) {
+                        input.closest('.form-group').classList.add('error');
+                        input.closest('.form-group').querySelector('.error-message').textContent = 'Por favor ingrese un RUT válido (ej: 12345678-9)';
+                        isValid = false;
+                    }
+                }
+            });
+            
+            // If form is valid, show success message
+            if (isValid) {
+                const submitBtn = form.querySelector('.submit-btn');
+                const submitText = submitBtn.querySelector('.submit-text');
+                const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+                
+                // Show loading state
+                submitText.style.display = 'none';
+                loadingSpinner.style.display = 'inline';
+                
+                // Simulate form submission
+                setTimeout(function() {
+                    // Hide loading state
+                    submitText.style.display = 'inline';
+                    loadingSpinner.style.display = 'none';
+                    
+                    // Show success message
+                    document.getElementById('successMessage').classList.add('show');
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(function() {
+                        form.reset();
+                        document.getElementById('successMessage').classList.remove('show');
+                        fileName.textContent = 'No se ha seleccionado ningún archivo';
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }, 3000);
+                }, 1500);
+            }
+        });
+
+        // Floating label functionality
+        document.querySelectorAll('.floating-label input, .floating-label textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.closest('.form-group').querySelector('label').style.color = 'var(--primary-color)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.closest('.form-group').querySelector('label').style.color = '#999';
+            });
+        });
+    });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get modal elements
+    const modal = document.getElementById('quoteModal');
+    const btn = document.getElementById('quoteButton');
+    const closeBtn = document.querySelector('.close');
+    const form = document.getElementById('quoteForm');
+    
+    // Open modal
+    btn.addEventListener('click', function() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Close modal - works for both click and touch
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Add both click and touch events for better mobile support
+    closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener('touchend', function(e) {
+        e.preventDefault(); // Prevent any default touch behavior
+        closeModal();
+    });
+    
+    // Close when clicking/touching outside modal
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // For touch devices - handle touch outside
+    modal.addEventListener('touchend', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Rest of your form validation code...
+});
+
+
+// JavaScript 5th
+document.addEventListener('DOMContentLoaded', function() {
+  const downloadBtn = document.getElementById('downloadPoaBtn');
+  const modal = document.getElementById('poaFormModal');
+  const closeBtn = document.querySelector('.close-modal');
+  const poaForm = document.getElementById('poaForm');
+  const formSteps = document.querySelectorAll('.form-step');
+  const progressSteps = document.querySelectorAll('.progress-step');
+  const nextBtns = document.querySelectorAll('.next-step');
+  const prevBtns = document.querySelectorAll('.prev-step');
+  
+  // Open modal
+  downloadBtn.addEventListener('click', function() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  
+  // Close modal
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  closeBtn.addEventListener('click', closeModal);
+  
+  // Close when clicking outside
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+  
+  // Form steps navigation
+  let currentStep = 0;
+  
+  function showStep(stepIndex) {
+    formSteps.forEach((step, index) => {
+      step.classList.toggle('active', index === stepIndex);
+    });
+    
+    progressSteps.forEach((step, index) => {
+      step.classList.toggle('active', index <= stepIndex);
+    });
+    
+    currentStep = stepIndex;
+  }
+  
+  nextBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Validate current step before proceeding
+      const currentStepInputs = formSteps[currentStep].querySelectorAll('[required]');
+      let isValid = true;
+      
+      currentStepInputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.borderColor = 'var(--error-color)';
+          isValid = false;
+        } else {
+          input.style.borderColor = '';
+        }
+      });
+      
+      if (isValid) {
+        showStep(currentStep + 1);
+      } else {
+        // Add shake animation to indicate error
+        formSteps[currentStep].classList.add('shake');
+        setTimeout(() => {
+          formSteps[currentStep].classList.remove('shake');
+        }, 500);
+      }
+    });
+  });
+  
+  prevBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      showStep(currentStep - 1);
+    });
+  });
+  
+  // Form submission
+  poaForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Collect form data
+    const formData = new FormData(poaForm);
+    const data = Object.fromEntries(formData);
+    
+    // Simulate form submission (replace with actual AJAX call)
+    console.log('Form submitted:', data);
+    
+    // Show success message
+    const successHTML = `
+      <div class="form-success">
+        <svg viewBox="0 0 24 24" fill="var(--success-color)">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+        <h3>¡Gracias!</h3>
+        <p>Su solicitud ha sido enviada exitosamente.</p>
+        <button class="close-success">Cerca</button>
+      </div>
+    `;
+    
+    modal.querySelector('.modal-body').innerHTML = successHTML;
+    
+    // Close success message
+    modal.querySelector('.modal-body').addEventListener('click', function(e) {
+      if (e.target.classList.contains('close-success')) {
+        closeModal();
+        poaForm.reset();
+        showStep(0); // Reset to first step
+        modal.querySelector('.modal-body').innerHTML = poaForm.outerHTML;
+        setupFormSteps(); // Reinitialize form steps
+      }
+    });
+  });
+  
+  // Initialize form
+  showStep(0);
+  
+  // Add shake animation to CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+    .shake {
+      animation: shake 0.4s ease-in-out;
+    }
+  `;
+  document.head.appendChild(style);
+});
+
+// Get the modal and close button elements
+const modal = document.getElementById('prescriptionModal');
+const closeBtn = document.querySelector('.close');
+
+// Close modal when clicking the × button
+closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+// Optional: Close modal when clicking outside the modal content
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Form validation
+    const form = document.getElementById('prescriptionForm');
+    const inputs = form.querySelectorAll('input, textarea, select');
+    
+    // Add validation on blur
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        // For file inputs
+        if (input.type === 'file') {
+            input.addEventListener('change', function() {
+                const fileName = this.files[0] ? this.files[0].name : 'No se ha seleccionado ningún archivo';
+                document.getElementById('fileName').textContent = fileName;
+                validateField(this);
+            });
+        }
+    });
+    
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+        
+        inputs.forEach(input => {
+            if (!validateField(input)) {
+                isValid = false;
+            }
+        });
+        
+        if (isValid) {
+            // Show loading state
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.querySelector('.submit-text').style.display = 'none';
+            submitBtn.querySelector('.loading-spinner').style.display = 'inline-block';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.add('show');
+                form.reset();
+                submitBtn.querySelector('.submit-text').style.display = 'block';
+                submitBtn.querySelector('.loading-spinner').style.display = 'none';
+                
+                // Reset validation states
+                document.querySelectorAll('.form-group').forEach(group => {
+                    group.classList.remove('valid');
+                });
+                
+                // Reset file name
+                document.getElementById('fileName').textContent = 'No se ha seleccionado ningún archivo';
+            }, 1500);
+        }
+    });
+
+ // 11th and 12th
+const firmaMedicoInput = document.getElementById('firmaMedico');
+  const poderSimpleInput = document.getElementById('poderSimple');
+  const fileName1 = document.getElementById('fileName1');
+  const fileName2 = document.getElementById('fileName2');
+
+  firmaMedicoInput.addEventListener('change', function () {
+    if (this.files && this.files.length > 0) {
+      fileName1.textContent = this.files[0].name;
+      fileName1.classList.add('uploaded');
+    } else {
+      fileName1.textContent = 'No se ha seleccionado ningún archivo';
+      fileName1.classList.remove('uploaded');
+    }
+  });
+
+  poderSimpleInput.addEventListener('change', function () {
+    if (this.files && this.files.length > 0) {
+      fileName2.textContent = this.files[0].name;
+      fileName2.classList.add('uploaded');
+    } else {
+      fileName2.textContent = 'No se ha seleccionado ningún archivo';
+      fileName2.classList.remove('uploaded');
+    }
+  });
+
+// Optional: Trigger file input when the button is clicked
+document.querySelector('.file-input-button').addEventListener('click', function() {
+    document.getElementById('firmaMedico').click();
+});
+    
+    // Field validation function
+    function validateField(field) {
+        const formGroup = field.closest('.form-group');
+        if (!formGroup) return true;
+        
+        const errorMessage = formGroup.querySelector('.error-message');
+        
+        if (field.required && !field.value.trim()) {
+            formGroup.classList.add('error');
+            formGroup.classList.remove('valid');
+            return false;
+        }
+        
+        // Special validation for email
+        if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+            formGroup.classList.add('error');
+            formGroup.classList.remove('valid');
+            return false;
+        }
+        
+        // If we get here, field is valid
+        formGroup.classList.remove('error');
+        if (field.value.trim()) {
+            formGroup.classList.add('valid');
+        } else {
+            formGroup.classList.remove('valid');
+        }
+        return true;
+    }
+    
+    // Close modal
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('prescriptionModal').style.display = 'none';
+    });
+});
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get modal elements
+            const modal = document.getElementById('quoteModal');
+            const btn = document.getElementById('quoteButton');
+            const closeBtn = document.querySelector('.close');
+            const form = document.getElementById('quoteForm');
+            
+            // Open modal
+            btn.addEventListener('click', function() {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close when clicking outside modal
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Form validation
+            function validateField(field) {
+                const formGroup = field.closest('.form-group');
+                if (!formGroup) return true;
+                
+                const errorMessage = formGroup.querySelector('.error-message');
+                
+                if (field.required && !field.value.trim()) {
+                    formGroup.classList.add('error');
+                    formGroup.classList.remove('valid');
+                    return false;
+                }
+                
+                // Special validation for email
+                if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+                    formGroup.classList.add('error');
+                    formGroup.classList.remove('valid');
+                    return false;
+                }
+                
+                // If we get here, field is valid
+                formGroup.classList.remove('error');
+                if (field.value.trim()) {
+                    formGroup.classList.add('valid');
+                } else {
+                    formGroup.classList.remove('valid');
+                }
+                return true;
+            }
+            
+            // Validate on blur
+            form.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Validate all fields
+                form.querySelectorAll('input[required], select[required]').forEach(field => {
+                    if (!validateField(field)) {
+                        isValid = false;
+                    }
+                });
+                
+                if (isValid) {
+                    // Show loading state
+                    const submitBtn = form.querySelector('.submit-btn');
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Sending...';
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        alert('¡Gracias por tu solicitud! Nos comunicaremos contigo pronto.');
+                        form.reset();
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        
+                        // Reset validation states
+                        document.querySelectorAll('.form-group').forEach(group => {
+                            group.classList.remove('valid');
+                        });
+                        
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'SUBMIT REQUEST';
+                    }, 1500);
+                }
+            });
+        });
+
+        function closeModalAndReset() {
+  // Close the modal
+  document.getElementById('prescriptionModal').style.display = 'none';
+  
+  // Re-enable body scrolling
+  document.body.style.overflow = 'auto';
+  
+  // Reset the form
+  document.getElementById('prescriptionForm').reset();
+  
+  // Reset file name display
+  document.getElementById('fileName').textContent = 'No se ha seleccionado ningún archivo';
+  
+  // Hide success message if shown
+  document.getElementById('successMessage').style.display = 'none';
+  
+  // Reset any error messages
+  const errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(msg => msg.style.display = 'none');
+}
+
+// Attach to both close buttons
+document.getElementById('closeModalBtn').addEventListener('click', closeModalAndReset);
+document.getElementById('cancelFormBtn').addEventListener('click', closeModalAndReset);
+
+// Also modify your open modal function
+document.getElementById('openModalBtn').addEventListener('click', function() {
+  document.getElementById('prescriptionModal').style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+});
+
+</script>
+</script>
+</body>
+</html>

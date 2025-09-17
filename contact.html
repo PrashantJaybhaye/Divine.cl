@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Contact | Divine Healthcare</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="brand-logo">
+                    <img src="logo.png" alt="Divine Healthcare Logo">
+                </a>
+                <button class="hamburger" aria-label="Toggle navigation" onclick="toggleNav()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <ul>
+                       <li><button onclick = "window.location.href='import.html'" class="med-import-btn" data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
+                        <li><a href="index.html" data-i18n="nav.home">Hogar</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">Sobre nosotros</a></li>
+                        <li><a href="#" data-i18n="nav.business">Verticales de negocios</a></li>
+                        <li><a href="#" data-i18n="nav.portfolio">Nuestro portafolio</a></li>
+                        <li><a href="infrastructure.html" data-i18n="nav.infrastructure">Infraestructura</a></li>
+                        <li><a href="Chile.html" data-i18n="nav.chile">Presencia en Chile</a></li>
+                        <li><a href="contact.html" class="active" data-i18n="nav.contact">Contáctenos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Póngase en contacto con Divine Healthcare</h1>
+                    <h2 class="hero-subtitle">Estamos aquí para <span class="highlight-text">ayudarte</span></h2>
+                    <p class="hero-description">Comuníquese a través de cualquiera de nuestros convenientes métodos de contacto a continuación</p>
+                </div>
+                <div class="hero-image">
+                    <img src="support-min.png" alt="Customer support illustration" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Options Section -->
+        <section class="contact-options-section">
+            <div class="container">
+                <div class="contact-options-grid">
+                    <!-- Contact Card 1 -->
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Soporte telefónico</h3>
+                        <p>Hable directamente con nuestros representantes</p>
+                        <div class="contact-details">
+                           <strong>Chile:</strong> 
+                           <p> +56 9 3399 0606</p>
+                        </div>
+                        <br>
+                        <a href="tel:+56212345678" class="contact-btn">Llame ahora</a>
+                    </div>
+
+                    <!-- Contact Card 2 -->
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>correo electrónico</h3>
+                        <p>Envíenos sus consultas y le responderemos.</p>
+                        <div class="contact-details">
+                            <strong>Apoyo:</strong> 
+                                <p>contacto@divine.cl</p>
+                        </div>
+                        <br>
+                       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@divine.cl.com&su=Contact%20Request&body=Hello%20Team,%0A%0AI%20would%20like%20to%20contact%20you%20about..." 
+   class="contact-btn" 
+   target="_blank">
+   correo electrónico
+</a>
+                    </div>
+
+                    <!-- Contact Card 3 -->
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visítanos</h3>
+                        <p>Nuestra sede y oficinas regionales</p>
+                        <div class="contact-details">
+                           <strong>Sede de Chile:</strong> 
+                                <p> Av. Pedro de Valdivia 273, Oficina 1310, Providencia, Santiago </p>
+                        </div>
+                        <a href="#locations" class="contact-btn">Ver ubicaciones</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="contact-form-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Envíanos un mensaje</h2>
+            <p>Complete el siguiente formulario y nos pondremos en contacto con usted dentro de las 24 horas</p>
+        </div>
+        <div class="form-container">
+            <form id="contactForm" action="https://formsubmit.co/contacto@divine.cl" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                <input type="hidden" name="_autoresponse" value="Thank you for your message. We'll contact you soon via WhatsApp.">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nombre completo*</label>
+                        <input type="text" id="name" name="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico*</label>
+                        <input type="email" id="email" name="Email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="phone">Número de teléfono*</label>
+                    <div class="phone-input-wrapper">
+                        <input type="text" id="country-code" name="Country code" placeholder="+1" class="country-code" maxlength="4" required>
+                        <input type="tel" id="phone" name="WhatsApp Number" class="phone-number" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                        <label for="subject">Asunto*</label>
+                        <select id="subject" name="Subject" required>
+                    <option value="" disabled selected>Seleccione un tema</option>
+                    <option value="General inquiry">Consulta general</option>
+                    <option value="Product Information">Información del producto</option>
+                    <option value="Partnership opportunities">Oportunidades de asociación</option>
+                    <option value="Technical Support">Soporte técnico</option>
+                         </select>
+                    </div>
+                <div class="form-group full-width">
+                    <label for="message">Su mensaje*</label>
+                    <textarea id="message" name="Message" rows="6" required></textarea>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">Enviar mensaje</button>
+                    <div class="form-note">
+                        <p>* Campos requeridos</p>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="direct-contact">
+                <p>O contáctenos directamente:</p>
+                <a href="https://wa.me/56933990606" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Envíanos un mensaje por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this JavaScript to handle form submission -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was a problem sending your message. Please try again or contact us via WhatsApp.');
+        });
+    });
+</script>
+
+<!-- Add this CSS -->
+<style>
+    .phone-input-wrapper {
+        display: flex;
+        width: 100%;
+    }
+    .country-code {
+        width: 80px;
+        margin-right: 10px;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .phone-number {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .direct-contact {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #25D366;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .submit-btn {
+        padding: 12px 25px;
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- Locations Section -->
+        <section class="locations-section" id="locations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nuestras ubicaciones</h2>
+                    <p>Encuentra nuestras oficinas en todo el mundo</p>
+                </div>
+                
+                    <!-- Location 1 -->
+                    <div class="location-card">
+                        <div class="location-map">
+                          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212998.345065768!2d-70.66926545!3d-33.4691199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1716160000000!5m2!1sen!2sus"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+                        </div>
+                        <div class="location-info">
+                            <h3>Chile</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> Av. Pedro de Valdivia 273, Oficina 1304/1305, Providencia, Santiago</p>
+                            <p><i class="fas fa-phone"></i> +56 9 3399 0606</p>
+                            <p><i class="fas fa-envelope"></i>contacto@divine.cl</p>
+                            <p><i class="fas fa-clock"></i> Lunes a viernes: 9.30 a.m. a 5.30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+     <button class="scroll-to-top" id="scrollToTop">
+        <div class="progress-circle"></div>
+        <span class="tooltip">Volver al principio</span>
+    </button>
+
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
+                    <p class="footer-description">
+                        Nuestra Visión es que nuestros productos posean certificación emitida por 
+                     las más altas agencias reguladoras manteniendo precios asequibles para las 
+                     instituciones y pacientes con más de 2 décadas de experiencia en el campo.
+                    </p>
+                    <div class="footer-social">
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                               <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
+                   aria-label="WhatsApp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>                      
+              </ul>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h3>Enlaces rápidos</h3>
+                        <ul>
+                           <li><a href="#">Importación uso Personal</a></li>
+                            <li><a href="index.html">Hogar</a></li>
+                            <li><a href="about.html">Sobre nosotros</a></li>
+                            <li><a href="#">Verticales de negocios</a></li>
+                            <li><a href="#">Nuestro portafolio</a></li>
+                            <li><a href="infrastructure.html">Infraestructura</a></li>
+                            <li><a href="Chile.html">Presencia en Chile</a></li>
+                            <li><a href="contact.html">Contáctenos</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Idiomas</h3>
+                        <ul>
+                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a></li>
+                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+               <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
+    <!-- Form Inputs -->
+    <input type="text" name="name" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea>
+
+    <!-- Hidden FormSubmit Config -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
+
+    <!-- Success Message -->
+    <div id="form-success" style="display: none;">
+         ¡Gracias! Su mensaje ha sido enviado exitosamente.
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="submit-btn">Enviar mensaje</button>
+        <button type="reset" class="reset-btn">Reiniciar</button>
+    </div>
+</form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    // Fetch IP and location
+    let ip = "IP: Unknown";
+    let location = "Location: Not available";
+    try {
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
+        ip = `IP: ${data.ip}`;
+        location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
+    } catch (error) {
+        console.warn("Failed to fetch IP/location");
+    }
+
+    const timestamp = `Time: ${new Date().toLocaleString()}`;
+    const userDetails = `${ip} | ${location} | ${timestamp}`;
+
+    formData.append('user_details', userDetails);
+
+    // Send form data via fetch to FormSubmit
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            document.getElementById('form-success').style.display = 'block';
+            form.reset();
+        } else {
+            alert('Form submission failed. Please try again.');
+        }
+    } catch (err) {
+        alert('Error submitting form.');
+        console.error(err);
+    }
+});
+</script>
+
+
+<script>
+const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Show button when scrolling
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+                
+                // Update progress circle rotation based on scroll position
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPosition = window.pageYOffset;
+                const scrollPercentage = (scrollPosition / scrollHeight) * 360;
+                scrollToTopBtn.querySelector('.progress-circle').style.transform = rotate($,{scrollPercentage},deg);
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Scroll to top with smooth animation
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Add pulse animation when clicked
+            this.style.animation = 'pulse 0.5s';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+</script>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="lang.js"></script>
+    <script>
+        // Toggle mobile navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

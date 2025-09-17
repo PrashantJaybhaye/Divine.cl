@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Divine Healthcare</title>
+</head>
+
+<body>
+    <header class="header">
+        <!-- Top Social Bar -->
+        <div class="social-bar">
+            <div class="container">
+               <div class="social-links">
+    <span>Follow Us:</span>
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+ <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
+                   aria-label="WhatsApp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+                <div class="language-selector">
+  <a href="#" class="language-option" data-lang="es">
+    <img src="https://flagcdn.com/w40/es.png" alt="Spanish" class="flag-icon">
+    <span data-i18n="lang.spanish">Español</span>
+  </a>
+  <a href="#" class="language-option" data-lang="en">
+    <img src="icons8-united-kingdom-48.png" alt="English" class="flag-icon">
+    <span data-i18n="lang.english">Inglés</span>
+  </a>
+</div>
+</div>
+ </div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="brand-logo">
+                    <img src="logo.png" alt="Divine Healthcare Logo">
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <ul>
+                       <li><button onclick = "window.location.href='import.html'" class="med-import-btn" data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
+                        <li><a href="index.html" class="active" data-i18n="nav.home">Hogar</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">Sobre nosotros</a></li>
+                        <li><a href="#" data-i18n="nav.business">Verticales de negocios</a></li>
+                        <li><a href="#" data-i18n="nav.portfolio">Nuestro portafolio</a></li>
+                        <li><a href="infrastructure.html" data-i18n="nav.infrastructure">Infraestructura</a></li>
+                        <li><a href="Chile.html" data-i18n="nav.chile">Presencia en Chile</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contáctenos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="homeimage.jpeg" alt="Divine Healthcare">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Divine Health<span class="highlight-blue">Care</span></h1>
+                <p class="tagline">Impulsados por la innovación, guiados por el cuidado</p>
+            </div>
+        </section>
+
+
+        <section class="video-section">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="infra.mp4" type="video/mp4">
+                        <!-- Add additional source formats if needed -->
+                        Su navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h2>Nuestro compromiso con la excelencia en la atención médica</h2>
+                    <p>Divine Healthcare, nos dedicamos a brindar soluciones médicas innovadoras que mejoran los resultados de los pacientes en todo el mundo. Nuestras dos décadas de experiencia en el mercado chileno nos han permitido desarrollar un profundo conocimiento de las necesidades de atención médica en diferentes regiones.</p>
+                    <p>Combinamos tecnología de vanguardia con atención compasiva para ofrecer productos que cumplan con los más altos estándares regulatorios y sigan siendo accesibles para todos.</p>
+                    <a href="about.html" class="video-btn">Conozca más sobre nosotros</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="para">
+            <b>Divine Health</b><span class="highlight-blue"><b>Care</b></span> es una empresa líder en el sector salud con sede en Chile, dedicada a obtener productos de empresas manufactureras líderes en investigación que ofrecen medicamentos de alta calidad. Brindamos a profesionales de la salud y pacientes medicamentos innovadores que salvan vidas. Nuestras dos décadas de experiencia en el mercado chileno nos han permitido comprender a fondo las necesidades de salud en diferentes regiones. Nuestros estrictos estándares de calidad y prácticas sostenibles, conforme a las directrices chilenas, garantizan la confianza en cada producto que creamos.
+        </div>
+
+     <!-- INTERACTIVE RESEARCH PARALLAX -->
+    <section class="parallax">
+  <div class="parallax-overlay">
+    <div class="parallax-content">
+      <h3>Profesionales con amplia experiencia en el sector Salud aseguran la gestión de su necesidad.</h3>
+      <button onclick="window.location.href='import.html'" class="med-import-btn">Nos encargamos de la importación de medicamentos que no están disponibles en Chile, así como de fármacos de alto costo que nos ayudan a acercar a los pacientes a recuperar su salud.</button>
+    </div>
+  </div>
+</section>
+
+    </main> 
+
+    <button class="scroll-to-top" id="scrollToTop">
+        <div class="progress-circle"></div>
+        <span class="tooltip">Volver al principio</span>
+    </button>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
+                    <p class="footer-description">
+                        Nuestra Visión es que nuestros productos posean certificación emitida 
+                        por las más altas agencias reguladoras manteniendo precios asequibles 
+                        para las instituciones y pacientes con más de 2 décadas de experiencia en el campo.
+                    </p>
+                    <div class="footer-social">
+                       <ul class="social-links">
+    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+ <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
+                   aria-label="WhatsApp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </ul>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h3>Enlaces rápidos</h3>
+                        <ul>
+                            <li><a href="import.html">Importación uso Personal</a></li>
+                            <li><a href="index.html">Hogar</a></li>
+                            <li><a href="about.html">Sobre nosotros</a></li>
+                            <li><a href="#">Verticales de negocios</a></li>
+                            <li><a href="#">Nuestro portafolio</a></li>
+                            <li><a href="infrastructure.html">Infraestructura</a></li>
+                            <li><a href="Chile.html">Presencia en Chile</a></li>
+                            <li><a href="contact.html">Contáctenos</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Idiomas</h3>
+                        <ul>
+                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a></li>
+                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
+    <!-- Form Inputs -->
+    <input type="text" name="name" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea>
+
+    <!-- Hidden FormSubmit Config -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
+
+    <!-- Success Message -->
+    <div id="form-success" style="display: none;">
+        ¡Gracias! Su mensaje ha sido enviado exitosamente.
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="submit-btn">Enviar mensaje</button>
+        <button type="reset" class="reset-btn">Reiniciar</button>
+    </div>
+</form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    // Fetch IP and location
+    let ip = "IP: Unknown";
+    let location = "Location: Not available";
+    try {
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
+        ip = `IP: ${data.ip}`;
+        location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
+    } catch (error) {
+        console.warn("Failed to fetch IP/location");
+    }
+
+    const timestamp = `Time: ${new Date().toLocaleString()}`;
+    const userDetails = `${ip} | ${location} | ${timestamp}`;
+
+    formData.append('user_details', userDetails);
+
+    // Send form data via fetch to FormSubmit
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            document.getElementById('form-success').style.display = 'block';
+            form.reset();
+        } else {
+            alert('Form submission failed. Please try again.');
+        }
+    } catch (err) {
+        alert('Error submitting form.');
+        console.error(err);
+    }
+});
+</script>
+
+
+<script>
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Show button when scrolling
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+                
+                // Update progress circle rotation based on scroll position
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPosition = window.pageYOffset;
+                const scrollPercentage = (scrollPosition / scrollHeight) * 360;
+                scrollToTopBtn.querySelector('.progress-circle').style.transform = rotate($,{scrollPercentage},deg);
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Scroll to top with smooth animation
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Add pulse animation when clicked
+            this.style.animation = 'pulse 0.5s';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+</script>
+</form>
+</div>
+<div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script src="lang.js"></script>
+   <script>
+        // Toggle mobile navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+           const chatbotButton = document.getElementById('chatbotButton');
+           const chatbotContainer = document.getElementById('chatbotContainer');
+           const closeChatbot = document.getElementById('closeChatbot');
+           const chatBody = document.getElementById('chatBody');
+           const chatInput = document.getElementById('chatInput');
+           const sendButton = document.getElementById('sendButton');
+           const quickQuestions = document.querySelectorAll('.quick-question');
+           const notificationBadge = document.querySelector('.notification-badge');
+       
+           // Predefined answers
+           const answers = {
+               "¿En qué horarios estás en línea/activo?": "Estamos disponibles de lunes a viernes de 9.30 a. m. a 5.30 p. m., puede contactarnos en cualquier momento a través de nuestro correo electrónico de soporte a contacto@divine.cl.",
+               "¿Dónde están sus ubicaciones?": "Hemos establecido ubicaciones en India, Chile con planes para una mayor expansión global. Av. Pedro de Valdivia 273, Oficina 1310, Providencia, Santiago.",
+               "¿Qué servicios estás planeando a continuación?": "Somos una empresa farmacéutica ubicada en Santiago y bodega cercana al Aeropuerto Internacional de Chile, con un equipo de profesionales con amplia experiencia en la industria. Hoy cubrimos las líneas de productos para Bio Similares, Medicamento Huérfano, Sistema Nervioso Central, Oncología, Cardiología, Antiinfecciosos y Medicina Gástrica.",
+               "¿En qué estás especializado?": "Nuestros productos terminados son fabricados por instalaciones de fabricación aprobadas por WHO GMP, EU GMP, USFDA y PIC; estas instalaciones son una de las instalaciones farmacéuticas más grandes de la India en su segmento particular. Los productos fabricados y suministrados para Chile son los mismos productos de alta calidad que se suministran en 170 países y más, esto asegura calidad y experiencia en el suministro continuo de medicamentos de alto estándar.",
+               "¿Cuál es su número de contacto y correo electrónico de soporte?": "Puedes comunicarte con nosotros en:\nTeléfono: +56 9 3399 0606\nEmail de soporte: contacto@divine.cl"
+           };
+       
+           // Show welcome message after page loads
+           setTimeout(() => {
+               addBotMessage("¡Hola! Bienvenido a Divina Salud. ¿Cómo podemos ayudarle hoy?");
+               // Add quick intro about questions
+               setTimeout(() => {
+                   addBotMessage("Puede escribir su pregunta o hacer clic en cualquiera de las preguntas rápidas a continuación.");
+                   showNotificationBadge();
+               }, 1000);
+           }, 3000);
+       
+           // Toggle chatbot visibility
+           chatbotButton.addEventListener('click', () => {
+               chatbotContainer.classList.add('active');
+               chatbotButton.style.transform = 'scale(0.9)';
+               hideNotificationBadge();
+               // Focus on input when opened
+               setTimeout(() => {
+                   chatInput.focus();
+               }, 300);
+           });
+       
+           closeChatbot.addEventListener('click', () => {
+               chatbotContainer.classList.remove('active');
+               chatbotButton.style.transform = 'scale(1)';
+           });
+       
+           // Send message function
+           function sendMessage() {
+               const message = chatInput.value.trim();
+               if (message) {
+                   addUserMessage(message);
+                   chatInput.value = '';
+                   
+                   // Check if message matches any predefined question
+                   const matchingAnswer = answers[message];
+                   if (matchingAnswer) {
+                       setTimeout(() => {
+                           addBotMessage(matchingAnswer);
+                       }, 800);
+                   } else {
+                       // Default response for other questions
+                       setTimeout(() => {
+                           addBotMessage("Gracias por tu mensaje. Nuestro equipo se comunicará con usted en breve. Para asistencia inmediata, puede llamarnos al +56 9 3399 0606.");
+                       }, 1000);
+                   }
+               }
+           }
+       
+           // Handle quick question clicks
+           quickQuestions.forEach(button => {
+               button.addEventListener('click', function() {
+                   const question = this.getAttribute('data-question');
+                   addUserMessage(question);
+                   
+                   setTimeout(() => {
+                       addBotMessage(answers[question]);
+                   }, 800);
+               });
+           });
+       
+           // Handle Enter key
+           chatInput.addEventListener('keypress', (e) => {
+               if (e.key === 'Enter') {
+                   sendMessage();
+               }
+           });
+       
+           // Send button click
+           sendButton.addEventListener('click', sendMessage);
+       
+           // Notification badge functions
+           function showNotificationBadge() {
+               if (!chatbotContainer.classList.contains('active')) {
+                   notificationBadge.style.display = 'block';
+               }
+           }
+       
+           function hideNotificationBadge() {
+               notificationBadge.style.display = 'none';
+           }
+       
+           // Helper functions to add messages
+           function addBotMessage(text) {
+               const messageDiv = document.createElement('div');
+               messageDiv.className = 'chatbot-message bot';
+               // Replace newlines with <br> for HTML display
+               const formattedText = text.replace(/\n/g, '<br>');
+               messageDiv.innerHTML = `<div class="message-content">${formattedText}</div>`;
+               chatBody.appendChild(messageDiv);
+               chatBody.scrollTop = chatBody.scrollHeight;
+           }
+       
+           function addUserMessage(text) {
+               const messageDiv = document.createElement('div');
+               messageDiv.className = 'chatbot-message user';
+               messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+               chatBody.appendChild(messageDiv);
+               chatBody.scrollTop = chatBody.scrollHeight;
+           }
+       
+           // Close chatbot when clicking outside
+           document.addEventListener('click', function(event) {
+               if (!chatbotContainer.contains(event.target) && 
+                   event.target !== chatbotButton && 
+                   !chatbotButton.contains(event.target)) {
+                   chatbotContainer.classList.remove('active');
+                   chatbotButton.style.transform = 'scale(1)';
+               }
+           });
+       });
+        </script>
+       
+<!-- Chatbot Button -->
+<button class="chatbot-button" id="chatbotButton">
+    <i class="fas fa-comment-dots"></i>
+    <span class="notification-badge"></span>
+</button>
+
+<!-- Chatbot Popup -->
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+        <div class="agent-info">
+            <i class="fas fa-robot"></i>
+            <div>
+                <p>Divine Healthcare Bot<span> (Online)</span></p>
+                <small>Normalmente responde en unos minutos.</small>
+            </div>
+        </div>
+        <div class="close-btn" id="closeChatbot">&times;</div>
+    </div>
+
+    <div class="chatbot-body" id="chatBody">
+        <!-- Messages will appear here -->
+    </div>
+
+    <div class="quick-questions">
+        <button class="quick-question" data-question="¿En qué horarios estás en línea/activo?">Horas de trabajo</button>
+        <button class="quick-question" data-question="¿Dónde están sus ubicaciones?">Nuestros Ubicaciones</button>
+        <button class="quick-question" data-question="¿Qué servicios estás planeando a continuación?">Servicios futuros</button>
+        <button class="quick-question" data-question="¿En qué estás especializado?">Especializaciones</button>
+        <button class="quick-question" data-question="¿Cuál es su número de contacto y correo electrónico de soporte?">Información de contacto</button>
+    </div>
+
+    <div class="chatbot-footer">
+        <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
+        <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+</body>
+</html>
