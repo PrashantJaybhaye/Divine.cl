@@ -163,6 +163,9 @@
       'import.cat.prof.p': '¿El tratamiento que usted quiere recetar a su paciente no está disponible en Chile o es demasiado caro?',
       'import.cat.hosp.h3': ' Hospitales y clínicas',
       'import.cat.hosp.p': '¿Buscas un tratamiento para un paciente de tu institución que no está disponible en Chile?',
+      'quote.content.title1': 'Quienes somos',
+      'quote.content.button.1': 'Inicio > quienes somos',
+      'feature.section.who1':'Divine es una empresa con sede en Chile que se centra en ayudar a los pacientes a acceder a tratamientos inaccesibles o de costo prohibitivo a nivel local. Con más de 25 años de experiencia, nuestra misión es conectar a las personas con las soluciones médicas globales más efectivas.',
 
       // Chatbot
       'chatbot.agent_title': 'Divine Healthcare Bot',
@@ -348,6 +351,9 @@
       'import.cat.prof.p': 'Is the treatment you want to prescribe unavailable or too expensive in Chile?',
       'import.cat.hosp.h3': 'Hospitals and clinics',
       'import.cat.hosp.p': 'Looking for a treatment for a patient in your institution that is unavailable in Chile?',
+      'quote.content.title1': 'Who we are',
+      'quote.content.button.1': 'Home > who we are',
+      'feature.section.who1':'Divine is a company based in Chile that focuses on helping patients access treatments that are inaccessible or prohibitively expensive locally. With over 25 years of experience, our mission is to connect people with the most effective global medical solutions.',
 
       // Chatbot
       'chatbot.agent_title': 'Divine Healthcare Bot',
