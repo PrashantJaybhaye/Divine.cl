@@ -280,178 +280,224 @@ document.getElementById('contactForm').addEventListener('submit', async function
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    </script>
-    <script>
-       document.addEventListener('DOMContentLoaded', function() {
-           const chatbotButton = document.getElementById('chatbotButton');
-           const chatbotContainer = document.getElementById('chatbotContainer');
-           const closeChatbot = document.getElementById('closeChatbot');
-           const chatBody = document.getElementById('chatBody');
-           const chatInput = document.getElementById('chatInput');
-           const sendButton = document.getElementById('sendButton');
-           const quickQuestions = document.querySelectorAll('.quick-question');
-           const notificationBadge = document.querySelector('.notification-badge');
-       
-           // Predefined answers
-           const answers = {
-               "¿En qué horarios estás en línea/activo?": "Estamos disponibles de lunes a viernes de 9.30 a. m. a 5.30 p. m., puede contactarnos en cualquier momento a través de nuestro correo electrónico de soporte a contacto@divine.cl.",
-               "¿Dónde están sus ubicaciones?": "Hemos establecido ubicaciones en India, Chile con planes para una mayor expansión global. Av. Pedro de Valdivia 273, Oficina 1310, Providencia, Santiago.",
-               "¿Qué servicios estás planeando a continuación?": "Somos una empresa farmacéutica ubicada en Santiago y bodega cercana al Aeropuerto Internacional de Chile, con un equipo de profesionales con amplia experiencia en la industria. Hoy cubrimos las líneas de productos para Bio Similares, Medicamento Huérfano, Sistema Nervioso Central, Oncología, Cardiología, Antiinfecciosos y Medicina Gástrica.",
-               "¿En qué estás especializado?": "Nuestros productos terminados son fabricados por instalaciones de fabricación aprobadas por WHO GMP, EU GMP, USFDA y PIC; estas instalaciones son una de las instalaciones farmacéuticas más grandes de la India en su segmento particular. Los productos fabricados y suministrados para Chile son los mismos productos de alta calidad que se suministran en 170 países y más, esto asegura calidad y experiencia en el suministro continuo de medicamentos de alto estándar.",
-               "¿Cuál es su número de contacto y correo electrónico de soporte?": "Puedes comunicarte con nosotros en:\nTeléfono: +56 9 3399 0606\nEmail de soporte: contacto@divine.cl"
-           };
-       
-           // Show welcome message after page loads
-           setTimeout(() => {
-               addBotMessage("¡Hola! Bienvenido a Divina Salud. ¿Cómo podemos ayudarle hoy?");
-               // Add quick intro about questions
-               setTimeout(() => {
-                   addBotMessage("Puede escribir su pregunta o hacer clic en cualquiera de las preguntas rápidas a continuación.");
-                   showNotificationBadge();
-               }, 1000);
-           }, 3000);
-       
-           // Toggle chatbot visibility
-           chatbotButton.addEventListener('click', () => {
-               chatbotContainer.classList.add('active');
-               chatbotButton.style.transform = 'scale(0.9)';
-               hideNotificationBadge();
-               // Focus on input when opened
-               setTimeout(() => {
-                   chatInput.focus();
-               }, 300);
-           });
-       
-           closeChatbot.addEventListener('click', () => {
-               chatbotContainer.classList.remove('active');
-               chatbotButton.style.transform = 'scale(1)';
-           });
-       
-           // Send message function
-           function sendMessage() {
-               const message = chatInput.value.trim();
-               if (message) {
-                   addUserMessage(message);
-                   chatInput.value = '';
-                   
-                   // Check if message matches any predefined question
-                   const matchingAnswer = answers[message];
-                   if (matchingAnswer) {
-                       setTimeout(() => {
-                           addBotMessage(matchingAnswer);
-                       }, 800);
-                   } else {
-                       // Default response for other questions
-                       setTimeout(() => {
-                           addBotMessage("Gracias por tu mensaje. Nuestro equipo se comunicará con usted en breve. Para asistencia inmediata, puede llamarnos al +56 9 3399 0606.");
-                       }, 1000);
-                   }
-               }
-           }
-       
-           // Handle quick question clicks
-           quickQuestions.forEach(button => {
-               button.addEventListener('click', function() {
-                   const question = this.getAttribute('data-question');
-                   addUserMessage(question);
-                   
-                   setTimeout(() => {
-                       addBotMessage(answers[question]);
-                   }, 800);
-               });
-           });
-       
-           // Handle Enter key
-           chatInput.addEventListener('keypress', (e) => {
-               if (e.key === 'Enter') {
-                   sendMessage();
-               }
-           });
-       
-           // Send button click
-           sendButton.addEventListener('click', sendMessage);
-       
-           // Notification badge functions
-           function showNotificationBadge() {
-               if (!chatbotContainer.classList.contains('active')) {
-                   notificationBadge.style.display = 'block';
-               }
-           }
-       
-           function hideNotificationBadge() {
-               notificationBadge.style.display = 'none';
-           }
-       
-           // Helper functions to add messages
-           function addBotMessage(text) {
-               const messageDiv = document.createElement('div');
-               messageDiv.className = 'chatbot-message bot';
-               // Replace newlines with <br> for HTML display
-               const formattedText = text.replace(/\n/g, '<br>');
-               messageDiv.innerHTML = `<div class="message-content">${formattedText}</div>`;
-               chatBody.appendChild(messageDiv);
-               chatBody.scrollTop = chatBody.scrollHeight;
-           }
-       
-           function addUserMessage(text) {
-               const messageDiv = document.createElement('div');
-               messageDiv.className = 'chatbot-message user';
-               messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
-               chatBody.appendChild(messageDiv);
-               chatBody.scrollTop = chatBody.scrollHeight;
-           }
-       
-           // Close chatbot when clicking outside
-           document.addEventListener('click', function(event) {
-               if (!chatbotContainer.contains(event.target) && 
-                   event.target !== chatbotButton && 
-                   !chatbotButton.contains(event.target)) {
-                   chatbotContainer.classList.remove('active');
-                   chatbotButton.style.transform = 'scale(1)';
-               }
-           });
-       });
-        </script>
-       
+hamburger.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+hamburger.classList.toggle('active');
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const chatbotButton = document.getElementById('chatbotButton');
+const chatbotContainer = document.getElementById('chatbotContainer');
+const closeChatbot = document.getElementById('closeChatbot');
+const chatBody = document.getElementById('chatBody');
+const chatInput = document.getElementById('chatInput');
+const sendButton = document.getElementById('sendButton');
+const quickQuestions = document.querySelectorAll('.quick-question');
+const notificationBadge = document.querySelector('.notification-badge');
+
+function getCurrentLang() {
+const l = document.documentElement.getAttribute('lang');
+return l === 'en' ? 'en' : 'es';
+}
+let currentLang = getCurrentLang();
+
+const qa = {
+es: {
+"¿En qué horarios estás en línea/activo?": "Estamos disponibles de lunes a viernes de 9.30 a. m. a 5.30 p. m., puede contactarnos en cualquier momento a través de nuestro correo electrónico de soporte a contacto@divine.cl.",
+"¿Dónde están sus ubicaciones?": "Hemos establecido ubicaciones en India, Chile con planes para una mayor expansión global. Av. Pedro de Valdivia 273, Oficina 1310, Providencia, Santiago.",
+"¿Qué servicios estás planeando a continuación?": "Somos una empresa farmacéutica ubicada en Santiago y bodega cercana al Aeropuerto Internacional de Chile, con un equipo de profesionales con amplia experiencia en la industria. Hoy cubrimos las líneas de productos para Bio Similares, Medicamento Huérfano, Sistema Nervioso Central, Oncología, Cardiología, Antiinfecciosos y Medicina Gástrica.",
+"¿En qué estás especializado?": "Nuestros productos terminados son fabricados por instalaciones de fabricación aprobadas por WHO GMP, EU GMP, USFDA y PIC; estas instalaciones son una de las instalaciones farmacéuticas más grandes de la India en su segmento particular. Los productos fabricados y suministrados para Chile son los mismos productos de alta calidad que se suministran en 170 países y más, esto asegura calidad y experiencia en el suministro continuo de medicamentos de alto estándar.",
+"¿Cuál es su número de contacto y correo electrónico de soporte?": "Puedes comunicarte con nosotros en:\nTeléfono: +56 9 3399 0606\nEmail de soporte: contacto@divine.cl"
+},
+en: {
+"What hours are you online/active?": "We are available Monday to Friday from 9:30 a.m. to 5:30 p.m. You can contact us anytime via our support email at contacto@divine.cl.",
+"Where are your locations?": "We have established locations in India and Chile with plans for further global expansion. Av. Pedro de Valdivia 273, Office 1310, Providencia, Santiago.",
+"What services are you planning next?": "We are a pharmaceutical company in Santiago with a warehouse near Chile International Airport, and a team with broad industry experience. We currently cover product lines for Biosimilars, Orphan Drugs, CNS, Oncology, Cardiology, Anti-infectives and Gastric medicines.",
+"What do you specialize in?": "Our finished products are manufactured by facilities approved by WHO GMP, EU GMP, USFDA and PICs; these are among the largest pharmaceutical facilities in India in their segment. Products supplied for Chile are the same high quality supplied to 170+ countries, ensuring quality and expertise in continuous supply.",
+"What is your contact number and support email?": "You can reach us at:\nPhone: +56 9 3399 0606\nSupport Email: contacto@divine.cl"
+}
+};
+
+const welcome = {
+es: {
+w1: '¡Hola! Bienvenido a Divina Salud. ¿Cómo podemos ayudarle hoy?',
+w2: 'Puede escribir su pregunta o hacer clic en cualquiera de las preguntas rápidas a continuación.',
+def: 'Gracias por tu mensaje. Nuestro equipo se comunicará con usted en breve. Para asistencia inmediata, puede llamarnos al +56 9 3399 0606.'
+},
+en: {
+w1: 'Hi! Welcome to Divine Healthcare. How can we help you today?',
+w2: 'Type your question or click any quick question below.',
+def: 'Thank you for your message. Our team will get back to you shortly. For immediate help, call +56 9 3399 0606.'
+}
+};
+
+// Map language-agnostic quick question keys to full localized questions
+const questionsByKey = {
+hours: {
+  es: '¿En qué horarios estás en línea/activo?',
+  en: 'What hours are you online/active?'
+},
+locations: {
+  es: '¿Dónde están sus ubicaciones?',
+  en: 'Where are your locations?'
+},
+services: {
+  es: '¿Qué servicios estás planeando a continuación?',
+  en: 'What services are you planning next?'
+},
+specialization: {
+  es: '¿En qué estás especializado?',
+  en: 'What do you specialize in?'
+},
+contact: {
+  es: '¿Cuál es su número de contacto y correo electrónico de soporte?',
+  en: 'What is your contact number and support email?'
+}
+};
+
+setTimeout(() => {
+addBotMessage(welcome[currentLang].w1);
+setTimeout(() => {
+addBotMessage(welcome[currentLang].w2);
+showNotificationBadge();
+}, 1000);
+}, 3000);
+
+document.querySelectorAll('.language-option').forEach(a => {
+a.addEventListener('click', () => {
+setTimeout(() => { currentLang = getCurrentLang(); }, 0);
+});
+});
+
+chatbotButton.addEventListener('click', () => {
+chatbotContainer.classList.add('active');
+chatbotButton.style.transform = 'scale(0.9)';
+hideNotificationBadge();
+setTimeout(() => {
+chatInput.focus();
+}, 300);
+});
+
+closeChatbot.addEventListener('click', () => {
+chatbotContainer.classList.remove('active');
+chatbotButton.style.transform = 'scale(1)';
+});
+
+function sendMessage() {
+const message = chatInput.value.trim();
+if (message) {
+addUserMessage(message);
+chatInput.value = '';
+
+const map = qa[currentLang] || {};
+const matchingAnswer = map[message];
+if (matchingAnswer) {
+setTimeout(() => {
+addBotMessage(matchingAnswer);
+}, 800);
+} else {
+setTimeout(() => {
+addBotMessage(welcome[currentLang].def);
+}, 1000);
+}
+}
+}
+
+quickQuestions.forEach(button => {
+button.addEventListener('click', function() {
+const key = this.getAttribute('data-qkey');
+const localizedQuestion = key && questionsByKey[key] ? questionsByKey[key][currentLang] : this.textContent.trim();
+addUserMessage(localizedQuestion);
+const map = qa[currentLang] || {};
+setTimeout(() => {
+addBotMessage(map[localizedQuestion] || welcome[currentLang].def);
+}, 800);
+});
+});
+
+chatInput.addEventListener('keypress', (e) => {
+if (e.key === 'Enter') {
+sendMessage();
+}
+});
+
+sendButton.addEventListener('click', sendMessage);
+
+function showNotificationBadge() {
+if (!chatbotContainer.classList.contains('active')) {
+notificationBadge.style.display = 'block';
+}
+}
+
+function hideNotificationBadge() {
+notificationBadge.style.display = 'none';
+}
+
+function addBotMessage(text) {
+const messageDiv = document.createElement('div');
+messageDiv.className = 'chatbot-message bot';
+const formattedText = text.replace(/\n/g, '<br>');
+messageDiv.innerHTML = `<div class="message-content">${formattedText}</div>`;
+chatBody.appendChild(messageDiv);
+chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function addUserMessage(text) {
+const messageDiv = document.createElement('div');
+messageDiv.className = 'chatbot-message user';
+messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+chatBody.appendChild(messageDiv);
+chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+document.addEventListener('click', function(event) {
+if (!chatbotContainer.contains(event.target) && 
+event.target !== chatbotButton && 
+!chatbotButton.contains(event.target)) {
+chatbotContainer.classList.remove('active');
+chatbotButton.style.transform = 'scale(1)';
+}
+});
+});
+</script>
+
 <!-- Chatbot Button -->
 <button class="chatbot-button" id="chatbotButton">
-    <i class="fas fa-comment-dots"></i>
-    <span class="notification-badge"></span>
+<i class="fas fa-comment-dots"></i>
+<span class="notification-badge"></span>
 </button>
 
 <!-- Chatbot Popup -->
 <div class="chatbot-container" id="chatbotContainer">
-    <div class="chatbot-header">
-        <div class="agent-info">
-            <i class="fas fa-robot"></i>
-            <div>
-                <p>Divine Healthcare Bot<span> (Online)</span></p>
-                <small>Normalmente responde en unos minutos.</small>
-            </div>
-        </div>
-        <div class="close-btn" id="closeChatbot">&times;</div>
-    </div>
+<div class="chatbot-header">
+<div class="agent-info">
+<i class="fas fa-robot"></i>
+<div>
+<p><span data-i18n="chatbot.agent_title">Divine Healthcare Bot</span><span data-i18n="chatbot.agent_online"> (En línea)</span></p>
+<small data-i18n="chatbot.agent_small">Normalmente responde en unos minutos.</small>
+</div>
+</div>
+<div class="close-btn" id="closeChatbot">&times;</div>
+</div>
 
-    <div class="chatbot-body" id="chatBody">
-        <!-- Messages will appear here -->
-    </div>
+<div class="chatbot-body" id="chatBody">
+<!-- Messages will appear here -->
+</div>
 
-    <div class="quick-questions">
-        <button class="quick-question" data-question="¿En qué horarios estás en línea/activo?">Horas de trabajo</button>
-        <button class="quick-question" data-question="¿Dónde están sus ubicaciones?">Nuestros Ubicaciones</button>
-        <button class="quick-question" data-question="¿Qué servicios estás planeando a continuación?">Servicios futuros</button>
-        <button class="quick-question" data-question="¿En qué estás especializado?">Especializaciones</button>
-        <button class="quick-question" data-question="¿Cuál es su número de contacto y correo electrónico de soporte?">Información de contacto</button>
-    </div>
+<div class="quick-questions">
+<button class="quick-question" data-qkey="hours" data-i18n="chatbot.quick.hours">Horas de trabajo</button>
+<button class="quick-question" data-qkey="locations" data-i18n="chatbot.quick.locations">Nuestros Ubicaciones</button>
+<button class="quick-question" data-qkey="services" data-i18n="chatbot.quick.services">Servicios futuros</button>
+<button class="quick-question" data-qkey="specialization" data-i18n="chatbot.quick.specialization">Especializaciones</button>
+<button class="quick-question" data-qkey="contact" data-i18n="chatbot.quick.contact">Información de contacto</button>
+</div>
 
-    <div class="chatbot-footer">
-        <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
-        <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
-    </div>
+<div class="chatbot-footer">
+<input type="text" id="chatInput" data-i18n="chatbot.input_placeholder" data-i18n-attr="placeholder" placeholder="Escribe tu mensaje..." autocomplete="off">
+
+<button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+</div>
 </div>
 </body>
 </html>
