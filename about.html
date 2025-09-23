@@ -266,7 +266,7 @@ const scrollToTopBtn = document.getElementById('scrollToTop');
                 const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const scrollPosition = window.pageYOffset;
                 const scrollPercentage = (scrollPosition / scrollHeight) * 360;
-                scrollToTopBtn.querySelector('.progress-circle').style.transform = rotate($,{scrollPercentage},deg);
+                scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
             } else {
                 scrollToTopBtn.classList.remove('show');
             }
@@ -296,5 +296,14 @@ const scrollToTopBtn = document.getElementById('scrollToTop');
     </footer>
 
 <script src="lang.js"></script>
+<script>
+// Toggle mobile navigation (used by onclick on the hamburger button)
+function toggleNav() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.hamburger');
+  if (navLinks) navLinks.classList.toggle('active');
+  if (hamburger) hamburger.classList.toggle('active');
+}
+</script>
 </body>
 </html>

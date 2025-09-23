@@ -258,7 +258,7 @@
                             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
                             const scrollPosition = window.pageYOffset;
                             const scrollPercentage = (scrollPosition / scrollHeight) * 360;
-                            scrollToTopBtn.querySelector('.progress-circle').style.transform = rotate($, { scrollPercentage }, deg);
+                            scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
                         } else {
                             scrollToTopBtn.classList.remove('show');
                         }

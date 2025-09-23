@@ -14,7 +14,7 @@
                 <a href="index.html" class="brand-logo">
                     <img src="logo.png" alt="Divine Healthcare Logo">
                 </a>
-                <button class="hamburger" aria-label="Toggle navigation" onclick="toggleNav()">
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
@@ -414,7 +414,7 @@ const scrollToTopBtn = document.getElementById('scrollToTop');
                 const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const scrollPosition = window.pageYOffset;
                 const scrollPercentage = (scrollPosition / scrollHeight) * 360;
-                scrollToTopBtn.querySelector('.progress-circle').style.transform = rotate($,{scrollPercentage},deg);
+                scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
             } else {
                 scrollToTopBtn.classList.remove('show');
             }
