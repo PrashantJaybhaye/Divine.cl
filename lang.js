@@ -167,6 +167,98 @@
       'quote.content.button.1': 'Inicio > quienes somos',
       'feature.section.who1':'Divine es una empresa con sede en Chile que se centra en ayudar a los pacientes a acceder a tratamientos inaccesibles o de costo prohibitivo a nivel local. Con más de 25 años de experiencia, nuestra misión es conectar a las personas con las soluciones médicas globales más efectivas.',
 
+      // Header info (ES)
+      'header.address.line1': 'Av. Pedro de Valdivia 273, Oficina 1310',
+      'header.address.line2': 'Providencia, Santiago',
+      'header.hours.line1': 'De lunes a viernes de 9.30 a 17.30 horas',
+      'header.hours.line2': 'Cerrado sábados y domingos.',
+
+      // Import page - additional sections (ES)
+      // Quote stripes
+      'quote.content.title2': 'A quién servimos',
+      'quote.content.button.2': 'Inicio > a quién servimos',
+      'quote.content.title3': 'Proceso de Importación',
+      'quote.content.button.3': 'Inicio > Proceso de Importación',
+      'quote.content.title4': 'Preguntas frecuentes',
+      'quote.content.button.4': 'Inicio > Preguntas frecuentes',
+
+      // Who we are - cards
+      'who.cards.receive': 'Recibe tu producto en un plazo de 15 a 21 días laborables.',
+      'who.cards.comply': 'Cumple con la normativa establecida por el Instituto de Salud Pública de Chile.',
+      'who.cards.suppliers': 'Proveedores internacionales autorizados y aprobados por las autoridades sanitarias de sus respectivos países.',
+      'who.cards.specialty': 'Importamos medicamentos para enfermedades raras o especializadas (hasta 6 meses de tratamiento).',
+      'who.cards.experience': '25 años de experiencia importando',
+      'who.cards.shipping': 'Envíos a todo Chile con y sin cadena de frío.',
+      'who.cards.pharmacist': 'Contamos con un Químico Farmacéutico que supervisa el proceso.',
+      'who.cards.attention': 'Atención a clínicas, hospitales y pacientes particulares.',
+
+      // Who we serve - cards
+      'serve.cards.hospitals': 'Hospitales',
+      'serve.cards.clinics': 'Clínicas',
+      'serve.cards.groups': 'Grupos o asociaciones de pacientes',
+      'serve.cards.private': 'Pacientes privados',
+      'serve.cards.other_institutions': 'Otras instituciones de salud',
+      'serve.cards.pharmacy': 'Farmacia',
+
+      // Import process - steps
+      'import.process.step1': 'Solicitud de cotización',
+      'import.process.step2': 'Aceptación de cotización',
+      'import.process.step3': 'Presentar documentación para la importación',
+      'import.process.step4': 'Pedido en proceso',
+      'import.process.step5': 'Transporte Internacional, resolución de ISP y despacho de aduanas',
+      'import.process.step6': 'Entrega',
+
+      // Documentation section
+      'doc.header.h2': '1. Documentación para realizar su Importación',
+      'doc.item.prescription': '1. Receta médica',
+      'doc.item.id_copy': '2. Fotocopia del documento de identidad',
+      'doc.item.poa': '3. Poder notarial simple',
+      'doc.item.poa_note': 'Firmado por el paciente o un miembro de la familia',
+      'doc.item.download_poa': '4. Descargar Poder Notarial Simple',
+      'doc.modal.title': 'Ingreso de solicitud',
+      'doc.modal.subtitle': 'Complete todos los campos requeridos para iniciar su proceso',
+      'doc.footer.h2': '2.  Envíe su solicitud para iniciar el proceso',
+      'doc.info.upload': 'Información de carga',
+      'doc.info.subtitle': 'que la receta debe incluir',
+
+      // Power of Attorney (POA) modal & form
+      'poa.modal.title': 'Solicite su documento',
+      'poa.modal.subtitle': 'Le enviaremos un poder notarial a su número de registro.',
+      'poa.form.name': 'Nombre completo*',
+      'poa.form.name.label': 'Nombre completo*',
+      'poa.form.email': 'Correo electrónico*',
+      'poa.form.email.label': 'Correo electrónico*',
+      'poa.form.phone': 'Número de teléfono*',
+      'poa.form.phone.label': 'Número de teléfono*',
+      'poa.form.purpose.label': 'Poder legal*',
+      'poa.form.notes': 'Notas adicionales',
+      'poa.form.notes.label': 'Notas adicionales',
+      'poa.form.next': 'Continuar',
+      'poa.form.prev': 'Atrás',
+      'poa.form.submit': 'Enviar y descargar',
+
+      // FAQ section
+      'faq.header.title': 'Preguntas frecuentes',
+      'faq.header.subtitle': 'Encuentre respuestas a preguntas comunes sobre nuestros servicios y procesos',
+      'faq.q1.q': '¿Cuanto tiempo tarda la importación?',
+      'faq.q1.a': 'El proceso de importación suele tardar entre 5 y 10 días hábiles, dependiendo del tipo de producto y el país de origen. Le proporcionaremos un plazo más preciso una vez que tengamos todos los detalles necesarios.',
+      'faq.q2.q': '¿Qué se necesita para importar?',
+      'faq.q2.a': 'Para iniciar una importación, necesitaremos los detalles del producto, la cantidad, la receta y cualquier otra información y documentación relevante de los pacientes y el médico. Nuestro equipo le guiará con los requisitos específicos de su envío.',
+      'faq.q3.q': '¿A quién servimos?',
+      'faq.q3.a': 'Atendemos a empresas de todos los tamaños y de diversos sectores, así como a particulares que necesitan servicios especiales de importación de medicamentos. Nuestros clientes son pacientes, minoristas, distribuidores, profesionales sanitarios y más.',
+      'faq.q4.q': '¿Importamos medicamentos con cadena de frío (2°C – 4°C)?',
+      'faq.q4.a': 'Sí, contamos con capacidades logísticas especializadas de cadena de frío para medicamentos sensibles a la temperatura. Nuestras instalaciones están equipadas con sistemas de almacenamiento y monitoreo de temperatura controlada para garantizar la integridad del producto.',
+      'faq.q5.q': '¿Hacemos envíos a todo Chile?',
+      'faq.q5.a': 'Ofrecemos cobertura nacional en Chile, incluyendo zonas remotas. Los tiempos de entrega pueden variar según la ubicación, pero garantizamos un servicio confiable en todo el país.',
+      'faq.q6.q': '¿Condiciones de pago?',
+      'faq.q6.a': 'Ofrecemos condiciones de pago flexibles, incluyendo pago por adelantado, pagos parciales y opciones de crédito para clientes habituales. Nuestras condiciones de pago estándar son: 50% por adelantado al confirmar el pedido y 50% después del envío. Puede contactar con nuestro equipo para obtener condiciones de pago flexibles.',
+      'faq.useful': '¿Fue útil esto?',
+      'faq.useful.yes': 'Sí',
+      'faq.useful.no': 'No',
+      'faq.ask.title': 'Haz tu pregunta',
+      'faq.ask.placeholder': 'Escribe tu pregunta aquí...',
+      'faq.ask.submit': 'Enviar pregunta',
+
       // Chatbot
       'chatbot.agent_title': 'Divine Healthcare Bot',
       'chatbot.agent_online': ' (En línea)',
@@ -354,6 +446,98 @@
       'quote.content.title1': 'Who we are',
       'quote.content.button.1': 'Home > who we are',
       'feature.section.who1':'Divine is a company based in Chile that focuses on helping patients access treatments that are inaccessible or prohibitively expensive locally. With over 25 years of experience, our mission is to connect people with the most effective global medical solutions.',
+
+      // Header info (EN)
+      'header.address.line1': 'Av. Pedro de Valdivia 273, Office 1310',
+      'header.address.line2': 'Providencia, Santiago',
+      'header.hours.line1': 'Monday to Friday from 9:30 to 17:30',
+      'header.hours.line2': 'Closed on Saturdays and Sundays.',
+
+      // Import page - additional sections (EN)
+      // Quote stripes
+      'quote.content.title2': 'Who we serve',
+      'quote.content.button.2': 'Home > who we serve',
+      'quote.content.title3': 'Importation Process',
+      'quote.content.button.3': 'Home > Importation Process',
+      'quote.content.title4': 'Frequently Asked Questions',
+      'quote.content.button.4': 'Home > Frequently Asked Questions',
+
+      // Who we are - cards
+      'who.cards.receive': 'Receive your product within 15 to 21 business days.',
+      'who.cards.comply': 'Complies with the regulations set by the Public Health Institute of Chile.',
+      'who.cards.suppliers': 'Authorized international suppliers approved by the health authorities of their respective countries.',
+      'who.cards.specialty': 'We import medicines for rare or specialized diseases (up to 6 months of treatment).',
+      'who.cards.experience': '25 years of import experience',
+      'who.cards.shipping': 'Shipping throughout Chile with and without cold chain.',
+      'who.cards.pharmacist': 'We have a Pharmaceutical Chemist supervising the process.',
+      'who.cards.attention': 'Service for clinics, hospitals, and private patients.',
+
+      // Who we serve - cards
+      'serve.cards.hospitals': 'Hospitals',
+      'serve.cards.clinics': 'Clinics',
+      'serve.cards.groups': 'Patient groups or associations',
+      'serve.cards.private': 'Private patients',
+      'serve.cards.other_institutions': 'Other health institutions',
+      'serve.cards.pharmacy': 'Pharmacy',
+
+      // Import process - steps
+      'import.process.step1': 'Quote request',
+      'import.process.step2': 'Quote acceptance',
+      'import.process.step3': 'Submit documentation for importation',
+      'import.process.step4': 'Order in process',
+      'import.process.step5': 'International transport, ISP resolution and customs clearance',
+      'import.process.step6': 'Delivery',
+
+      // Documentation section
+      'doc.header.h2': '1. Documentation to perform your importation',
+      'doc.item.prescription': '1. Medical prescription',
+      'doc.item.id_copy': '2. Copy of identity document',
+      'doc.item.poa': '3. Simple power of attorney',
+      'doc.item.poa_note': 'Signed by the patient or a family member',
+      'doc.item.download_poa': '4. Download Simple Power of Attorney',
+      'doc.modal.title': 'Application entry',
+      'doc.modal.subtitle': 'Complete all required fields to start your process',
+      'doc.footer.h2': '2. Submit your request to start the process',
+      'doc.info.upload': 'Upload information',
+      'doc.info.subtitle': 'that the prescription must include',
+
+      // Power of Attorney (POA) modal & form
+      'poa.modal.title': 'Request your document',
+      'poa.modal.subtitle': 'We will send a power of attorney to your registration number.',
+      'poa.form.name': 'Full name*',
+      'poa.form.name.label': 'Full name*',
+      'poa.form.email': 'Email*',
+      'poa.form.email.label': 'Email*',
+      'poa.form.phone': 'Phone number*',
+      'poa.form.phone.label': 'Phone number*',
+      'poa.form.purpose.label': 'Legal authority*',
+      'poa.form.notes': 'Additional notes',
+      'poa.form.notes.label': 'Additional notes',
+      'poa.form.next': 'Continue',
+      'poa.form.prev': 'Back',
+      'poa.form.submit': 'Submit and download',
+
+      // FAQ section
+      'faq.header.title': 'Frequently asked questions',
+      'faq.header.subtitle': 'Find answers to common questions about our services and processes',
+      'faq.q1.q': 'How long does importation take?',
+      'faq.q1.a': 'The import process usually takes between 5 and 10 business days, depending on the product type and country of origin. We will provide a more precise timeline once we have all necessary details.',
+      'faq.q2.q': 'What is needed to import?',
+      'faq.q2.a': 'To start an import, we will need the product details, quantity, prescription, and any other relevant patient and physician information and documentation. Our team will guide you through the specific requirements for your shipment.',
+      'faq.q3.q': 'Who do we serve?',
+      'faq.q3.a': 'We serve businesses of all sizes across various sectors, as well as individuals needing specialized medicine import services. Our clients include patients, retailers, distributors, healthcare professionals, and more.',
+      'faq.q4.q': 'Do we import cold chain medicines (2°C – 4°C)?',
+      'faq.q4.a': 'Yes, we have specialized cold chain logistics capabilities for temperature-sensitive medicines. Our facilities are equipped with temperature-controlled storage and monitoring systems to ensure product integrity.',
+      'faq.q5.q': 'Do we deliver throughout Chile?',
+      'faq.q5.a': 'We offer nationwide coverage in Chile, including remote areas. Delivery times may vary by location, but we ensure reliable service across the country.',
+      'faq.q6.q': 'Payment terms?',
+      'faq.q6.a': 'We offer flexible payment terms, including advance payment, partial payments, and credit options for regular customers. Our standard terms are: 50% upfront on order confirmation and 50% after dispatch. Contact our team for flexible terms.',
+      'faq.useful': 'Was this helpful?',
+      'faq.useful.yes': 'Yes',
+      'faq.useful.no': 'No',
+      'faq.ask.title': 'Ask your question',
+      'faq.ask.placeholder': 'Type your question here...',
+      'faq.ask.submit': 'Submit question',
 
       // Chatbot
       'chatbot.agent_title': 'Divine Healthcare Bot',

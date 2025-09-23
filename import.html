@@ -30,8 +30,8 @@
             </div>
             <div class="contact-info">
                 <div><i class="fas fa-phone"></i> +56 9 3399 0606 <br><small> contacto@divine.cl </small></div>
-                <div><i class="fas fa-map-marker-alt"></i> Av. Pedro de Valdivia 273, Oficina 1310 <br><small>Providencia, Santiago</small></div>
-                <div><i class="fas fa-clock"></i> De lunes a viernes de 9.30 a 17.30 horas<br><small>Cerrado sábados y domingos.</small></div>
+                <div><i class="fas fa-map-marker-alt"></i> <span data-i18n="header.address.line1">Av. Pedro de Valdivia 273, Oficina 1310</span> <br><small data-i18n="header.address.line2">Providencia, Santiago</small></div>
+                <div><i class="fas fa-clock"></i> <span data-i18n="header.hours.line1">De lunes a viernes de 9.30 a 17.30 horas</span><br><small data-i18n="header.hours.line2">Cerrado sábados y domingos.</small></div>
             </div>
         </div>
     </div>
@@ -442,42 +442,42 @@ Message: ${formData.message || 'N/A'}`;
   <div class="about-cards">
       <div class="card">
         <img src="parcels.png" alt="Health Authority" />
-        <p><strong>Recibe tu producto</strong> en un plazo de 15 a 21 días laborables.</p>
+        <p data-i18n="who.cards.receive"><strong>Recibe tu producto</strong> en un plazo de 15 a 21 días laborables.</p>
       </div>
 
       <div class="card">
         <img src="tick.png" alt="Health Authority" />
-        <p><strong>Cumple </strong> con la normativa establecida por el Instituto de Salud Pública de Chile.</p>
+        <p data-i18n="who.cards.comply"><strong>Cumple </strong> con la normativa establecida por el Instituto de Salud Pública de Chile.</p>
       </div>
 
       <div class="card">
         <img src="international.png" alt="International Supply" />
-        <p><strong>Proveedores internacionales autorizados</strong> y aprobados por las autoridades sanitarias de sus respectivos países.</p>
+        <p data-i18n="who.cards.suppliers"><strong>Proveedores internacionales autorizados</strong> y aprobados por las autoridades sanitarias de sus respectivos países.</p>
       </div>
 
       <div class="card">
         <img src="https://cdn-icons-png.flaticon.com/512/2897/2897990.png" alt="Specialty Meds" />
-        <p><strong>Importamos medicamentos</strong> para enfermedades raras o especializadas (hasta 6 meses de tratamiento).</p>
+        <p data-i18n="who.cards.specialty"><strong>Importamos medicamentos</strong> para enfermedades raras o especializadas (hasta 6 meses de tratamiento).</p>
       </div>
 
     <div class="card">
         <img src="badge.png" alt="Specialty Meds" />
-        <p><strong>25 años</strong> de experiencia importando</p>
+        <p data-i18n="who.cards.experience"><strong>25 años</strong> de experiencia importando</p>
       </div>
 
        <div class="card">
         <img src="delivery.png" alt="Specialty Meds" />
-        <p><strong>Envíos a todo Chile</strong>con y sin cadena de frío.</p>
+        <p data-i18n="who.cards.shipping"><strong>Envíos a todo Chile</strong>con y sin cadena de frío.</p>
       </div>
 
     <div class="card">
         <img src="doctor.png" alt="Specialty Meds" />
-        <p><strong>Contamos con un Químico Farmacéutico</strong> que supervisa el proceso.</p>
+        <p data-i18n="who.cards.pharmacist"><strong>Contamos con un Químico Farmacéutico</strong> que supervisa el proceso.</p>
       </div>
 
       <div class="card">
         <img src="hospital.png" alt="Specialty Meds" />
-        <p><strong>Atención</strong> a clínicas, hospitales y pacientes particulares.</p>
+        <p data-i18n="who.cards.attention"><strong>Atención</strong> a clínicas, hospitales y pacientes particulares.</p>
       </div>
 </section>
 
@@ -487,8 +487,8 @@ Message: ${formData.message || 'N/A'}`;
 <section class="quote-section">
    
     <div class="quote-content">
-        <h2>A quién servimos</h2>
-        <button class="btn" id="scrollToWhoWeServe">Inicio > a quién servimos</button>
+        <h2 data-i18n="quote.content.title2">A quién servimos</h2>
+        <button class="btn" id="scrollToWhoWeServe" data-i18n="quote.content.button.2">Inicio > a quién servimos</button>
     </div>
 </section>
 
@@ -507,27 +507,27 @@ Message: ${formData.message || 'N/A'}`;
    <div class="serve-grid">
     <div class="serve-card">
       <img src="serve1.png" alt="Hospitals">
-      <p><strong>Hospitales</strong></p>
+      <p data-i18n="serve.cards.hospitals"><strong>Hospitales</strong></p>
     </div>
     <div class="serve-card">
       <img src="serve2.png" alt="Clinics">
-      <p><strong>Clínicas</strong></p>
+      <p data-i18n="serve.cards.clinics"><strong>Clínicas</strong></p>
     </div>
     <div class="serve-card">
       <img src="serve3.png" alt="Groups">
-      <p><strong>Grupos o <br> asociaciones de pacientes</strong></p>
+      <p data-i18n="serve.cards.groups"><strong>Grupos o <br> asociaciones de pacientes</strong></p>
     </div>
     <div class="serve-card">
       <img src="serve4.png" alt="Private Patients">
-      <p><strong>Pacientes privados</strong></p>
+      <p data-i18n="serve.cards.private"><strong>Pacientes privados</strong></p>
     </div>
     <div class="serve-card">
       <img src="serve5.png" alt="Other Institutions">
-      <p><strong>Otras instituciones <br> de salud</strong></p>
+      <p data-i18n="serve.cards.other_institutions"><strong>Otras instituciones <br> de salud</strong></p>
     </div>
      <div class="serve-card">
       <img src="serve6.png" alt="Other Institutions">
-      <p><strong>Farmacia</strong></p>
+      <p data-i18n="serve.cards.pharmacy"><strong>Farmacia</strong></p>
     </div>
   </div>
 </section>
@@ -538,8 +538,8 @@ Message: ${formData.message || 'N/A'}`;
 <section class="quote-section">
   
     <div class="quote-content">
-        <h2> Proceso de Importación </h2>
-        <button class="btn" id="scrollToImportationProcess">Inicio > Proceso de Importación</button>
+        <h2 data-i18n="quote.content.title3"> Proceso de Importación </h2>
+        <button class="btn" id="scrollToImportationProcess" data-i18n="quote.content.button.3">Inicio > Proceso de Importación</button>
     </div>
 </section>
 
@@ -558,27 +558,27 @@ Message: ${formData.message || 'N/A'}`;
   <div class="steps-grid">
     <div class="step">
       <img src="import2.png" alt="Quotation">
-      <h3>Solicitud de cotización</h3>
+      <h3 data-i18n="import.process.step1">Solicitud de cotización</h3>
     </div>
     <div class="step">
       <img src="import1.png" alt="Acceptance">
-      <h3>Aceptación de cotización</h3>
+      <h3 data-i18n="import.process.step2">Aceptación de cotización</h3>
     </div>
     <div class="step">
       <img src="import 3.png" alt="Documentation">
-      <h3>Presentar documentación <br> para la importación</h3>
+      <h3 data-i18n="import.process.step3">Presentar documentación <br> para la importación</h3>
     </div>
     <div class="step">
       <img src="import4.png" alt="Progress">
-      <h3>Pedido en proceso</h3>
+      <h3 data-i18n="import.process.step4">Pedido en proceso</h3>
     </div>
     <div class="step">
       <img src="import5.png" alt="Transport">
-      <h3>Transporte Internacional,<br>resolución de ISP y<br>despacho de aduanas</h3>
+      <h3 data-i18n="import.process.step5">Transporte Internacional,<br>resolución de ISP y<br>despacho de aduanas</h3>
     </div>
     <div class="step">
       <img src="import6.png" alt="Delivery">
-      <h3>Entrega</h3>
+      <h3 data-i18n="import.process.step6">Entrega</h3>
     </div>
   </div>
 
@@ -587,29 +587,29 @@ Message: ${formData.message || 'N/A'}`;
         DOCUMENTATION
     ====================== -->
   <div class="doc-header">
-    <h2>1. Documentación para realizar su Importación</h2>
+    <h2 data-i18n="doc.header.h2">1. Documentación para realizar su Importación</h2>
   </div>
 <!-- 1st card-->
   <div class="doc-grid">
   <div class="doc-item">
     <div class="icon-circle"><img src="prescription.png" alt=""></div>
-    <h4>1. Receta médica</h4>
+    <h4 data-i18n="doc.item.prescription">1. Receta médica</h4>
   </div>
   <!-- 2nd card-->
   <div class="doc-item">
     <div class="icon-circle"><img src="id.png" alt=""></div>
-    <h4>2. Fotocopia del documento de identidad</h4>
+    <h4 data-i18n="doc.item.id_copy">2. Fotocopia del documento de identidad</h4>
   </div>
   <!-- 3rd card-->
   <div class="doc-item">
     <div class="icon-circle"><img src="agreement.png" alt=""></div>
-    <h4>3. Poder notarial simple</h4>
-    <p>Firmado por el paciente o un miembro de la familia</p>
+    <h4 data-i18n="doc.item.poa">3. Poder notarial simple</h4>
+    <p data-i18n="doc.item.poa_note">Firmado por el paciente o un miembro de la familia</p>
   </div>
   <!-- This is now the 4th card (originally 5th) -->
   <button id="downloadPoaBtn" class="poa-download-btn doc-item">
     <div class="icon-circle"><img src="download.png" alt=""></div>
-    <h4>4. Descargar Poder Notarial Simple</h4>
+    <h4 data-i18n="doc.item.download_poa">4. Descargar Poder Notarial Simple</h4>
   </button>
 </div>
 
@@ -617,8 +617,8 @@ Message: ${formData.message || 'N/A'}`;
 <div id="prescriptionModal" class="modal">
   <div class="modal-content">
     <div class="form-header">
-      <h2>Ingreso de solicitud</h2>
-      <p>Complete todos los campos requeridos para iniciar su proceso</p>
+      <h2 data-i18n="doc.modal.title">Ingreso de solicitud</h2>
+      <p data-i18n="doc.modal.subtitle">Complete todos los campos requeridos para iniciar su proceso</p>
       <button id="closeModalBtn" class="close-modal-btn" type="button" title="Cerrar y reiniciar formulario">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -774,15 +774,15 @@ Message: ${formData.message || 'N/A'}`;
 </div>
 
  <div class="doc-footer">
-    <h2>2.  Envíe su solicitud para iniciar el proceso</h2>
+    <h2 data-i18n="doc.footer.h2">2.  Envíe su solicitud para iniciar el proceso</h2>
   </div>
 
 <button id="openModalBtn" style="color: white; border: none; cursor: pointer;">
     <div class="doc-item" id="prescriptionBtn">
-     <div class="icon-circle"><img src="download.png" alt=""></div>
-    <h4>Información de carga</h4>
-  <p>que la receta debe incluir</p>
-</button>
+     <div class="icon-circle"><img src="download.png" alt="" data-i18n="doc.info.upload.image"></div>
+     <h4 data-i18n="doc.info.upload">Información de carga</h4>
+  <p data-i18n="doc.info.subtitle">que la receta debe incluir</p>
+  </button>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -982,8 +982,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div id="poaFormModal" class="poa-modal">
   <div class="modal-container">
     <div class="modal-header">
-      <h3>Solicite su documento</h3>
-      <p>Le enviaremos un poder notarial a su número de registro.</p>
+      <h3 data-i18n="poa.modal.title">Solicite su documento</h3>
+      <p data-i18n="poa.modal.subtitle">Le enviaremos un poder notarial a su número de registro.</p>
       <button class="close-modal" aria-label="Close">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -1003,8 +1003,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Step 1 - Personal Info -->
         <div class="form-step active" data-step="1">
           <div class="floating-input">
-            <input type="text" id="name" name="name" required>
-            <label for="name">Nombre completo*</label>
+            <input type="text" id="name" name="name" required data-i18n="poa.form.name" data-i18n-attr="placeholder">
+            <label for="name" data-i18n="poa.form.name.label">Nombre completo*</label>
             <span class="input-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -1013,8 +1013,8 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           
           <div class="floating-input">
-            <input type="email" id="email" name="email" required>
-            <label for="email">Correo electrónico*</label>
+            <input type="email" id="email" name="email" required data-i18n="poa.form.email" data-i18n-attr="placeholder">
+            <label for="email" data-i18n="poa.form.email.label">Correo electrónico*</label>
             <span class="input-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -1023,15 +1023,15 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           
           <div class="form-navigation">
-            <button type="button" class="next-step">Continuar</button>
+            <button type="button" class="next-step" data-i18n="poa.form.next">Continuar</button>
           </div>
         </div>
         
         <!-- Step 2 - Contact Details -->
         <div class="form-step" data-step="2">
           <div class="floating-input">
-            <input type="tel" id="phone" name="phone" required>
-            <label for="phone">Número de teléfono*</label>
+            <input type="tel" id="phone" name="phone" required data-i18n="poa.form.phone" data-i18n-attr="placeholder">
+            <label for="phone" data-i18n="poa.form.phone.label">Número de teléfono*</label>
             <span class="input-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
@@ -1049,7 +1049,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <option value="Hermano o hermana">Hermano o hermana</option>
               <option value="Otro (Especificar)">Otro (Especificar)</option>
             </select>
-            <label for="purpose">Poder legal*</label>
+            <label for="purpose" data-i18n="poa.form.purpose.label">Poder legal*</label>
             <span class="input-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -1058,21 +1058,21 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           
           <div class="form-navigation">
-            <button type="button" class="prev-step">Atrás</button>
-            <button type="button" class="next-step">Continuar</button>
+            <button type="button" class="prev-step" data-i18n="poa.form.prev">Atrás</button>
+            <button type="button" class="next-step" data-i18n="poa.form.next">Continuar</button>
           </div>
         </div>
         
         <!-- Step 3 - Final Details -->
         <div class="form-step" data-step="3">
           <div class="floating-input">
-            <textarea id="message" name="message" rows="3"></textarea>
-            <label for="message">Notas adicionales</label>
+            <textarea id="message" name="message" rows="3" data-i18n="poa.form.notes" data-i18n-attr="placeholder"></textarea>
+            <label for="message" data-i18n="poa.form.notes.label">Notas adicionales</label>
           </div>
           
           <div class="form-navigation">
-            <button type="button" class="prev-step">Atrás</button>
-            <button type="submit" class="submit-form">Enviar y descargar</button>
+            <button type="button" class="prev-step" data-i18n="poa.form.prev">Atrás</button>
+            <button type="submit" class="submit-form" data-i18n="poa.form.submit">Enviar y descargar</button>
           </div>
         </div>
       </form>
@@ -1264,8 +1264,8 @@ document.addEventListener('DOMContentLoaded', function() {
  <section class="quote-section">
 
     <div class="quote-content">
-      <h2> Preguntas frecuentes </h2>
-     <button class="btn" id="scrollToFAQ">Inicio > Preguntas frecuentes</button>
+      <h2 data-i18n="quote.content.title4"> Preguntas frecuentes </h2>
+     <button class="btn" id="scrollToFAQ" data-i18n="quote.content.button.4">Inicio > Preguntas frecuentes</button>
   </section>
 
   
@@ -1280,91 +1280,91 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- FAQ -->
    <div class="faq-container" id="faq">
         <div class="faq-header">
-            <h1>Preguntas frecuentes</h1>
-            <p>Encuentre respuestas a preguntas comunes sobre nuestros servicios y procesos</p>
+            <h1 data-i18n="faq.header.title">Preguntas frecuentes</h1>
+            <p data-i18n="faq.header.subtitle">Encuentre respuestas a preguntas comunes sobre nuestros servicios y procesos</p>
         </div>
         
         <div class="faq-accordion" id="faqAccordion">
             <div class="faq-item">
-                <div class="faq-question">¿Cuanto tiempo tarda la importación?</div>
+                <div class="faq-question" data-i18n="faq.q1.q">¿Cuanto tiempo tarda la importación?</div>
                 <div class="faq-answer">
-                    <p>El proceso de importación suele tardar entre 5 y 10 días hábiles, dependiendo del tipo de producto y el país de origen. Le proporcionaremos un plazo más preciso una vez que tengamos todos los detalles necesarios.</p>
+                    <p data-i18n="faq.q1.a">El proceso de importación suele tardar entre 5 y 10 días hábiles, dependiendo del tipo de producto y el país de origen. Le proporcionaremos un plazo más preciso una vez que tengamos todos los detalles necesarios.</p>
                     <!-- Breakthrough Feature 3: Rating System -->
                     <div class="faq-feedback">
-                        <p>¿Fue útil esto?</p>
+                        <p data-i18n="faq.useful">¿Fue útil esto?</p>
                         <div class="feedback-buttons">
-                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
-                            <button class="feedback-btn" data-value="no">👎 No</button>
+                            <button class="feedback-btn" data-value="yes" data-i18n="faq.useful.yes"> Sí</button>
+                            <button class="feedback-btn" data-value="no" data-i18n="faq.useful.no"> No</button>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">¿Qué se necesita para importar?</div>
+                <div class="faq-question" data-i18n="faq.q2.q">¿Qué se necesita para importar?</div>
                 <div class="faq-answer">
-                    <p>Para iniciar una importación, necesitaremos los detalles del producto, la cantidad, la receta y cualquier otra información y documentación relevante de los pacientes y el médico. Nuestro equipo le guiará con los requisitos específicos de su envío.</p>
+                    <p data-i18n="faq.q2.a">Para iniciar una importación, necesitaremos los detalles del producto, la cantidad, la receta y cualquier otra información y documentación relevante de los pacientes y el médico. Nuestro equipo le guiará con los requisitos específicos de su envío.</p>
                     <div class="faq-feedback">
-                        <p>¿Fue útil esto?</p>
+                        <p data-i18n="faq.useful">¿Fue útil esto?</p>
                         <div class="feedback-buttons">
-                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
-                            <button class="feedback-btn" data-value="no">👎 No</button>
+                            <button class="feedback-btn" data-value="yes" data-i18n="faq.useful.yes"> Sí</button>
+                            <button class="feedback-btn" data-value="no" data-i18n="faq.useful.no"> No</button>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">¿A quién servimos?</div>
+                <div class="faq-question" data-i18n="faq.q3.q">¿A quién servimos?</div>
                 <div class="faq-answer">
-                    <p>Atendemos a empresas de todos los tamaños y de diversos sectores, así como a particulares que necesitan servicios especiales de importación de medicamentos. Nuestros clientes son pacientes, minoristas, distribuidores, profesionales sanitarios y más.</p>
+                    <p data-i18n="faq.q3.a">Atendemos a empresas de todos los tamaños y de diversos sectores, así como a particulares que necesitan servicios especiales de importación de medicamentos. Nuestros clientes son pacientes, minoristas, distribuidores, profesionales sanitarios y más.</p>
                     <div class="faq-feedback">
-                        <p>¿Fue útil esto?</p>
+                        <p data-i18n="faq.useful">¿Fue útil esto?</p>
                         <div class="feedback-buttons">
-                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
-                            <button class="feedback-btn" data-value="no">👎 No</button>
+                            <button class="feedback-btn" data-value="yes" data-i18n="faq.useful.yes"> Sí</button>
+                            <button class="feedback-btn" data-value="no" data-i18n="faq.useful.no"> No</button>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">¿Importamos medicamentos con cadena de frío (2°C – 4°C)?</div>
+                <div class="faq-question" data-i18n="faq.q4.q">¿Importamos medicamentos con cadena de frío (2°C – 4°C)?</div>
                 <div class="faq-answer">
-                    <p>Sí, contamos con capacidades logísticas especializadas de cadena de frío para medicamentos sensibles a la temperatura. Nuestras instalaciones están equipadas con sistemas de almacenamiento y monitoreo de temperatura controlada para garantizar la integridad del producto.</p>
+                    <p data-i18n="faq.q4.a">Sí, contamos con capacidades logísticas especializadas de cadena de frío para medicamentos sensibles a la temperatura. Nuestras instalaciones están equipadas con sistemas de almacenamiento y monitoreo de temperatura controlada para garantizar la integridad del producto.</p>
                     <div class="faq-feedback">
-                        <p>¿Fue útil esto?</p>
+                        <p data-i18n="faq.useful">¿Fue útil esto?</p>
                         <div class="feedback-buttons">
-                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
-                            <button class="feedback-btn" data-value="no">👎 No</button>
+                            <button class="feedback-btn" data-value="yes" data-i18n="faq.useful.yes"> Sí</button>
+                            <button class="feedback-btn" data-value="no" data-i18n="faq.useful.no"> No</button>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">¿Hacemos envíos a todo Chile?</div>
+                <div class="faq-question" data-i18n="faq.q5.q">¿Hacemos envíos a todo Chile?</div>
                 <div class="faq-answer">
-                    <p>Ofrecemos cobertura nacional en Chile, incluyendo zonas remotas. Los tiempos de entrega pueden variar según la ubicación, pero garantizamos un servicio confiable en todo el país.</p>
+                    <p data-i18n="faq.q5.a">Ofrecemos cobertura nacional en Chile, incluyendo zonas remotas. Los tiempos de entrega pueden variar según la ubicación, pero garantizamos un servicio confiable en todo el país.</p>
                     <div class="faq-feedback">
-                        <p>¿Fue útil esto?</p>
+                        <p data-i18n="faq.useful">¿Fue útil esto?</p>
                         <div class="feedback-buttons">
-                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
-                            <button class="feedback-btn" data-value="no">👎 No</button>
+                            <button class="feedback-btn" data-value="yes" data-i18n="faq.useful.yes"> Sí</button>
+                            <button class="feedback-btn" data-value="no" data-i18n="faq.useful.no"> No</button>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">¿Condiciones de pago?</div>
+                <div class="faq-question" data-i18n="faq.q6.q">¿Condiciones de pago?</div>
                 <div class="faq-answer">
-                    <p>Ofrecemos condiciones de pago flexibles, incluyendo pago por adelantado, pagos parciales y opciones de crédito para clientes habituales. Nuestras condiciones de pago estándar son: 50% por adelantado al confirmar el pedido y 50% después del envío. Puede contactar con nuestro equipo para obtener condiciones de pago flexibles.</p>
+                    <p data-i18n="faq.q6.a">Ofrecemos condiciones de pago flexibles, incluyendo pago por adelantado, pagos parciales y opciones de crédito para clientes habituales. Nuestras condiciones de pago estándar son: 50% por adelantado al confirmar el pedido y 50% después del envío. Puede contactar con nuestro equipo para obtener condiciones de pago flexibles.</p>
                     <div class="faq-feedback">
-                        <p>¿Fue útil esto?</p>
+                        <p data-i18n="faq.useful">¿Fue útil esto?</p>
                         <div class="feedback-buttons">
-                            <button class="feedback-btn" data-value="yes">👍 Sí</button>
-                            <button class="feedback-btn" data-value="no">👎 No</button>
+                            <button class="feedback-btn" data-value="yes" data-i18n="faq.useful.yes"> Sí</button>
+                            <button class="feedback-btn" data-value="no" data-i18n="faq.useful.no"> No</button>
                         </div>
                     </div>
                 </div>
@@ -1373,10 +1373,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <!-- Breakthrough Feature 1: Ask Question Form -->
         <div class="ask-question" id="askQuestion" style="display: none;">
-            <h3>Ask Your Question</h3>
-            <textarea placeholder="Type your question here..."></textarea>
-            <button class="submit-question">Submit Question</button>
+            <h3 data-i18n="faq.ask.title">Ask Your Question</h3>
+            <textarea placeholder="Type your question here..." data-i18n="faq.ask.placeholder" data-i18n-attr="placeholder"></textarea>
+            <button class="submit-question" data-i18n="faq.ask.submit">Submit Question</button>
         </div>
+        
     </div>
         
     </div>
