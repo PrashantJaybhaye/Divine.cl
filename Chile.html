@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Chile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Chile Presence | Divine Healthcare</title>
+    <style>
+        /* Minimal, form-specific helper styles (copied from index.html) */
+        .field-error {
+            display: none;
+            color: #b00020;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        .field-invalid {
+            border-color: #b00020 !important;
+        }
+
+        #form-error {
+            display: none;
+            background: #fdecea;
+            color: #b00020;
+            padding: 10px 12px;
+            border: 1px solid #f5c2c0;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        #form-success {
+            background: #ecf9f1;
+            color: #1e7e34;
+            padding: 10px 12px;
+            border: 1px solid #b7ebc6;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .submit-btn[disabled] {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar">
@@ -21,7 +60,8 @@
                 </button>
                 <div class="nav-links" id="navLinks">
                     <ul>
-                       <li><button onclick = "window.location.href='import.html'" class="med-import-btn" data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
+                        <li><button onclick="window.location.href='import.html'" class="med-import-btn"
+                                data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
                         <li><a href="index.html" data-i18n="nav.home">Hogar</a></li>
                         <li><a href="about.html" data-i18n="nav.about">Sobre nosotros</a></li>
                         <li><a href="#" data-i18n="nav.business">Verticales de negocios</a></li>
@@ -56,47 +96,43 @@
 
         <!-- Map and Partners Section -->
         <div class="map-container">
-    <h2 data-i18n="chile.map.h2">Nuestra ubicación</h2>
-   <iframe
-  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13293408.594429525!2d-75!3d-30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1716160000000!5m2!1sen!2sus"
-  width="600"
-  height="450"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-</div> 
-              
-<div class="partners-container">
-    <h2 data-i18n="chile.partners.h2">Nuestros socios</h2>
-    <div class="partners-marquee">
-        <div class="partners-track">
-            <div class="partner-item"><img src="cenabast-1.jpg" alt="Cenabast"></div>
-            <div class="partner-item"><img src="Hosital.jpg" alt="Hospital"></div>
-            <div class="partner-item"><img src="red de.jpg" alt="Red de Salud"></div>
-            <div class="partner-item"><img src="HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile"></div>
-            <div class="partner-item"><img src="Clinica.jpg" alt="Clínica"></div>
-            <div class="partner-item"><img src="Ahumada.jpg" alt="Ahumada"></div>
-            <div class="partner-item"><img src="salcobrand.jpg" alt="Salcobrand"></div>
-            <div class="partner-item"><img src="ECO.jpg" alt="ECO"></div>
-            <div class="partner-item"><img src="Clinica-universidad.jpg" alt="Clínica Universidad"></div>
-            <div class="partner-item"><img src="cruzverde.png" alt="cruzverde"></div>
-            <!-- Duplicate for seamless looping -->
-            <div class="partner-item"><img src="cenabast-1.jpg" alt="Cenabast"></div>
-            <div class="partner-item"><img src="Hosital.jpg" alt="Hospital"></div>
-            <div class="partner-item"><img src="red de.jpg" alt="Red de Salud"></div>
-            <div class="partner-item"><img src="HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile"></div>
-            <div class="partner-item"><img src="Clinica.jpg" alt="Clínica"></div>
-            <div class="partner-item"><img src="Ahumada.jpg" alt="Ahumada"></div>
-            <div class="partner-item"><img src="salcobrand.jpg" alt="Salcobrand"></div>
-            <div class="partner-item"><img src="ECO.jpg" alt="ECO"></div>
-            <div class="partner-item"><img src="Clinica-universidad.jpg" alt="Clínica Universidad"></div>
-            <div class="partner-item"><img src="cruzverde.png" alt="cruzverde"></div>
+            <h2 data-i18n="chile.map.h2">Nuestra ubicación</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13293408.594429525!2d-75!3d-30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1716160000000!5m2!1sen!2sus"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
-    </div>
-</div>
+
+        <div class="partners-container">
+            <h2 data-i18n="chile.partners.h2">Nuestros socios</h2>
+            <div class="partners-marquee">
+                <div class="partners-track">
+                    <div class="partner-item"><img src="cenabast-1.jpg" alt="Cenabast"></div>
+                    <div class="partner-item"><img src="Hosital.jpg" alt="Hospital"></div>
+                    <div class="partner-item"><img src="red de.jpg" alt="Red de Salud"></div>
+                    <div class="partner-item"><img src="HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile"></div>
+                    <div class="partner-item"><img src="Clinica.jpg" alt="Clínica"></div>
+                    <div class="partner-item"><img src="Ahumada.jpg" alt="Ahumada"></div>
+                    <div class="partner-item"><img src="salcobrand.jpg" alt="Salcobrand"></div>
+                    <div class="partner-item"><img src="ECO.jpg" alt="ECO"></div>
+                    <div class="partner-item"><img src="Clinica-universidad.jpg" alt="Clínica Universidad"></div>
+                    <div class="partner-item"><img src="cruzverde.png" alt="cruzverde"></div>
+                    <!-- Duplicate for seamless looping -->
+                    <div class="partner-item"><img src="cenabast-1.jpg" alt="Cenabast"></div>
+                    <div class="partner-item"><img src="Hosital.jpg" alt="Hospital"></div>
+                    <div class="partner-item"><img src="red de.jpg" alt="Red de Salud"></div>
+                    <div class="partner-item"><img src="HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile"></div>
+                    <div class="partner-item"><img src="Clinica.jpg" alt="Clínica"></div>
+                    <div class="partner-item"><img src="Ahumada.jpg" alt="Ahumada"></div>
+                    <div class="partner-item"><img src="salcobrand.jpg" alt="Salcobrand"></div>
+                    <div class="partner-item"><img src="ECO.jpg" alt="ECO"></div>
+                    <div class="partner-item"><img src="Clinica-universidad.jpg" alt="Clínica Universidad"></div>
+                    <div class="partner-item"><img src="cruzverde.png" alt="cruzverde"></div>
+                </div>
             </div>
+        </div>
+        </div>
         </section>
     </main>
 
@@ -111,22 +147,20 @@
                 <div class="footer-brand">
                     <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
                     <p class="footer-description" data-i18n="footer.description">
-                        Nuestra Visión es que nuestros productos posean certificación emitida por 
-                     las más altas agencias reguladoras manteniendo precios asequibles para las 
-                     instituciones y pacientes con más de 2 décadas de experiencia en el campo.
+                        Nuestra Visión es que nuestros productos posean certificación emitida por
+                        las más altas agencias reguladoras manteniendo precios asequibles para las
+                        instituciones y pacientes con más de 2 décadas de experiencia en el campo.
                     </p>
                     <div class="footer-social">
                         <ul class="social-links">
                             <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-                               <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
-                   aria-label="WhatsApp" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                </a>                      
-              </ul>
+                            <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services"
+                                aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </ul>
                     </div>
                 </div>
 
@@ -134,12 +168,14 @@
                     <div class="links-column">
                         <h3 data-i18n="footer.quick_links">Enlaces rápidos</h3>
                         <ul>
-                           <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso Personal</a></li>
+                            <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso
+                                    Personal</a></li>
                             <li><a href="index.html" data-i18n="footer.link.home">Hogar</a></li>
                             <li><a href="about.html" data-i18n="footer.link.about">Sobre nosotros</a></li>
                             <li><a href="#" data-i18n="footer.link.business">Verticales de negocios</a></li>
                             <li><a href="#" data-i18n="footer.link.portfolio">Nuestro portafolio</a></li>
-                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a></li>
+                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a>
+                            </li>
                             <li><a href="Chile.html" data-i18n="footer.link.chile">Presencia en Chile</a></li>
                             <li><a href="contact.html" data-i18n="footer.link.contact">Contáctenos</a></li>
                         </ul>
@@ -147,117 +183,187 @@
                     <div class="links-column">
                         <h3 data-i18n="footer.languages">Idiomas</h3>
                         <ul>
-                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a></li>
-                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a></li>
+                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a>
+                            </li>
+                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-   <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
-    <!-- Form Inputs -->
-    <input type="text" name="name" placeholder="Nombre" required data-i18n="form.name" data-i18n-attr="placeholder">
-    <input type="email" name="email" placeholder="Correo electrónico" required data-i18n="form.email" data-i18n-attr="placeholder">
-    <textarea name="message" placeholder="Tu mensaje" rows="4" required data-i18n="form.message" data-i18n-attr="placeholder"></textarea>
+                <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST"
+                    id="contactForm">
+                    <!-- Form Inputs -->
+                    <input type="text" id="form-name" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
+                        placeholder="Nombre" required aria-describedby="err-name">
+                    <div id="err-name" class="field-error" data-i18n="form.error.name">Por favor ingrese su nombre.
+                    </div>
 
-    <!-- Hidden FormSubmit Config -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none">
-    <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto." data-i18n="form.autoresponse" data-i18n-attr="value">
+                    <input type="email" id="form-email" name="email" data-i18n="form.email" data-i18n-attr="placeholder"
+                        placeholder="Correo electrónico" required aria-describedby="err-email">
+                    <div id="err-email" class="field-error" data-i18n="form.error.email">Por favor ingrese un correo
+                        válido.</div>
 
-    <!-- Success Message -->
-    <div id="form-success" style="display: none;">
-         ¡Gracias! Su mensaje ha sido enviado exitosamente.
-    </div>
+                    <textarea id="form-message" name="message" data-i18n="form.message" data-i18n-attr="placeholder"
+                        placeholder="Tu mensaje" rows="4" required aria-describedby="err-message"></textarea>
+                    <div id="err-message" class="field-error" data-i18n="form.error.message">Por favor ingrese su
+                        mensaje.</div>
 
-    <div class="form-actions">
-        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
-        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
-    </div>
-</form>
+                    <!-- Hidden FormSubmit Config -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
+                        value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
 
-<script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+                    <!-- Error/Success Messages -->
+                    <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo
+                        enviar el formulario. Inténtalo de nuevo.</div>
+                    <div id="form-success" style="display: none;" role="status" aria-live="polite"
+                        data-i18n="form.success">¡Gracias! Su mensaje ha sido
+                        enviado exitosamente.</div>
 
-    const form = this;
-    const formData = new FormData(form);
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
+                        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
+                    </div>
+                </form>
 
-    // Fetch IP and location
-    let ip = "IP: Unknown";
-    let location = "Location: Not available";
-    try {
-        const res = await fetch('https://ipapi.co/json/');
-        const data = await res.json();
-        ip = `IP: ${data.ip}`;
-        location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
-    } catch (error) {
-        console.warn("Failed to fetch IP/location");
-    }
+                <script>
+                    function restorePlaceholders() {
+                        const ids = ['form-name', 'form-email', 'form-message'];
+                        ids.forEach(id => {
+                            const el = document.getElementById(id);
+                            if (!el) return;
+                            const original = el.getAttribute('data-ph') || el.getAttribute('placeholder') || '';
+                            if (!el.value.trim()) {
+                                el.placeholder = original;
+                            }
+                        });
+                    }
 
-    const timestamp = `Time: ${new Date().toLocaleString()}`;
-    const userDetails = `${ip} | ${location} | ${timestamp}`;
+                    const contactForm = document.getElementById('contactForm');
+                    contactForm.addEventListener('reset', () => {
+                        // restore placeholders shortly after reset clears values
+                        setTimeout(restorePlaceholders, 0);
+                    });
 
-    formData.append('user_details', userDetails);
+                    contactForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
 
-    // Send form data via fetch to FormSubmit
-    try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+                        const form = this;
+                        const nameEl = document.getElementById('form-name');
+                        const emailEl = document.getElementById('form-email');
+                        const msgEl = document.getElementById('form-message');
+                        const errBanner = document.getElementById('form-error');
+                        const okBanner = document.getElementById('form-success');
+                        const submitBtn = form.querySelector('.submit-btn');
 
-        if (response.ok) {
-            document.getElementById('form-success').style.display = 'block';
-            form.reset();
-        } else {
-            alert('Form submission failed. Please try again.');
-        }
-    } catch (err) {
-        alert('Error submitting form.');
-        console.error(err);
-    }
-});
-</script>
+                        // Reset errors
+                        errBanner.style.display = 'none';
+                        okBanner.style.display = 'none';
+                        ['err-name', 'err-email', 'err-message'].forEach(id => (document.getElementById(id).style.display = 'none'));
+                        [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
+
+                        // Simple validation
+                        let valid = true;
+                        if (!nameEl.value.trim()) { document.getElementById('err-name').style.display = 'block'; nameEl.classList.add('field-invalid'); valid = false; }
+                        const emailVal = emailEl.value.trim();
+                        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+                        if (!emailOk) { document.getElementById('err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
+                        if (!msgEl.value.trim()) { document.getElementById('err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
+                        if (!valid) { return; }
+
+                        const formData = new FormData(form);
+
+                        // Fetch IP and location (best-effort)
+                        let ip = "IP: Unknown";
+                        let location = "Location: Not available";
+                        try {
+                            const res = await fetch('https://ipapi.co/json/');
+                            const data = await res.json();
+                            ip = `IP: ${data.ip}`;
+                            location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
+                        } catch (error) {
+                            console.warn('Failed to fetch IP/location');
+                        }
+
+                        const timestamp = `Time: ${new Date().toLocaleString()}`;
+                        const userDetails = `${ip} | ${location} | ${timestamp}`;
+                        formData.append('user_details', userDetails);
+
+                        // Loading state
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Sending…' : 'Enviando…';
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        form.setAttribute('aria-busy', 'true');
+
+                        try {
+                            const response = await fetch(form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: { 'Accept': 'application/json' }
+                            });
+
+                            if (response.ok) {
+                                okBanner.style.display = 'block';
+                                form.reset();
+                                restorePlaceholders();
+                            } else {
+                                // Try to parse JSON error from FormSubmit; fallback to generic
+                                let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
+                                try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
+                                errBanner.textContent = errMsg;
+                                errBanner.style.display = 'block';
+                            }
+                        } catch (err) {
+                            console.error(err);
+                            errBanner.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Network error. Please check your connection and try again.' : 'Error de red. Verifique su conexión e inténtelo nuevamente.';
+                            errBanner.style.display = 'block';
+                        } finally {
+                            submitBtn.textContent = originalText;
+                            submitBtn.removeAttribute('disabled');
+                            form.removeAttribute('aria-busy');
+                        }
+                    });
+                </script>
 
 
-<script>
-const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        // Show button when scrolling
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('show');
-                
-                // Update progress circle rotation based on scroll position
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPosition = window.pageYOffset;
-                const scrollPercentage = (scrollPosition / scrollHeight) * 360;
-                scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-        
-        // Scroll to top with smooth animation
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            
-            // Add pulse animation when clicked
-            this.style.animation = 'pulse 0.5s';
-            setTimeout(() => {
-                this.style.animation = '';
-            }, 500);
-        });
-</script>
+                <script>
+                    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+                    // Show button when scrolling
+                    window.addEventListener('scroll', function () {
+                        if (window.pageYOffset > 300) {
+                            scrollToTopBtn.classList.add('show');
+
+                            // Update progress circle rotation based on scroll position
+                            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                            const scrollPosition = window.pageYOffset;
+                            const scrollPercentage = (scrollPosition / scrollHeight) * 360;
+                            scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
+                        } else {
+                            scrollToTopBtn.classList.remove('show');
+                        }
+                    });
+
+                    // Scroll to top with smooth animation
+                    scrollToTopBtn.addEventListener('click', function () {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+
+                        // Add pulse animation when clicked
+                        this.style.animation = 'pulse 0.5s';
+                        setTimeout(() => {
+                            this.style.animation = '';
+                        }, 500);
+                    });
+                </script>
             </div>
             <div class="footer-bottom">
-                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos
+                    reservados.</p>
             </div>
         </div>
     </footer>
@@ -267,11 +373,12 @@ const scrollToTopBtn = document.getElementById('scrollToTop');
         // Toggle mobile navigation
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        
+
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
     </script>
 </body>
+
 </html>

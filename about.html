@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>About Us | Divine Healthcare</title>
+    <style>
+        /* Minimal, form-specific helper styles (copied from index.html) */
+        .field-error {
+            display: none;
+            color: #b00020;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        .field-invalid {
+            border-color: #b00020 !important;
+        }
+
+        #form-error {
+            display: none;
+            background: #fdecea;
+            color: #b00020;
+            padding: 10px 12px;
+            border: 1px solid #f5c2c0;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        #form-success {
+            background: #ecf9f1;
+            color: #1e7e34;
+            padding: 10px 12px;
+            border: 1px solid #b7ebc6;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .submit-btn[disabled] {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar">
@@ -21,7 +60,8 @@
                 </button>
                 <div class="nav-links" id="navLinks">
                     <ul>
-                        <li><button onclick = "window.location.href='import.html'" class="med-import-btn" data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
+                        <li><button onclick="window.location.href='import.html'" class="med-import-btn"
+                                data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
                         <li><a href="index.html" data-i18n="nav.home">Hogar</a></li>
                         <li><a href="about.html" class="active" data-i18n="nav.about">Sobre nosotros</a></li>
                         <li><a href="#" data-i18n="nav.business">Verticales de negocios</a></li>
@@ -40,7 +80,8 @@
         <section class="about-hero">
             <div class="hero-content">
                 <h1 data-i18n="about.hero.h1">Acerca de Divine Healthcare</h1>
-                <p class="hero-subtitle" data-i18n="about.hero.subtitle">Impulsados por la innovación, guiados por el cuidado.</p>
+                <p class="hero-subtitle" data-i18n="about.hero.subtitle">Impulsados por la innovación, guiados por el
+                    cuidado.</p>
             </div>
         </section>
 
@@ -51,66 +92,84 @@
                     <h2 data-i18n="about.team.h2">Acerca de nuestro equipo</h2>
                 </div>
                 <div class="section-content">
-                    <p data-i18n="about.team.p1">Divine y su grupo cuentan con más de 40 empleados, de los cuales 18 se dedican al área comercial y al equipo de ventas. Tenemos cobertura total en Chile, concentrándonos en las tres regiones que abarcan el 75% del mercado.</p>
-                    <p data-i18n="about.team.p2">La estructura está diseñada para funcionar en equipo y ofrecer a nuestros clientes los mejores servicios. Contamos con un equipo completo de regulación y farmacovigilancia, licitaciones hospitalarias de ventas y marketing, y un departamento financiero.</p>
-                    <p data-i18n="about.team.p3">Disponemos de un sistema interno de despacho y entrega con más de 7.000 posiciones para pallets.</p>
+                    <p data-i18n="about.team.p1">Divine y su grupo cuentan con más de 40 empleados, de los cuales 18 se
+                        dedican al área comercial y al equipo de ventas. Tenemos cobertura total en Chile,
+                        concentrándonos en las tres regiones que abarcan el 75% del mercado.</p>
+                    <p data-i18n="about.team.p2">La estructura está diseñada para funcionar en equipo y ofrecer a
+                        nuestros clientes los mejores servicios. Contamos con un equipo completo de regulación y
+                        farmacovigilancia, licitaciones hospitalarias de ventas y marketing, y un departamento
+                        financiero.</p>
+                    <p data-i18n="about.team.p3">Disponemos de un sistema interno de despacho y entrega con más de 7.000
+                        posiciones para pallets.</p>
                 </div>
             </div>
         </section>
 
-         <section class="about-section">
-        <!-- Our Story -->
-        <div class="section-header">
-            <h2 data-i18n="about.story.h2">Acerca de Divine Healthcare</h2>
-            <p data-i18n="about.story.p">Impulsados por la innovación, guiados por el cuidado</p>
-        </div>
-        
-        <div class="story-container">
-            <div class="story-text">
-                <h2 data-i18n="about.journey.h2">Nuestro viaje</h2>
-                <p data-i18n="about.journey.p1">Fundada en Santiago de Chile, Divine Healthcare nació con la visión de brindar acceso a medicamentos de primera calidad a los pacientes chilenos a un precio accesible. Además, brindamos una plataforma al fabricante para que suministre sus productos de alta calidad al mercado chileno.</p>
-                
-                <p data-i18n="about.journey.p2">Como empresa del sector salud ubicada en la capital del país, con almacén cerca del Aeropuerto Internacional de Chile, y un equipo de profesionales con amplia experiencia en la industria, actualmente cubrimos las líneas de productos para biosimilares, medicamentos huérfanos, sistema nervioso central, oncología, cardiología, antiinfecciosos y medicamentos gástricos.</p>
-            </div>
-            <div class="story-image">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Divine Healthcare Research Facility">
-            </div>
-        </div>
-        
-        <!-- Mission & Vision -->
-        <div class="mission-vision">
-            <div class="mission-box">
-                <h3 data-i18n="about.mv.mission.h3">Nuestra misión</h3>
-                <p data-i18n="about.mv.mission.p">Mejorar vidas mediante soluciones sanitarias innovadoras y asequibles. Reducimos la brecha entre el descubrimiento científico y el acceso de los pacientes, garantizando que medicamentos de calidad lleguen a quienes más los necesitan.</p>
-            </div>
-            
-            <div class="vision-box">
-                <h3 data-i18n="about.mv.vision.h3">Nuestra visión</h3>
-                <p data-i18n="about.mv.vision.p">Ser un líder mundial en excelencia farmacéutica para 2030, reconocido por nuestras prácticas sostenibles, avances terapéuticos y compromiso con la equidad en la salud global.</p>
-            </div>
-        </div>
-        
-        <!-- Certifications -->
-        <div class="certifications-section">
+        <section class="about-section">
+            <!-- Our Story -->
             <div class="section-header">
-                <h2 data-i18n="about.certs.h2">Acreditaciones y Certificaciones de nuestro Fabricante</h2>
-                <p data-i18n="about.certs.p">Cumpliendo con los más altos estándares de calidad global</p>
+                <h2 data-i18n="about.story.h2">Acerca de Divine Healthcare</h2>
+                <p data-i18n="about.story.p">Impulsados por la innovación, guiados por el cuidado</p>
             </div>
-            
-           <div class="cert-logos-container">
-  <div class="cert-logos">
-    <img src="FDA.jpg" alt="FDA Approved" class="cert-logo">
-  </div>
-  <div class="cert-logos">
-    <img src="gmp.png" alt="PICS" class="cert-logo">
-  </div>
-  <div class="cert-logos">
-    <img src="pics.png" alt="GMP" class="cert-logo">
-  </div>
-</div>
-            
-        </div>
-    </section>
+
+            <div class="story-container">
+                <div class="story-text">
+                    <h2 data-i18n="about.journey.h2">Nuestro viaje</h2>
+                    <p data-i18n="about.journey.p1">Fundada en Santiago de Chile, Divine Healthcare nació con la visión
+                        de brindar acceso a medicamentos de primera calidad a los pacientes chilenos a un precio
+                        accesible. Además, brindamos una plataforma al fabricante para que suministre sus productos de
+                        alta calidad al mercado chileno.</p>
+
+                    <p data-i18n="about.journey.p2">Como empresa del sector salud ubicada en la capital del país, con
+                        almacén cerca del Aeropuerto Internacional de Chile, y un equipo de profesionales con amplia
+                        experiencia en la industria, actualmente cubrimos las líneas de productos para biosimilares,
+                        medicamentos huérfanos, sistema nervioso central, oncología, cardiología, antiinfecciosos y
+                        medicamentos gástricos.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        alt="Divine Healthcare Research Facility">
+                </div>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="mission-vision">
+                <div class="mission-box">
+                    <h3 data-i18n="about.mv.mission.h3">Nuestra misión</h3>
+                    <p data-i18n="about.mv.mission.p">Mejorar vidas mediante soluciones sanitarias innovadoras y
+                        asequibles. Reducimos la brecha entre el descubrimiento científico y el acceso de los pacientes,
+                        garantizando que medicamentos de calidad lleguen a quienes más los necesitan.</p>
+                </div>
+
+                <div class="vision-box">
+                    <h3 data-i18n="about.mv.vision.h3">Nuestra visión</h3>
+                    <p data-i18n="about.mv.vision.p">Ser un líder mundial en excelencia farmacéutica para 2030,
+                        reconocido por nuestras prácticas sostenibles, avances terapéuticos y compromiso con la equidad
+                        en la salud global.</p>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certifications-section">
+                <div class="section-header">
+                    <h2 data-i18n="about.certs.h2">Acreditaciones y Certificaciones de nuestro Fabricante</h2>
+                    <p data-i18n="about.certs.p">Cumpliendo con los más altos estándares de calidad global</p>
+                </div>
+
+                <div class="cert-logos-container">
+                    <div class="cert-logos">
+                        <img src="FDA.jpg" alt="FDA Approved" class="cert-logo">
+                    </div>
+                    <div class="cert-logos">
+                        <img src="gmp.png" alt="PICS" class="cert-logo">
+                    </div>
+                    <div class="cert-logos">
+                        <img src="pics.png" alt="GMP" class="cert-logo">
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
         <!-- Why Choose Us Section -->
         <section class="why-choose-us">
@@ -119,10 +178,18 @@
                     <div class="text-content">
                         <h2 data-i18n="about.why.h2">¿Por qué elegir Divine Healthcare?</h2>
                         <p>
-                            <span data-i18n="about.why.p1">Los productos terminados de Divine Healthcare se fabrican en plantas de fabricación aprobadas por la OMS, la UE, la FDA y el PIC. Estas instalaciones se encuentran entre las más grandes de la India en su segmento farmacéutico. Los productos fabricados y suministrados para Chile son de la misma alta calidad que se suministran en 170 países y más, lo que garantiza la calidad y la experiencia en el suministro continuo de medicamentos de alta calidad.</span>
+                            <span data-i18n="about.why.p1">Los productos terminados de Divine Healthcare se fabrican en
+                                plantas de fabricación aprobadas por la OMS, la UE, la FDA y el PIC. Estas instalaciones
+                                se encuentran entre las más grandes de la India en su segmento farmacéutico. Los
+                                productos fabricados y suministrados para Chile son de la misma alta calidad que se
+                                suministran en 170 países y más, lo que garantiza la calidad y la experiencia en el
+                                suministro continuo de medicamentos de alta calidad.</span>
                         </p>
                         <p>
-                           <span data-i18n="about.why.p2">Divine Healthcare SpA basa sus operaciones y su crecimiento futuro en el estricto cumplimiento de las normativas sanitarias locales e internacionales, buscando estar a la vanguardia en requisitos como la bioequivalencia y la equivalencia terapéutica. Representamos Innovación, Calidad y Servicio.</span>
+                            <span data-i18n="about.why.p2">Divine Healthcare SpA basa sus operaciones y su crecimiento
+                                futuro en el estricto cumplimiento de las normativas sanitarias locales e
+                                internacionales, buscando estar a la vanguardia en requisitos como la bioequivalencia y
+                                la equivalencia terapéutica. Representamos Innovación, Calidad y Servicio.</span>
                         </p>
                     </div>
                     <div class="image-content">
@@ -144,20 +211,20 @@
                 <div class="footer-brand">
                     <img src="logo.png" alt="Divine Healthcare Logo" class="footer-logo">
                     <p class="footer-description" data-i18n="footer.description">
-                       Nuestra Visión es que nuestros productos posean certificación emitida por las más altas agencias reguladoras manteniendo precios asequibles para las instituciones y pacientes con más de 2 décadas de experiencia en el campo.
+                        Nuestra Visión es que nuestros productos posean certificación emitida por las más altas agencias
+                        reguladoras manteniendo precios asequibles para las instituciones y pacientes con más de 2
+                        décadas de experiencia en el campo.
                     </p>
                     <div class="footer-social">
                         <ul class="social-links">
                             <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-                            <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
-                   aria-label="WhatsApp" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                </a>                       
-             </ul>
+                            <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services"
+                                aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </ul>
                     </div>
                 </div>
 
@@ -165,12 +232,14 @@
                     <div class="links-column">
                         <h3 data-i18n="footer.quick_links">Enlaces rápidos</h3>
                         <ul>
-                            <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso Personal</a></li>
+                            <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso
+                                    Personal</a></li>
                             <li><a href="index.html" data-i18n="footer.link.home">Hogar</a></li>
                             <li><a href="about.html" data-i18n="footer.link.about">Sobre nosotros</a></li>
                             <li><a href="#" data-i18n="footer.link.business">Verticales de negocios</a></li>
                             <li><a href="#" data-i18n="footer.link.portfolio">Nuestro portafolio</a></li>
-                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a></li>
+                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a>
+                            </li>
                             <li><a href="Chile.html" data-i18n="footer.link.chile">Presencia en Chile</a></li>
                             <li><a href="contact.html" data-i18n="footer.link.contact">Contáctenos</a></li>
                         </ul>
@@ -178,132 +247,204 @@
                     <div class="links-column">
                         <h3>Idiomas</h3>
                         <ul>
-                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a></li>
-                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a></li>
+                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a>
+                            </li>
+                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-    <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
-    <!-- Form Inputs -->
-    <input type="text" name="name" placeholder="Nombre" required data-i18n="form.name" data-i18n-attr="placeholder">
-    <input type="email" name="email" placeholder="Correo electrónico" required data-i18n="form.email" data-i18n-attr="placeholder">
-    <textarea name="message" placeholder="Tu mensaje" rows="4" required data-i18n="form.message" data-i18n-attr="placeholder"></textarea>
+                <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST"
+                    id="contactForm">
+                    <!-- Form Inputs -->
+                    <input type="text" id="form-name" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
+                        placeholder="Nombre" required aria-describedby="err-name">
+                    <div id="err-name" class="field-error" data-i18n="form.error.name">Por favor ingrese su nombre.
+                    </div>
 
-    <!-- Hidden FormSubmit Config -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none">
-    <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto." data-i18n="form.autoresponse" data-i18n-attr="value">
+                    <input type="email" id="form-email" name="email" data-i18n="form.email" data-i18n-attr="placeholder"
+                        placeholder="Correo electrónico" required aria-describedby="err-email">
+                    <div id="err-email" class="field-error" data-i18n="form.error.email">Por favor ingrese un correo
+                        válido.</div>
 
-    <!-- Success Message -->
-    <div id="form-success" style="display: none;" data-i18n="form.success">
-        ¡Gracias! Su mensaje ha sido enviado exitosamente.
-    </div>
+                    <textarea id="form-message" name="message" data-i18n="form.message" data-i18n-attr="placeholder"
+                        placeholder="Tu mensaje" rows="4" required aria-describedby="err-message"></textarea>
+                    <div id="err-message" class="field-error" data-i18n="form.error.message">Por favor ingrese su
+                        mensaje.</div>
 
-    <div class="form-actions">
-        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
-        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
-    </div>
-</form>
+                    <!-- Hidden FormSubmit Config -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
+                        value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
 
-<script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+                    <!-- Error/Success Messages -->
+                    <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo
+                        enviar el formulario. Inténtalo de nuevo.</div>
+                    <div id="form-success" style="display: none;" role="status" aria-live="polite"
+                        data-i18n="form.success">¡Gracias! Su mensaje ha sido
+                        enviado exitosamente.</div>
 
-    const form = this;
-    const formData = new FormData(form);
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
+                        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
+                    </div>
+                </form>
 
-    // Fetch IP and location
-    let ip = "IP: Unknown";
-    let location = "Location: Not available";
-    try {
-        const res = await fetch('https://ipapi.co/json/');
-        const data = await res.json();
-        ip = `IP: ${data.ip}`;
-        location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
-    } catch (error) {
-        console.warn("Failed to fetch IP/location");
-    }
+                <script>
+                    function restorePlaceholders() {
+                        const ids = ['form-name', 'form-email', 'form-message'];
+                        ids.forEach(id => {
+                            const el = document.getElementById(id);
+                            if (!el) return;
+                            const original = el.getAttribute('data-ph') || el.getAttribute('placeholder') || '';
+                            if (!el.value.trim()) {
+                                el.placeholder = original;
+                            }
+                        });
+                    }
 
-    const timestamp = `Time: ${new Date().toLocaleString()}`;
-    const userDetails = `${ip} | ${location} | ${timestamp}`;
+                    const contactForm = document.getElementById('contactForm');
+                    contactForm.addEventListener('reset', () => {
+                        // restore placeholders shortly after reset clears values
+                        setTimeout(restorePlaceholders, 0);
+                    });
 
-    formData.append('user_details', userDetails);
+                    contactForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
 
-    // Send form data via fetch to FormSubmit
-    try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+                        const form = this;
+                        const nameEl = document.getElementById('form-name');
+                        const emailEl = document.getElementById('form-email');
+                        const msgEl = document.getElementById('form-message');
+                        const errBanner = document.getElementById('form-error');
+                        const okBanner = document.getElementById('form-success');
+                        const submitBtn = form.querySelector('.submit-btn');
 
-        if (response.ok) {
-            document.getElementById('form-success').style.display = 'block';
-            form.reset();
-        } else {
-            alert('Form submission failed. Please try again.');
-        }
-    } catch (err) {
-        alert('Error submitting form.');
-        console.error(err);
-    }
-});
-</script>
+                        // Reset errors
+                        errBanner.style.display = 'none';
+                        okBanner.style.display = 'none';
+                        ['err-name', 'err-email', 'err-message'].forEach(id => (document.getElementById(id).style.display = 'none'));
+                        [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
+
+                        // Simple validation
+                        let valid = true;
+                        if (!nameEl.value.trim()) { document.getElementById('err-name').style.display = 'block'; nameEl.classList.add('field-invalid'); valid = false; }
+                        const emailVal = emailEl.value.trim();
+                        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+                        if (!emailOk) { document.getElementById('err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
+                        if (!msgEl.value.trim()) { document.getElementById('err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
+                        if (!valid) { return; }
+
+                        const formData = new FormData(form);
+
+                        // Fetch IP and location (best-effort)
+                        let ip = "IP: Unknown";
+                        let location = "Location: Not available";
+                        try {
+                            const res = await fetch('https://ipapi.co/json/');
+                            const data = await res.json();
+                            ip = `IP: ${data.ip}`;
+                            location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
+                        } catch (error) {
+                            console.warn('Failed to fetch IP/location');
+                        }
+
+                        const timestamp = `Time: ${new Date().toLocaleString()}`;
+                        const userDetails = `${ip} | ${location} | ${timestamp}`;
+                        formData.append('user_details', userDetails);
+
+                        // Loading state
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Sending…' : 'Enviando…';
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        form.setAttribute('aria-busy', 'true');
+
+                        try {
+                            const response = await fetch(form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: { 'Accept': 'application/json' }
+                            });
+
+                            if (response.ok) {
+                                okBanner.style.display = 'block';
+                                form.reset();
+                                restorePlaceholders();
+                            } else {
+                                // Try to parse JSON error from FormSubmit; fallback to generic
+                                let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
+                                try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
+                                errBanner.textContent = errMsg;
+                                errBanner.style.display = 'block';
+                            }
+                        } catch (err) {
+                            console.error(err);
+                            errBanner.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Network error. Please check your connection and try again.' : 'Error de red. Verifique su conexión e inténtelo nuevamente.';
+                            errBanner.style.display = 'block';
+                        } finally {
+                            submitBtn.textContent = originalText;
+                            submitBtn.removeAttribute('disabled');
+                            form.removeAttribute('aria-busy');
+                        }
+                    });
+                </script>
 
 
-<script>
-const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        // Show button when scrolling
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('show');
-                
-                // Update progress circle rotation based on scroll position
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPosition = window.pageYOffset;
-                const scrollPercentage = (scrollPosition / scrollHeight) * 360;
-                scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-        
-        // Scroll to top with smooth animation
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            
-            // Add pulse animation when clicked
-            this.style.animation = 'pulse 0.5s';
-            setTimeout(() => {
-                this.style.animation = '';
-            }, 500);
-        });
-</script>
-</form>
+                <script>
+                    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+                    // Show button when scrolling
+                    window.addEventListener('scroll', function () {
+                        if (window.pageYOffset > 300) {
+                            scrollToTopBtn.classList.add('show');
+
+                            // Update progress circle rotation based on scroll position
+                            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                            const scrollPosition = window.pageYOffset;
+                            const scrollPercentage = (scrollPosition / scrollHeight) * 360;
+                            scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
+                        } else {
+                            scrollToTopBtn.classList.remove('show');
+                        }
+                    });
+
+                    // Scroll to top with smooth animation
+                    scrollToTopBtn.addEventListener('click', function () {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+
+                        // Add pulse animation when clicked
+                        this.style.animation = 'pulse 0.5s';
+                        setTimeout(() => {
+                            this.style.animation = '';
+                        }, 500);
+                    });
+
+                </script>
+
             </div>
 
             <div class="footer-bottom">
-                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos
+                    reservados.</p>
             </div>
         </div>
     </footer>
 
-<script src="lang.js"></script>
-<script>
-// Toggle mobile navigation (used by onclick on the hamburger button)
-function toggleNav() {
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.querySelector('.hamburger');
-  if (navLinks) navLinks.classList.toggle('active');
-  if (hamburger) hamburger.classList.toggle('active');
-}
-</script>
+    <script src="lang.js"></script>
+    <script>
+        // Toggle mobile navigation (used by onclick on the hamburger button)
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            if (navLinks) navLinks.classList.toggle('active');
+            if (hamburger) hamburger.classList.toggle('active');
+        }
+    </script>
 </body>
+
 </html>

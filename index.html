@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Divine Healthcare</title>
+    <style>
+        /* Minimal, form-specific helper styles */
+        .field-error { display:none; color:#b00020; font-size:0.85rem; margin-top:6px; }
+        .field-invalid { border-color:#b00020 !important; }
+        #form-error { display:none; background:#fdecea; color:#b00020; padding:10px 12px; border:1px solid #f5c2c0; border-radius:6px; margin:10px 0; }
+        #form-success { background:#ecf9f1; color:#1e7e34; padding:10px 12px; border:1px solid #b7ebc6; border-radius:6px; margin:10px 0; }
+        .submit-btn[disabled] { opacity:0.7; cursor:not-allowed; }
+    </style>
 </head>
 
 <body>
@@ -13,30 +22,28 @@
         <!-- Top Social Bar -->
         <div class="social-bar">
             <div class="container">
-               <div class="social-links">
-    <span data-i18n="common.follow_us">Follow Us:</span>
-    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
-                   aria-label="WhatsApp" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
+                <div class="social-links">
+                    <span data-i18n="common.follow_us">Follow Us:</span>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services"
+                        aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
                 <div class="language-selector">
-  <a href="#" class="language-option" data-lang="es">
-    <img src="https://flagcdn.com/w40/es.png" alt="Spanish" class="flag-icon">
-    <span data-i18n="lang.spanish">Español</span>
-  </a>
-  <a href="#" class="language-option" data-lang="en">
-    <img src="icons8-united-kingdom-48.png" alt="English" class="flag-icon">
-    <span data-i18n="lang.english">Inglés</span>
-  </a>
-</div>
-</div>
- </div>
+                    <a href="#" class="language-option" data-lang="es">
+                        <img src="https://flagcdn.com/w40/es.png" alt="Spanish" class="flag-icon">
+                        <span data-i18n="lang.spanish">Español</span>
+                    </a>
+                    <a href="#" class="language-option" data-lang="en">
+                        <img src="icons8-united-kingdom-48.png" alt="English" class="flag-icon">
+                        <span data-i18n="lang.english">Inglés</span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <!-- Navigation -->
         <nav class="navbar">
@@ -51,7 +58,8 @@
                 </button>
                 <div class="nav-links" id="navLinks">
                     <ul>
-                       <li><button onclick = "window.location.href='import.html'" class="med-import-btn" data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
+                        <li><button onclick="window.location.href='import.html'" class="med-import-btn"
+                                data-i18n="nav.import_personal">Importación uso Personal<span></span></button></li>
                         <li><a href="index.html" class="active" data-i18n="nav.home">Hogar</a></li>
                         <li><a href="about.html" data-i18n="nav.about">Sobre nosotros</a></li>
                         <li><a href="#" data-i18n="nav.business">Verticales de negocios</a></li>
@@ -78,7 +86,6 @@
             </div>
         </section>
 
-
         <section class="video-section">
             <div class="video-container">
                 <div class="video-wrapper">
@@ -90,28 +97,43 @@
                 </div>
                 <div class="video-content">
                     <h2 data-i18n="home.video.h2">Nuestro compromiso con la excelencia en la atención médica</h2>
-                    <p data-i18n="home.video.p1">Divine Healthcare, nos dedicamos a brindar soluciones médicas innovadoras que mejoran los resultados de los pacientes en todo el mundo. Nuestras dos décadas de experiencia en el mercado chileno nos han permitido desarrollar un profundo conocimiento de las necesidades de atención médica en diferentes regiones.</p>
-                    <p data-i18n="home.video.p2">Combinamos tecnología de vanguardia con atención compasiva para ofrecer productos que cumplan con los más altos estándares regulatorios y sigan siendo accesibles para todos.</p>
+                    <p data-i18n="home.video.p1">Divine Healthcare, nos dedicamos a brindar soluciones médicas
+                        innovadoras que mejoran los resultados de los pacientes en todo el mundo. Nuestras dos décadas
+                        de experiencia en el mercado chileno nos han permitido desarrollar un profundo conocimiento de
+                        las necesidades de atención médica en diferentes regiones.</p>
+                    <p data-i18n="home.video.p2">Combinamos tecnología de vanguardia con atención compasiva para ofrecer
+                        productos que cumplan con los más altos estándares regulatorios y sigan siendo accesibles para
+                        todos.</p>
                     <a href="about.html" class="video-btn" data-i18n="home.video.cta">Conozca más sobre nosotros</a>
                 </div>
             </div>
         </section>
 
         <div class="para" data-i18n="home.long_para" data-i18n-html>
-            <b>Divine Health</b><span class="highlight-blue"><b>Care</b></span> es una empresa líder en el sector salud con sede en Chile, dedicada a obtener productos de empresas manufactureras líderes en investigación que ofrecen medicamentos de alta calidad. Brindamos a profesionales de la salud y pacientes medicamentos innovadores que salvan vidas. Nuestras dos décadas de experiencia en el mercado chileno nos han permitido comprender a fondo las necesidades de salud en diferentes regiones. Nuestros estrictos estándares de calidad y prácticas sostenibles, conforme a las directrices chilenas, garantizan la confianza en cada producto que creamos.
+            <b>Divine Health</b><span class="highlight-blue"><b>Care</b></span> es una empresa líder en el sector salud
+            con sede en Chile, dedicada a obtener productos de empresas manufactureras líderes en investigación que
+            ofrecen medicamentos de alta calidad. Brindamos a profesionales de la salud y pacientes medicamentos
+            innovadores que salvan vidas. Nuestras dos décadas de experiencia en el mercado chileno nos han permitido
+            comprender a fondo las necesidades de salud en diferentes regiones. Nuestros estrictos estándares de calidad
+            y prácticas sostenibles, conforme a las directrices chilenas, garantizan la confianza en cada producto que
+            creamos.
         </div>
 
-     <!-- INTERACTIVE RESEARCH PARALLAX -->
-    <section class="parallax">
-  <div class="parallax-overlay">
-    <div class="parallax-content">
-      <h3 data-i18n="home.parallax.h3">Profesionales con amplia experiencia en el sector Salud aseguran la gestión de su necesidad.</h3>
-      <button onclick="window.location.href='import.html'" class="med-import-btn" data-i18n="home.parallax.btn">Nos encargamos de la importación de medicamentos que no están disponibles en Chile, así como de fármacos de alto costo que nos ayudan a acercar a los pacientes a recuperar su salud.</button>
-    </div>
-  </div>
-</section>
+        <!-- INTERACTIVE RESEARCH PARALLAX -->
+        <section class="parallax">
+            <div class="parallax-overlay">
+                <div class="parallax-content">
+                    <h3 data-i18n="home.parallax.h3">Profesionales con amplia experiencia en el sector Salud aseguran la
+                        gestión de su necesidad.</h3>
+                    <button onclick="window.location.href='import.html'" class="med-import-btn"
+                        data-i18n="home.parallax.btn">Nos encargamos de la importación de medicamentos que no están
+                        disponibles en Chile, así como de fármacos de alto costo que nos ayudan a acercar a los
+                        pacientes a recuperar su salud.</button>
+                </div>
+            </div>
+        </section>
 
-    </main> 
+    </main>
 
     <button class="scroll-to-top" id="scrollToTop">
         <div class="progress-circle"></div>
@@ -124,22 +146,20 @@
                 <div class="footer-brand">
                     <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
                     <p class="footer-description" data-i18n="footer.description">
-                        Nuestra Visión es que nuestros productos posean certificación emitida 
-                        por las más altas agencias reguladoras manteniendo precios asequibles 
+                        Nuestra Visión es que nuestros productos posean certificación emitida
+                        por las más altas agencias reguladoras manteniendo precios asequibles
                         para las instituciones y pacientes con más de 2 décadas de experiencia en el campo.
                     </p>
                     <div class="footer-social">
-                       <ul class="social-links">
-    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
- <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services" 
-                   aria-label="WhatsApp" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </ul>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            <a href="https://wa.me/56933990606?text=Hello%20Divine%20Healthcare,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services"
+                                aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </ul>
                     </div>
                 </div>
 
@@ -147,12 +167,14 @@
                     <div class="links-column">
                         <h3 data-i18n="footer.quick_links">Enlaces rápidos</h3>
                         <ul>
-                            <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso Personal</a></li>
+                            <li><a href="import.html" data-i18n="footer.link.import_personal">Importación uso
+                                    Personal</a></li>
                             <li><a href="index.html" data-i18n="footer.link.home">Hogar</a></li>
                             <li><a href="about.html" data-i18n="footer.link.about">Sobre nosotros</a></li>
                             <li><a href="#" data-i18n="footer.link.business">Verticales de negocios</a></li>
                             <li><a href="#" data-i18n="footer.link.portfolio">Nuestro portafolio</a></li>
-                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a></li>
+                            <li><a href="infrastructure.html" data-i18n="footer.link.infrastructure">Infraestructura</a>
+                            </li>
                             <li><a href="Chile.html" data-i18n="footer.link.chile">Presencia en Chile</a></li>
                             <li><a href="contact.html" data-i18n="footer.link.contact">Contáctenos</a></li>
                         </ul>
@@ -160,344 +182,416 @@
                     <div class="links-column">
                         <h3 data-i18n="footer.languages">Idiomas</h3>
                         <ul>
-                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a></li>
-                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a></li>
+                            <li><a href="#" class="language-option" data-lang="en" data-i18n="lang.english">Inglés</a>
+                            </li>
+                            <li><a href="#" class="language-option" data-lang="es" data-i18n="lang.spanish">Español</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST" id="contactForm">
-    <!-- Form Inputs -->
-    <input type="text" name="name" data-i18n="form.name" data-i18n-attr="placeholder" placeholder="Nombre" required>
-    <input type="email" name="email" data-i18n="form.email" data-i18n-attr="placeholder" placeholder="Correo electrónico" required>
-    <textarea name="message" data-i18n="form.message" data-i18n-attr="placeholder" placeholder="Tu mensaje" rows="4" required></textarea>
+                <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST"
+                    id="contactForm">
+                    <!-- Form Inputs -->
+                    <input type="text" id="form-name" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
+                        placeholder="Nombre" required aria-describedby="err-name">
+                    <div id="err-name" class="field-error" data-i18n="form.error.name">Por favor ingrese su nombre.</div>
 
-    <!-- Hidden FormSubmit Config -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none">
-    <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value" value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
+                    <input type="email" id="form-email" name="email" data-i18n="form.email" data-i18n-attr="placeholder"
+                        placeholder="Correo electrónico" required aria-describedby="err-email">
+                    <div id="err-email" class="field-error" data-i18n="form.error.email">Por favor ingrese un correo válido.</div>
 
-    <!-- Success Message -->
-    <div id="form-success" style="display: none;" data-i18n="form.success">¡Gracias! Su mensaje ha sido enviado exitosamente.</div>
+                    <textarea id="form-message" name="message" data-i18n="form.message" data-i18n-attr="placeholder"
+                        placeholder="Tu mensaje" rows="4" required aria-describedby="err-message"></textarea>
+                    <div id="err-message" class="field-error" data-i18n="form.error.message">Por favor ingrese su mensaje.</div>
 
-    <div class="form-actions">
-        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
-        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
-    </div>
-</form>
+                    <!-- Hidden FormSubmit Config -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
+                        value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
 
-<script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+                    <!-- Error/Success Messages -->
+                    <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo enviar el formulario. Inténtalo de nuevo.</div>
+                    <div id="form-success" style="display: none;" role="status" aria-live="polite" data-i18n="form.success">¡Gracias! Su mensaje ha sido
+                        enviado exitosamente.</div>
 
-    const form = this;
-    const formData = new FormData(form);
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
+                        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
+                    </div>
+                </form>
 
-    // Fetch IP and location
-    let ip = "IP: Unknown";
-    let location = "Location: Not available";
-    try {
-        const res = await fetch('https://ipapi.co/json/');
-        const data = await res.json();
-        ip = `IP: ${data.ip}`;
-        location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
-    } catch (error) {
-        console.warn("Failed to fetch IP/location");
-    }
+                <script>
+                    function restorePlaceholders() {
+                        const ids = ['form-name','form-email','form-message'];
+                        ids.forEach(id => {
+                            const el = document.getElementById(id);
+                            if (!el) return;
+                            const original = el.getAttribute('data-ph') || el.getAttribute('placeholder') || '';
+                            if (!el.value.trim()) {
+                                el.placeholder = original;
+                            }
+                        });
+                    }
 
-    const timestamp = `Time: ${new Date().toLocaleString()}`;
-    const userDetails = `${ip} | ${location} | ${timestamp}`;
+                    const contactForm = document.getElementById('contactForm');
+                    contactForm.addEventListener('reset', () => {
+                        // restore placeholders shortly after reset clears values
+                        setTimeout(restorePlaceholders, 0);
+                    });
 
-    formData.append('user_details', userDetails);
+                    contactForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
 
-    // Send form data via fetch to FormSubmit
-    try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+                        const form = this;
+                        const nameEl = document.getElementById('form-name');
+                        const emailEl = document.getElementById('form-email');
+                        const msgEl = document.getElementById('form-message');
+                        const errBanner = document.getElementById('form-error');
+                        const okBanner = document.getElementById('form-success');
+                        const submitBtn = form.querySelector('.submit-btn');
 
-        if (response.ok) {
-            document.getElementById('form-success').style.display = 'block';
-            form.reset();
-        } else {
-            alert('Form submission failed. Please try again.');
-        }
-    } catch (err) {
-        alert('Error submitting form.');
-        console.error(err);
-    }
-});
-</script>
+                        // Reset errors
+                        errBanner.style.display = 'none';
+                        okBanner.style.display = 'none';
+                        ['err-name','err-email','err-message'].forEach(id => (document.getElementById(id).style.display='none'));
+                        [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
 
+                        // Simple validation
+                        let valid = true;
+                        if (!nameEl.value.trim()) { document.getElementById('err-name').style.display='block'; nameEl.classList.add('field-invalid'); valid=false; }
+                        const emailVal = emailEl.value.trim();
+                        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+                        if (!emailOk) { document.getElementById('err-email').style.display='block'; emailEl.classList.add('field-invalid'); valid=false; }
+                        if (!msgEl.value.trim()) { document.getElementById('err-message').style.display='block'; msgEl.classList.add('field-invalid'); valid=false; }
+                        if (!valid) { return; }
 
-<script>
-      const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        // Show button when scrolling
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('show');
-                
-                // Update progress circle rotation based on scroll position
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPosition = window.pageYOffset;
-                const scrollPercentage = (scrollPosition / scrollHeight) * 360;
-                scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-        
-        // Scroll to top with smooth animation
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            
-            // Add pulse animation when clicked
-            this.style.animation = 'pulse 0.5s';
-            setTimeout(() => {
-                this.style.animation = '';
-            }, 500);
-        });
-</script>
-</form>
-</div>
+                        const formData = new FormData(form);
+
+                        // Fetch IP and location (best-effort)
+                        let ip = "IP: Unknown";
+                        let location = "Location: Not available";
+                        try {
+                            const res = await fetch('https://ipapi.co/json/');
+                            const data = await res.json();
+                            ip = `IP: ${data.ip}`;
+                            location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
+                        } catch (error) {
+                            console.warn('Failed to fetch IP/location');
+                        }
+
+                        const timestamp = `Time: ${new Date().toLocaleString()}`;
+                        const userDetails = `${ip} | ${location} | ${timestamp}`;
+                        formData.append('user_details', userDetails);
+
+                        // Loading state
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Sending…' : 'Enviando…';
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        form.setAttribute('aria-busy', 'true');
+
+                        try {
+                            const response = await fetch(form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: { 'Accept': 'application/json' }
+                            });
+
+                            if (response.ok) {
+                                okBanner.style.display = 'block';
+                                form.reset();
+                                restorePlaceholders();
+                            } else {
+                                // Try to parse JSON error from FormSubmit; fallback to generic
+                                let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
+                                try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch(_){}
+                                errBanner.textContent = errMsg;
+                                errBanner.style.display = 'block';
+                            }
+                        } catch (err) {
+                            console.error(err);
+                            errBanner.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Network error. Please check your connection and try again.' : 'Error de red. Verifique su conexión e inténtelo nuevamente.';
+                            errBanner.style.display = 'block';
+                        } finally {
+                            submitBtn.textContent = originalText;
+                            submitBtn.removeAttribute('disabled');
+                            form.removeAttribute('aria-busy');
+                        }
+                    });
+                </script>
+
+                <script>
+                    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+                    // Show button when scrolling
+                    window.addEventListener('scroll', function () {
+                        if (window.pageYOffset > 300) {
+                            scrollToTopBtn.classList.add('show');
+
+                            // Update progress circle rotation based on scroll position
+                            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                            const scrollPosition = window.pageYOffset;
+                            const scrollPercentage = (scrollPosition / scrollHeight) * 360;
+                            scrollToTopBtn.querySelector('.progress-circle').style.transform = 'rotate(' + scrollPercentage + 'deg)';
+                        } else {
+                            scrollToTopBtn.classList.remove('show');
+                        }
+                    });
+
+                    // Scroll to top with smooth animation
+                    scrollToTopBtn.addEventListener('click', function () {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+
+                        // Add pulse animation when clicked
+                        this.style.animation = 'pulse 0.5s';
+                        setTimeout(() => {
+                            this.style.animation = '';
+                        }, 500);
+                    });
+                </script>
+            </div>
             <div class="footer-bottom">
-                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos reservados.</p>
+                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Divine Healthcare. Todos los derechos
+                    reservados.</p>
             </div>
         </div>
     </footer>
 
-   <script src="lang.js"></script>
-   <script>
+    <script src="lang.js"></script>
+    <script>
         // Toggle mobile navigation
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        
-hamburger.addEventListener('click', () => {
-navLinks.classList.toggle('active');
-hamburger.classList.toggle('active');
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-const chatbotButton = document.getElementById('chatbotButton');
-const chatbotContainer = document.getElementById('chatbotContainer');
-const closeChatbot = document.getElementById('closeChatbot');
-const chatBody = document.getElementById('chatBody');
-const chatInput = document.getElementById('chatInput');
-const sendButton = document.getElementById('sendButton');
-const quickQuestions = document.querySelectorAll('.quick-question');
-const notificationBadge = document.querySelector('.notification-badge');
 
-function getCurrentLang() {
-const l = document.documentElement.getAttribute('lang');
-return l === 'en' ? 'en' : 'es';
-}
-let currentLang = getCurrentLang();
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatbotButton = document.getElementById('chatbotButton');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const closeChatbot = document.getElementById('closeChatbot');
+            const chatBody = document.getElementById('chatBody');
+            const chatInput = document.getElementById('chatInput');
+            const sendButton = document.getElementById('sendButton');
+            const quickQuestions = document.querySelectorAll('.quick-question');
+            const notificationBadge = document.querySelector('.notification-badge');
 
-const qa = {
-es: {
-"¿En qué horarios estás en línea/activo?": "Estamos disponibles de lunes a viernes de 9.30 a. m. a 5.30 p. m., puede contactarnos en cualquier momento a través de nuestro correo electrónico de soporte a contacto@divine.cl.",
-"¿Dónde están sus ubicaciones?": "Hemos establecido ubicaciones en India, Chile con planes para una mayor expansión global. Av. Pedro de Valdivia 273, Oficina 1310, Providencia, Santiago.",
-"¿Qué servicios estás planeando a continuación?": "Somos una empresa farmacéutica ubicada en Santiago y bodega cercana al Aeropuerto Internacional de Chile, con un equipo de profesionales con amplia experiencia en la industria. Hoy cubrimos las líneas de productos para Bio Similares, Medicamento Huérfano, Sistema Nervioso Central, Oncología, Cardiología, Antiinfecciosos y Medicina Gástrica.",
-"¿En qué estás especializado?": "Nuestros productos terminados son fabricados por instalaciones de fabricación aprobadas por WHO GMP, EU GMP, USFDA y PIC; estas instalaciones son una de las instalaciones farmacéuticas más grandes de la India en su segmento particular. Los productos fabricados y suministrados para Chile son los mismos productos de alta calidad que se suministran en 170 países y más, esto asegura calidad y experiencia en el suministro continuo de medicamentos de alto estándar.",
-"¿Cuál es su número de contacto y correo electrónico de soporte?": "Puedes comunicarte con nosotros en:\nTeléfono: +56 9 3399 0606\nEmail de soporte: contacto@divine.cl"
-},
-en: {
-"What hours are you online/active?": "We are available Monday to Friday from 9:30 a.m. to 5:30 p.m. You can contact us anytime via our support email at contacto@divine.cl.",
-"Where are your locations?": "We have established locations in India and Chile with plans for further global expansion. Av. Pedro de Valdivia 273, Office 1310, Providencia, Santiago.",
-"What services are you planning next?": "We are a pharmaceutical company in Santiago with a warehouse near Chile International Airport, and a team with broad industry experience. We currently cover product lines for Biosimilars, Orphan Drugs, CNS, Oncology, Cardiology, Anti-infectives and Gastric medicines.",
-"What do you specialize in?": "Our finished products are manufactured by facilities approved by WHO GMP, EU GMP, USFDA and PICs; these are among the largest pharmaceutical facilities in India in their segment. Products supplied for Chile are the same high quality supplied to 170+ countries, ensuring quality and expertise in continuous supply.",
-"What is your contact number and support email?": "You can reach us at:\nPhone: +56 9 3399 0606\nSupport Email: contacto@divine.cl"
-}
-};
+            function getCurrentLang() {
+                const l = document.documentElement.getAttribute('lang');
+                return l === 'en' ? 'en' : 'es';
+            }
+            let currentLang = getCurrentLang();
 
-const welcome = {
-es: {
-w1: '¡Hola! Bienvenido a Divina Salud. ¿Cómo podemos ayudarle hoy?',
-w2: 'Puede escribir su pregunta o hacer clic en cualquiera de las preguntas rápidas a continuación.',
-def: 'Gracias por tu mensaje. Nuestro equipo se comunicará con usted en breve. Para asistencia inmediata, puede llamarnos al +56 9 3399 0606.'
-},
-en: {
-w1: 'Hi! Welcome to Divine Healthcare. How can we help you today?',
-w2: 'Type your question or click any quick question below.',
-def: 'Thank you for your message. Our team will get back to you shortly. For immediate help, call +56 9 3399 0606.'
-}
-};
+            const qa = {
+                es: {
+                    "¿En qué horarios estás en línea/activo?": "Estamos disponibles de lunes a viernes de 9.30 a. m. a 5.30 p. m., puede contactarnos en cualquier momento a través de nuestro correo electrónico de soporte a contacto@divine.cl.",
+                    "¿Dónde están sus ubicaciones?": "Hemos establecido ubicaciones en India, Chile con planes para una mayor expansión global. Av. Pedro de Valdivia 273, Oficina 1310, Providencia, Santiago.",
+                    "¿Qué servicios estás planeando a continuación?": "Somos una empresa farmacéutica ubicada en Santiago y bodega cercana al Aeropuerto Internacional de Chile, con un equipo de profesionales con amplia experiencia en la industria. Hoy cubrimos las líneas de productos para Bio Similares, Medicamento Huérfano, Sistema Nervioso Central, Oncología, Cardiología, Antiinfecciosos y Medicina Gástrica.",
+                    "¿En qué estás especializado?": "Nuestros productos terminados son fabricados por instalaciones de fabricación aprobadas por WHO GMP, EU GMP, USFDA y PIC; estas instalaciones son una de las instalaciones farmacéuticas más grandes de la India en su segmento particular. Los productos fabricados y suministrados para Chile son los mismos productos de alta calidad que se suministran en 170 países y más, esto asegura calidad y experiencia en el suministro continuo de medicamentos de alto estándar.",
+                    "¿Cuál es su número de contacto y correo electrónico de soporte?": "Puedes comunicarte con nosotros en:\nTeléfono: +56 9 3399 0606\nEmail de soporte: contacto@divine.cl"
+                },
+                en: {
+                    "What hours are you online/active?": "We are available Monday to Friday from 9:30 a.m. to 5:30 p.m. You can contact us anytime via our support email at contacto@divine.cl.",
+                    "Where are your locations?": "We have established locations in India and Chile with plans for further global expansion. Av. Pedro de Valdivia 273, Office 1310, Providencia, Santiago.",
+                    "What services are you planning next?": "We are a pharmaceutical company in Santiago with a warehouse near Chile International Airport, and a team with broad industry experience. We currently cover product lines for Biosimilars, Orphan Drugs, CNS, Oncology, Cardiology, Anti-infectives and Gastric medicines.",
+                    "What do you specialize in?": "Our finished products are manufactured by facilities approved by WHO GMP, EU GMP, USFDA and PICs; these are among the largest pharmaceutical facilities in India in their segment. Products supplied for Chile are the same high quality supplied to 170+ countries, ensuring quality and expertise in continuous supply.",
+                    "What is your contact number and support email?": "You can reach us at:\nPhone: +56 9 3399 0606\nSupport Email: contacto@divine.cl"
+                }
+            };
 
-// Map language-agnostic quick question keys to full localized questions
-const questionsByKey = {
-hours: {
-  es: '¿En qué horarios estás en línea/activo?',
-  en: 'What hours are you online/active?'
-},
-locations: {
-  es: '¿Dónde están sus ubicaciones?',
-  en: 'Where are your locations?'
-},
-services: {
-  es: '¿Qué servicios estás planeando a continuación?',
-  en: 'What services are you planning next?'
-},
-specialization: {
-  es: '¿En qué estás especializado?',
-  en: 'What do you specialize in?'
-},
-contact: {
-  es: '¿Cuál es su número de contacto y correo electrónico de soporte?',
-  en: 'What is your contact number and support email?'
-}
-};
+            const welcome = {
+                es: {
+                    w1: '¡Hola! Bienvenido a Divina Salud. ¿Cómo podemos ayudarle hoy?',
+                    w2: 'Puede escribir su pregunta o hacer clic en cualquiera de las preguntas rápidas a continuación.',
+                    def: 'Gracias por tu mensaje. Nuestro equipo se comunicará con usted en breve. Para asistencia inmediata, puede llamarnos al +56 9 3399 0606.'
+                },
+                en: {
+                    w1: 'Hi! Welcome to Divine Healthcare. How can we help you today?',
+                    w2: 'Type your question or click any quick question below.',
+                    def: 'Thank you for your message. Our team will get back to you shortly. For immediate help, call +56 9 3399 0606.'
+                }
+            };
 
-setTimeout(() => {
-addBotMessage(welcome[currentLang].w1);
-setTimeout(() => {
-addBotMessage(welcome[currentLang].w2);
-showNotificationBadge();
-}, 1000);
-}, 3000);
+            // Map language-agnostic quick question keys to full localized questions
+            const questionsByKey = {
+                hours: {
+                    es: '¿En qué horarios estás en línea/activo?',
+                    en: 'What hours are you online/active?'
+                },
+                locations: {
+                    es: '¿Dónde están sus ubicaciones?',
+                    en: 'Where are your locations?'
+                },
+                services: {
+                    es: '¿Qué servicios estás planeando a continuación?',
+                    en: 'What services are you planning next?'
+                },
+                specialization: {
+                    es: '¿En qué estás especializado?',
+                    en: 'What do you specialize in?'
+                },
+                contact: {
+                    es: '¿Cuál es su número de contacto y correo electrónico de soporte?',
+                    en: 'What is your contact number and support email?'
+                }
+            };
 
-document.querySelectorAll('.language-option').forEach(a => {
-a.addEventListener('click', () => {
-setTimeout(() => { currentLang = getCurrentLang(); }, 0);
-});
-});
+            setTimeout(() => {
+                addBotMessage(welcome[currentLang].w1);
+                setTimeout(() => {
+                    addBotMessage(welcome[currentLang].w2);
+                    showNotificationBadge();
+                }, 1000);
+            }, 3000);
 
-chatbotButton.addEventListener('click', () => {
-chatbotContainer.classList.add('active');
-chatbotButton.style.transform = 'scale(0.9)';
-hideNotificationBadge();
-setTimeout(() => {
-chatInput.focus();
-}, 300);
-});
+            document.querySelectorAll('.language-option').forEach(a => {
+                a.addEventListener('click', () => {
+                    setTimeout(() => { currentLang = getCurrentLang(); }, 0);
+                });
+            });
 
-closeChatbot.addEventListener('click', () => {
-chatbotContainer.classList.remove('active');
-chatbotButton.style.transform = 'scale(1)';
-});
+            chatbotButton.addEventListener('click', () => {
+                chatbotContainer.classList.add('active');
+                chatbotButton.style.transform = 'scale(0.9)';
+                hideNotificationBadge();
+                setTimeout(() => {
+                    chatInput.focus();
+                }, 300);
+            });
 
-function sendMessage() {
-const message = chatInput.value.trim();
-if (message) {
-addUserMessage(message);
-chatInput.value = '';
+            closeChatbot.addEventListener('click', () => {
+                chatbotContainer.classList.remove('active');
+                chatbotButton.style.transform = 'scale(1)';
+            });
 
-const map = qa[currentLang] || {};
-const matchingAnswer = map[message];
-if (matchingAnswer) {
-setTimeout(() => {
-addBotMessage(matchingAnswer);
-}, 800);
-} else {
-setTimeout(() => {
-addBotMessage(welcome[currentLang].def);
-}, 1000);
-}
-}
-}
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    addUserMessage(message);
+                    chatInput.value = '';
 
-quickQuestions.forEach(button => {
-button.addEventListener('click', function() {
-const key = this.getAttribute('data-qkey');
-const localizedQuestion = key && questionsByKey[key] ? questionsByKey[key][currentLang] : this.textContent.trim();
-addUserMessage(localizedQuestion);
-const map = qa[currentLang] || {};
-setTimeout(() => {
-addBotMessage(map[localizedQuestion] || welcome[currentLang].def);
-}, 800);
-});
-});
+                    const map = qa[currentLang] || {};
+                    const matchingAnswer = map[message];
+                    if (matchingAnswer) {
+                        setTimeout(() => {
+                            addBotMessage(matchingAnswer);
+                        }, 800);
+                    } else {
+                        setTimeout(() => {
+                            addBotMessage(welcome[currentLang].def);
+                        }, 1000);
+                    }
+                }
+            }
 
-chatInput.addEventListener('keypress', (e) => {
-if (e.key === 'Enter') {
-sendMessage();
-}
-});
+            quickQuestions.forEach(button => {
+                button.addEventListener('click', function () {
+                    const key = this.getAttribute('data-qkey');
+                    const localizedQuestion = key && questionsByKey[key] ? questionsByKey[key][currentLang] : this.textContent.trim();
+                    addUserMessage(localizedQuestion);
+                    const map = qa[currentLang] || {};
+                    setTimeout(() => {
+                        addBotMessage(map[localizedQuestion] || welcome[currentLang].def);
+                    }, 800);
+                });
+            });
 
-sendButton.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
 
-function showNotificationBadge() {
-if (!chatbotContainer.classList.contains('active')) {
-notificationBadge.style.display = 'block';
-}
-}
+            sendButton.addEventListener('click', sendMessage);
 
-function hideNotificationBadge() {
-notificationBadge.style.display = 'none';
-}
+            function showNotificationBadge() {
+                if (!chatbotContainer.classList.contains('active')) {
+                    notificationBadge.style.display = 'block';
+                }
+            }
 
-function addBotMessage(text) {
-const messageDiv = document.createElement('div');
-messageDiv.className = 'chatbot-message bot';
-const formattedText = text.replace(/\n/g, '<br>');
-messageDiv.innerHTML = `<div class="message-content">${formattedText}</div>`;
-chatBody.appendChild(messageDiv);
-chatBody.scrollTop = chatBody.scrollHeight;
-}
+            function hideNotificationBadge() {
+                notificationBadge.style.display = 'none';
+            }
 
-function addUserMessage(text) {
-const messageDiv = document.createElement('div');
-messageDiv.className = 'chatbot-message user';
-messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
-chatBody.appendChild(messageDiv);
-chatBody.scrollTop = chatBody.scrollHeight;
-}
+            function addBotMessage(text) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'chatbot-message bot';
+                const formattedText = text.replace(/\n/g, '<br>');
+                messageDiv.innerHTML = `<div class="message-content">${formattedText}</div>`;
+                chatBody.appendChild(messageDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
 
-document.addEventListener('click', function(event) {
-if (!chatbotContainer.contains(event.target) && 
-event.target !== chatbotButton && 
-!chatbotButton.contains(event.target)) {
-chatbotContainer.classList.remove('active');
-chatbotButton.style.transform = 'scale(1)';
-}
-});
-});
-</script>
+            function addUserMessage(text) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'chatbot-message user';
+                messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+                chatBody.appendChild(messageDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
 
-<!-- Chatbot Button -->
-<button class="chatbot-button" id="chatbotButton">
-<i class="fas fa-comment-dots"></i>
-<span class="notification-badge"></span>
-</button>
+            document.addEventListener('click', function (event) {
+                if (!chatbotContainer.contains(event.target) &&
+                    event.target !== chatbotButton &&
+                    !chatbotButton.contains(event.target)) {
+                    chatbotContainer.classList.remove('active');
+                    chatbotButton.style.transform = 'scale(1)';
+                }
+            });
+        });
+    </script>
 
-<!-- Chatbot Popup -->
-<div class="chatbot-container" id="chatbotContainer">
-<div class="chatbot-header">
-<div class="agent-info">
-<i class="fas fa-robot"></i>
-<div>
-<p><span data-i18n="chatbot.agent_title">Divine Healthcare Bot</span><span data-i18n="chatbot.agent_online"> (En línea)</span></p>
-<small data-i18n="chatbot.agent_small">Normalmente responde en unos minutos.</small>
-</div>
-</div>
-<div class="close-btn" id="closeChatbot">&times;</div>
-</div>
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" id="chatbotButton">
+        <i class="fas fa-comment-dots"></i>
+        <span class="notification-badge"></span>
+    </button>
 
-<div class="chatbot-body" id="chatBody">
-<!-- Messages will appear here -->
-</div>
+    <!-- Chatbot Popup -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="agent-info">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <p><span data-i18n="chatbot.agent_title">Divine Healthcare Bot</span><span
+                            data-i18n="chatbot.agent_online"> (En línea)</span></p>
+                    <small data-i18n="chatbot.agent_small">Normalmente responde en unos minutos.</small>
+                </div>
+            </div>
+            <div class="close-btn" id="closeChatbot">&times;</div>
+        </div>
 
-<div class="quick-questions">
-<button class="quick-question" data-qkey="hours" data-i18n="chatbot.quick.hours">Horas de trabajo</button>
-<button class="quick-question" data-qkey="locations" data-i18n="chatbot.quick.locations">Nuestros Ubicaciones</button>
-<button class="quick-question" data-qkey="services" data-i18n="chatbot.quick.services">Servicios futuros</button>
-<button class="quick-question" data-qkey="specialization" data-i18n="chatbot.quick.specialization">Especializaciones</button>
-<button class="quick-question" data-qkey="contact" data-i18n="chatbot.quick.contact">Información de contacto</button>
-</div>
+        <div class="chatbot-body" id="chatBody">
+            <!-- Messages will appear here -->
+        </div>
 
-<div class="chatbot-footer">
-<input type="text" id="chatInput" data-i18n="chatbot.input_placeholder" data-i18n-attr="placeholder" placeholder="Escribe tu mensaje..." autocomplete="off">
+        <div class="quick-questions">
+            <button class="quick-question" data-qkey="hours" data-i18n="chatbot.quick.hours">Horas de trabajo</button>
+            <button class="quick-question" data-qkey="locations" data-i18n="chatbot.quick.locations">Nuestros
+                Ubicaciones</button>
+            <button class="quick-question" data-qkey="services" data-i18n="chatbot.quick.services">Servicios
+                futuros</button>
+            <button class="quick-question" data-qkey="specialization"
+                data-i18n="chatbot.quick.specialization">Especializaciones</button>
+            <button class="quick-question" data-qkey="contact" data-i18n="chatbot.quick.contact">Información de
+                contacto</button>
+        </div>
 
-<button id="sendButton"><i class="fas fa-paper-plane"></i></button>
-</div>
-</div>
+        <div class="chatbot-footer">
+            <input type="text" id="chatInput" data-i18n="chatbot.input_placeholder" data-i18n-attr="placeholder"
+                placeholder="Escribe tu mensaje..." autocomplete="off">
+
+            <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 </body>
+
 </html>

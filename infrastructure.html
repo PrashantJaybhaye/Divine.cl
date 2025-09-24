@@ -7,6 +7,43 @@
     <link rel="stylesheet" href="infra.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Infrastructure | Divine Healthcare</title>
+    <style>
+        /* Minimal, form-specific helper styles (copied from index.html) */
+        .field-error {
+            display: none;
+            color: #b00020;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        .field-invalid {
+            border-color: #b00020 !important;
+        }
+
+        #form-error {
+            display: none;
+            background: #fdecea;
+            color: #b00020;
+            padding: 10px 12px;
+            border: 1px solid #f5c2c0;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        #form-success {
+            background: #ecf9f1;
+            color: #1e7e34;
+            padding: 10px 12px;
+            border: 1px solid #b7ebc6;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .submit-btn[disabled] {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body>
@@ -171,41 +208,91 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formsubmit.co/contacto@divine.cl" method="POST"
+                <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST"
                     id="contactForm">
                     <!-- Form Inputs -->
-                    <input type="text" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
-                        placeholder="Nombre" required>
-                    <input type="email" name="email" data-i18n="form.email" data-i18n-attr="placeholder"
-                        placeholder="Correo electrónico" required>
-                    <textarea name="message" data-i18n="form.message" data-i18n-attr="placeholder"
-                        placeholder="Tu mensaje" rows="4" required></textarea>
+                    <input type="text" id="form-name" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
+                        placeholder="Nombre" required aria-describedby="err-name">
+                    <div id="err-name" class="field-error" data-i18n="form.error.name">Por favor ingrese su nombre.
+                    </div>
+
+                    <input type="email" id="form-email" name="email" data-i18n="form.email" data-i18n-attr="placeholder"
+                        placeholder="Correo electrónico" required aria-describedby="err-email">
+                    <div id="err-email" class="field-error" data-i18n="form.error.email">Por favor ingrese un correo
+                        válido.</div>
+
+                    <textarea id="form-message" name="message" data-i18n="form.message" data-i18n-attr="placeholder"
+                        placeholder="Tu mensaje" rows="4" required aria-describedby="err-message"></textarea>
+                    <div id="err-message" class="field-error" data-i18n="form.error.message">Por favor ingrese su
+                        mensaje.</div>
 
                     <!-- Hidden FormSubmit Config -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_autoresponse"
+                    <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
                         value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
 
-                    <!-- Success Message -->
-                    <div id="form-success" style="display: none;">
-                        ¡Gracias! Su mensaje ha sido enviado exitosamente.
-                    </div>
+                    <!-- Error/Success Messages -->
+                    <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo
+                        enviar el formulario. Inténtalo de nuevo.</div>
+                    <div id="form-success" style="display: none;" role="status" aria-live="polite"
+                        data-i18n="form.success">¡Gracias! Su mensaje ha sido
+                        enviado exitosamente.</div>
 
                     <div class="form-actions">
-                        <button type="submit" class="submit-btn">Enviar mensaje</button>
-                        <button type="reset" class="reset-btn">Reiniciar</button>
+                        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
+                        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
                     </div>
                 </form>
 
                 <script>
-                    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+                    function restorePlaceholders() {
+                        const ids = ['form-name', 'form-email', 'form-message'];
+                        ids.forEach(id => {
+                            const el = document.getElementById(id);
+                            if (!el) return;
+                            const original = el.getAttribute('data-ph') || el.getAttribute('placeholder') || '';
+                            if (!el.value.trim()) {
+                                el.placeholder = original;
+                            }
+                        });
+                    }
+
+                    const contactForm = document.getElementById('contactForm');
+                    contactForm.addEventListener('reset', () => {
+                        // restore placeholders shortly after reset clears values
+                        setTimeout(restorePlaceholders, 0);
+                    });
+
+                    contactForm.addEventListener('submit', async function (e) {
                         e.preventDefault();
 
                         const form = this;
+                        const nameEl = document.getElementById('form-name');
+                        const emailEl = document.getElementById('form-email');
+                        const msgEl = document.getElementById('form-message');
+                        const errBanner = document.getElementById('form-error');
+                        const okBanner = document.getElementById('form-success');
+                        const submitBtn = form.querySelector('.submit-btn');
+
+                        // Reset errors
+                        errBanner.style.display = 'none';
+                        okBanner.style.display = 'none';
+                        ['err-name', 'err-email', 'err-message'].forEach(id => (document.getElementById(id).style.display = 'none'));
+                        [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
+
+                        // Simple validation
+                        let valid = true;
+                        if (!nameEl.value.trim()) { document.getElementById('err-name').style.display = 'block'; nameEl.classList.add('field-invalid'); valid = false; }
+                        const emailVal = emailEl.value.trim();
+                        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+                        if (!emailOk) { document.getElementById('err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
+                        if (!msgEl.value.trim()) { document.getElementById('err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
+                        if (!valid) { return; }
+
                         const formData = new FormData(form);
 
-                        // Fetch IP and location
+                        // Fetch IP and location (best-effort)
                         let ip = "IP: Unknown";
                         let location = "Location: Not available";
                         try {
@@ -214,33 +301,45 @@
                             ip = `IP: ${data.ip}`;
                             location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
                         } catch (error) {
-                            console.warn("Failed to fetch IP/location");
+                            console.warn('Failed to fetch IP/location');
                         }
 
                         const timestamp = `Time: ${new Date().toLocaleString()}`;
                         const userDetails = `${ip} | ${location} | ${timestamp}`;
-
                         formData.append('user_details', userDetails);
 
-                        // Send form data via fetch to FormSubmit
+                        // Loading state
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Sending…' : 'Enviando…';
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        form.setAttribute('aria-busy', 'true');
+
                         try {
                             const response = await fetch(form.action, {
                                 method: 'POST',
                                 body: formData,
-                                headers: {
-                                    'Accept': 'application/json'
-                                }
+                                headers: { 'Accept': 'application/json' }
                             });
 
                             if (response.ok) {
-                                document.getElementById('form-success').style.display = 'block';
+                                okBanner.style.display = 'block';
                                 form.reset();
+                                restorePlaceholders();
                             } else {
-                                alert('Form submission failed. Please try again.');
+                                // Try to parse JSON error from FormSubmit; fallback to generic
+                                let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
+                                try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
+                                errBanner.textContent = errMsg;
+                                errBanner.style.display = 'block';
                             }
                         } catch (err) {
-                            alert('Error submitting form.');
                             console.error(err);
+                            errBanner.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Network error. Please check your connection and try again.' : 'Error de red. Verifique su conexión e inténtelo nuevamente.';
+                            errBanner.style.display = 'block';
+                        } finally {
+                            submitBtn.textContent = originalText;
+                            submitBtn.removeAttribute('disabled');
+                            form.removeAttribute('aria-busy');
                         }
                     });
                 </script>
