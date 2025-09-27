@@ -576,14 +576,23 @@
     document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'es');
 
     // Translate text content
+    // IMPORTANT: Skip elements that specify data-i18n-attr (they will be handled below),
+    // and skip form controls (input/textarea/select) to avoid inserting inner text that
+    // becomes their value, which would duplicate placeholders.
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       const key = el.getAttribute('data-i18n');
-      if (dict[key]) {
-        if (el.hasAttribute('data-i18n-html')) {
-          el.innerHTML = dict[key];
-        } else {
-          el.textContent = dict[key];
-        }
+      if (!dict[key]) return;
+      const tag = el.tagName.toLowerCase();
+      if (el.hasAttribute('data-i18n-attr')) {
+        return; // attribute translation handled in the next pass
+      }
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') {
+        return; // do not set textContent/innerHTML on form controls
+      }
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = dict[key];
+      } else {
+        el.textContent = dict[key];
       }
     });
 
