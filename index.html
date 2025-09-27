@@ -241,10 +241,11 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
                     <!-- <input type="email" name="_replyto" placeholder="Your email"> -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - {{name}}">
                     <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
                         value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
-                    <input type="hidden" name="_cc" value="gwscary@gmail.com">
+                    <input type="hidden" name="_replyto" value="">
+                    <!-- <input type="hidden" name="_cc" value="gwscary@gmail.com"> -->
 
                     <!-- Error/Success Messages -->
                     <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo
@@ -278,6 +279,7 @@
                         setTimeout(restorePlaceholders, 0);
                     });
 
+                    
                     contactForm.addEventListener('submit', async function (e) {
                         e.preventDefault();
 
@@ -288,13 +290,13 @@
                         const errBanner = document.getElementById('form-error');
                         const okBanner = document.getElementById('form-success');
                         const submitBtn = form.querySelector('.submit-btn');
-
+                        
                         // Reset errors
                         errBanner.style.display = 'none';
                         okBanner.style.display = 'none';
                         ['err-name', 'err-email', 'err-message'].forEach(id => (document.getElementById(id).style.display = 'none'));
                         [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
-
+                        
                         // Simple validation
                         let valid = true;
                         if (!nameEl.value.trim()) { document.getElementById('err-name').style.display = 'block'; nameEl.classList.add('field-invalid'); valid = false; }
@@ -303,6 +305,12 @@
                         if (!emailOk) { document.getElementById('err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
                         if (!msgEl.value.trim()) { document.getElementById('err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
                         if (!valid) { return; }
+                        
+                        // Set _replyto field dynamically
+                        document.querySelector('input[name="_replyto"]').value = emailEl.value;
+
+                        // Set _subject field dynamically
+                        document.querySelector('input[name="_subject"]').value = `New Message from ${nameEl.value}`;
 
                         const formData = new FormData(form);
 
