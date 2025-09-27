@@ -219,7 +219,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formsubmit.co/siddhipatil2632006@gmail.com" method="POST"
+                <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST"
                     id="contactForm">
                     <!-- Form Inputs -->
                     <input type="text" id="form-name" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
@@ -279,7 +279,7 @@
                         setTimeout(restorePlaceholders, 0);
                     });
 
-                    
+
                     contactForm.addEventListener('submit', async function (e) {
                         e.preventDefault();
 
@@ -290,13 +290,13 @@
                         const errBanner = document.getElementById('form-error');
                         const okBanner = document.getElementById('form-success');
                         const submitBtn = form.querySelector('.submit-btn');
-                        
+
                         // Reset errors
                         errBanner.style.display = 'none';
                         okBanner.style.display = 'none';
                         ['err-name', 'err-email', 'err-message'].forEach(id => (document.getElementById(id).style.display = 'none'));
                         [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
-                        
+
                         // Simple validation
                         let valid = true;
                         if (!nameEl.value.trim()) { document.getElementById('err-name').style.display = 'block'; nameEl.classList.add('field-invalid'); valid = false; }
@@ -305,7 +305,7 @@
                         if (!emailOk) { document.getElementById('err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
                         if (!msgEl.value.trim()) { document.getElementById('err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
                         if (!valid) { return; }
-                        
+
                         // Set _replyto field dynamically
                         document.querySelector('input[name="_replyto"]').value = emailEl.value;
 
