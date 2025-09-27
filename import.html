@@ -1555,6 +1555,8 @@ Message: ${formData.message || 'N/A'}`;
           <input type="hidden" name="_autoresponse"
             value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto." data-i18n="form.autoresponse"
             data-i18n-attr="value">
+          <input type="hidden" name="_subject" value="New Contact Form Submission - {{name}}">
+          <input type="hidden" name="_replyto" value="">
 
           <!-- Error/Success Messages -->
           <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo enviar el
@@ -1569,6 +1571,25 @@ Message: ${formData.message || 'N/A'}`;
         </form>
 
         <script>
+          function restorePlaceholders() {
+            const ids = ['form-name', 'form-email', 'form-message'];
+            ids.forEach(id => {
+              const el = document.getElementById(id);
+              if (!el) return;
+              const original = el.getAttribute('data-ph') || el.getAttribute('placeholder') || '';
+              if (!el.value.trim()) {
+                el.placeholder = original;
+              }
+            });
+          }
+
+          const contactForm = document.getElementById('contactForm');
+          if (contactForm) {
+            contactForm.addEventListener('reset', () => {
+              setTimeout(restorePlaceholders, 0);
+            });
+          }
+
           const scrollToTopBtn = document.getElementById('scrollToTop');
 
           // Show button when scrolling
@@ -1685,7 +1706,7 @@ Message: ${formData.message || 'N/A'}`;
           });
 
 
-          // Enhanced footer form handling (copied from index.html)
+          // Enhanced footer form handling (standardized with other pages)
           document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -1711,6 +1732,12 @@ Message: ${formData.message || 'N/A'}`;
             if (!emailOk) { document.getElementById('err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
             if (!msgEl.value.trim()) { document.getElementById('err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
             if (!valid) { return; }
+
+            // Set _replyto and _subject dynamically
+            const replyToEl = form.querySelector('input[name="_replyto"]');
+            const subjectEl = form.querySelector('input[name="_subject"]');
+            if (replyToEl) replyToEl.value = emailEl.value;
+            if (subjectEl) subjectEl.value = `New Contact Form Submission ${nameEl.value}`;
 
             const formData = new FormData(form);
 
@@ -1746,14 +1773,7 @@ Message: ${formData.message || 'N/A'}`;
               if (response.ok) {
                 okBanner.style.display = 'block';
                 form.reset();
-                // restore placeholders after reset
-                const ids = ['form-name', 'form-email', 'form-message'];
-                ids.forEach(id => {
-                  const el = document.getElementById(id);
-                  if (!el) return;
-                  const original = el.getAttribute('data-ph') || el.getAttribute('placeholder') || '';
-                  if (!el.value.trim()) { el.placeholder = original; }
-                });
+                restorePlaceholders();
               } else {
                 let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
                 try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
