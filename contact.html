@@ -227,7 +227,13 @@
             document.getElementById('contactForm').addEventListener('submit', function (e) {
                 e.preventDefault();
                 const form = e.target;
-                const formData = new FormData(form);
+                // Set _replyto and _subject dynamically before building form data
+                                const replytoInput = form.querySelector('input[name="_replyto"]');
+                                if (replytoInput) replytoInput.value = emailEl.value;
+                                const subjectInput = form.querySelector('input[name="_subject"]');
+                                if (subjectInput) subjectInput.value = `New Contact Form Submission ${nameEl.value}`;
+
+                                const formData = new FormData(form);
 
                 fetch(form.action, {
                     method: 'POST',
@@ -410,6 +416,8 @@
                     <!-- Hidden FormSubmit Config -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - {{name}}">
+                    <input type="hidden" name="_replyto" value="">
                     <input type="hidden" name="_autoresponse"
                         value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
 
@@ -470,6 +478,12 @@
                                 if (!emailOk) { document.getElementById('footer-err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
                                 if (!msgEl.value.trim()) { document.getElementById('footer-err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
                                 if (!valid) { return; }
+
+                                // Set _replyto and _subject dynamically before building form data
+                                const replytoInput = form.querySelector('input[name="_replyto"]');
+                                if (replytoInput) replytoInput.value = emailEl.value;
+                                const subjectInput = form.querySelector('input[name="_subject"]');
+                                if (subjectInput) subjectInput.value = `New Contact Form Submission ${nameEl.value}`;
 
                                 const formData = new FormData(form);
 
