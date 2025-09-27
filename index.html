@@ -9,11 +9,40 @@
     <title>Divine Healthcare</title>
     <style>
         /* Minimal, form-specific helper styles */
-        .field-error { display:none; color:#b00020; font-size:0.85rem; margin-top:6px; }
-        .field-invalid { border-color:#b00020 !important; }
-        #form-error { display:none; background:#fdecea; color:#b00020; padding:10px 12px; border:1px solid #f5c2c0; border-radius:6px; margin:10px 0; }
-        #form-success { background:#ecf9f1; color:#1e7e34; padding:10px 12px; border:1px solid #b7ebc6; border-radius:6px; margin:10px 0; }
-        .submit-btn[disabled] { opacity:0.7; cursor:not-allowed; }
+        .field-error {
+            display: none;
+            color: #b00020;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        .field-invalid {
+            border-color: #b00020 !important;
+        }
+
+        #form-error {
+            display: none;
+            background: #fdecea;
+            color: #b00020;
+            padding: 10px 12px;
+            border: 1px solid #f5c2c0;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        #form-success {
+            background: #ecf9f1;
+            color: #1e7e34;
+            padding: 10px 12px;
+            border: 1px solid #b7ebc6;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .submit-btn[disabled] {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 
@@ -195,25 +224,33 @@
                     <!-- Form Inputs -->
                     <input type="text" id="form-name" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
                         placeholder="Nombre" required aria-describedby="err-name">
-                    <div id="err-name" class="field-error" data-i18n="form.error.name">Por favor ingrese su nombre.</div>
+                    <div id="err-name" class="field-error" data-i18n="form.error.name">Por favor ingrese su nombre.
+                    </div>
 
                     <input type="email" id="form-email" name="email" data-i18n="form.email" data-i18n-attr="placeholder"
                         placeholder="Correo electrónico" required aria-describedby="err-email">
-                    <div id="err-email" class="field-error" data-i18n="form.error.email">Por favor ingrese un correo válido.</div>
+                    <div id="err-email" class="field-error" data-i18n="form.error.email">Por favor ingrese un correo
+                        válido.</div>
 
                     <textarea id="form-message" name="message" data-i18n="form.message" data-i18n-attr="placeholder"
                         placeholder="Tu mensaje" rows="4" required aria-describedby="err-message"></textarea>
-                    <div id="err-message" class="field-error" data-i18n="form.error.message">Por favor ingrese su mensaje.</div>
+                    <div id="err-message" class="field-error" data-i18n="form.error.message">Por favor ingrese su
+                        mensaje.</div>
 
                     <!-- Hidden FormSubmit Config -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
+                    <!-- <input type="email" name="_replyto" placeholder="Your email"> -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
                     <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
                         value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
+                    <!-- <input type="hidden" name="_cc" value="friend@example.com"> -->
 
                     <!-- Error/Success Messages -->
-                    <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo enviar el formulario. Inténtalo de nuevo.</div>
-                    <div id="form-success" style="display: none;" role="status" aria-live="polite" data-i18n="form.success">¡Gracias! Su mensaje ha sido
+                    <div id="form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se pudo
+                        enviar el formulario. Inténtalo de nuevo.</div>
+                    <div id="form-success" style="display: none;" role="status" aria-live="polite"
+                        data-i18n="form.success">¡Gracias! Su mensaje ha sido
                         enviado exitosamente.</div>
 
                     <div class="form-actions">
@@ -224,7 +261,7 @@
 
                 <script>
                     function restorePlaceholders() {
-                        const ids = ['form-name','form-email','form-message'];
+                        const ids = ['form-name', 'form-email', 'form-message'];
                         ids.forEach(id => {
                             const el = document.getElementById(id);
                             if (!el) return;
@@ -255,16 +292,16 @@
                         // Reset errors
                         errBanner.style.display = 'none';
                         okBanner.style.display = 'none';
-                        ['err-name','err-email','err-message'].forEach(id => (document.getElementById(id).style.display='none'));
+                        ['err-name', 'err-email', 'err-message'].forEach(id => (document.getElementById(id).style.display = 'none'));
                         [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
 
                         // Simple validation
                         let valid = true;
-                        if (!nameEl.value.trim()) { document.getElementById('err-name').style.display='block'; nameEl.classList.add('field-invalid'); valid=false; }
+                        if (!nameEl.value.trim()) { document.getElementById('err-name').style.display = 'block'; nameEl.classList.add('field-invalid'); valid = false; }
                         const emailVal = emailEl.value.trim();
                         const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
-                        if (!emailOk) { document.getElementById('err-email').style.display='block'; emailEl.classList.add('field-invalid'); valid=false; }
-                        if (!msgEl.value.trim()) { document.getElementById('err-message').style.display='block'; msgEl.classList.add('field-invalid'); valid=false; }
+                        if (!emailOk) { document.getElementById('err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
+                        if (!msgEl.value.trim()) { document.getElementById('err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
                         if (!valid) { return; }
 
                         const formData = new FormData(form);
@@ -305,7 +342,7 @@
                             } else {
                                 // Try to parse JSON error from FormSubmit; fallback to generic
                                 let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
-                                try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch(_){}
+                                try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
                                 errBanner.textContent = errMsg;
                                 errBanner.style.display = 'block';
                             }
