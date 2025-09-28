@@ -378,7 +378,7 @@
       'contact.form.label.phone': 'Phone number*',
       'contact.form.label.subject': 'Subject*',
       'contact.form.option.placeholder': 'Select a topic',
-      'contact.form.option.general': 'General inquiry',
+      'contact.form.option.general': 'General enquiry',
       'contact.form.option.product': 'Product Information',
       'contact.form.option.partner': 'Partnership opportunities',
       'contact.form.option.tech': 'Technical Support',

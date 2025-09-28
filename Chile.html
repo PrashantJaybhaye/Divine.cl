@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Chile.css">
+    <link rel="stylesheet" href="./styles/Chile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Chile Presence | Divine Healthcare</title>
     <style>
@@ -51,7 +51,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="brand-logo">
-                    <img src="logo.png" alt="Divine Healthcare Logo">
+                    <img src="./assets/logo.png" alt="Divine Healthcare Logo">
                 </a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                     <span class="line"></span>
@@ -89,7 +89,7 @@
                 <div class="headquarters-content">
                     <h2 data-i18n="chile.hq.h2">Sede</h2>
                     <h3 data-i18n="contact.locations.country">Chile</h3>
-                    <img src="chileflag.jpeg" alt="Chile Flag" class="flag-image">
+                    <img src="./assets/chileflag.jpeg" alt="Chile Flag" class="flag-image">
                 </div>
             </div>
         </section>
@@ -108,27 +108,31 @@
             <h2 data-i18n="chile.partners.h2">Nuestros socios</h2>
             <div class="partners-marquee">
                 <div class="partners-track">
-                    <div class="partner-item"><img src="cenabast-1.jpg" alt="Cenabast"></div>
-                    <div class="partner-item"><img src="Hosital.jpg" alt="Hospital"></div>
-                    <div class="partner-item"><img src="red de.jpg" alt="Red de Salud"></div>
-                    <div class="partner-item"><img src="HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile"></div>
-                    <div class="partner-item"><img src="Clinica.jpg" alt="Clínica"></div>
-                    <div class="partner-item"><img src="Ahumada.jpg" alt="Ahumada"></div>
-                    <div class="partner-item"><img src="salcobrand.jpg" alt="Salcobrand"></div>
-                    <div class="partner-item"><img src="ECO.jpg" alt="ECO"></div>
-                    <div class="partner-item"><img src="Clinica-universidad.jpg" alt="Clínica Universidad"></div>
-                    <div class="partner-item"><img src="cruzverde.png" alt="cruzverde"></div>
+                    <div class="partner-item"><img src="./assets/cenabast-1.jpg" alt="Cenabast"></div>
+                    <div class="partner-item"><img src="./assets/Hosital.jpg" alt="Hospital"></div>
+                    <div class="partner-item"><img src="./assets/red de.jpg" alt="Red de Salud"></div>
+                    <div class="partner-item"><img src="./assets/HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile">
+                    </div>
+                    <div class="partner-item"><img src="./assets/Clinica.jpg" alt="Clínica"></div>
+                    <div class="partner-item"><img src="./assets/Ahumada.jpg" alt="Ahumada"></div>
+                    <div class="partner-item"><img src="./assets/salcobrand.jpg" alt="Salcobrand"></div>
+                    <div class="partner-item"><img src="./assets/ECO.jpg" alt="ECO"></div>
+                    <div class="partner-item"><img src="./assets/Clinica-universidad.jpg" alt="Clínica Universidad">
+                    </div>
+                    <div class="partner-item"><img src="./assets/cruzverde.png" alt="cruzverde"></div>
                     <!-- Duplicate for seamless looping -->
-                    <div class="partner-item"><img src="cenabast-1.jpg" alt="Cenabast"></div>
-                    <div class="partner-item"><img src="Hosital.jpg" alt="Hospital"></div>
-                    <div class="partner-item"><img src="red de.jpg" alt="Red de Salud"></div>
-                    <div class="partner-item"><img src="HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile"></div>
-                    <div class="partner-item"><img src="Clinica.jpg" alt="Clínica"></div>
-                    <div class="partner-item"><img src="Ahumada.jpg" alt="Ahumada"></div>
-                    <div class="partner-item"><img src="salcobrand.jpg" alt="Salcobrand"></div>
-                    <div class="partner-item"><img src="ECO.jpg" alt="ECO"></div>
-                    <div class="partner-item"><img src="Clinica-universidad.jpg" alt="Clínica Universidad"></div>
-                    <div class="partner-item"><img src="cruzverde.png" alt="cruzverde"></div>
+                    <div class="partner-item"><img src="./assets/cenabast-1.jpg" alt="Cenabast"></div>
+                    <div class="partner-item"><img src="./assets/Hosital.jpg" alt="Hospital"></div>
+                    <div class="partner-item"><img src="./assets/red de.jpg" alt="Red de Salud"></div>
+                    <div class="partner-item"><img src="./assets/HOSPITALES-DE-CHILE.jpg" alt="Hospitales de Chile">
+                    </div>
+                    <div class="partner-item"><img src="./assets/Clinica.jpg" alt="Clínica"></div>
+                    <div class="partner-item"><img src="./assets/Ahumada.jpg" alt="Ahumada"></div>
+                    <div class="partner-item"><img src="./assets/salcobrand.jpg" alt="Salcobrand"></div>
+                    <div class="partner-item"><img src="./assets/ECO.jpg" alt="ECO"></div>
+                    <div class="partner-item"><img src="./assets/Clinica-universidad.jpg" alt="Clínica Universidad">
+                    </div>
+                    <div class="partner-item"><img src="./assets/cruzverde.png" alt="cruzverde"></div>
                 </div>
             </div>
         </div>
@@ -145,7 +149,7 @@
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
+                    <img src="./assets/logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
                     <p class="footer-description" data-i18n="footer.description">
                         Nuestra Visión es que nuestros productos posean certificación emitida por
                         las más altas agencias reguladoras manteniendo precios asequibles para las
@@ -303,8 +307,10 @@
                         formData.append('user_details', userDetails);
 
                         // Loading state
-                        const originalText = submitBtn.textContent;
-                        submitBtn.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Sending…' : 'Enviando…';
+                        const originalText = submitBtn.innerHTML; // save current HTML
+                        submitBtn.innerHTML = (document.documentElement.getAttribute('lang') === 'en')
+                            ? '<i class="fas fa-spinner fa-spin"></i> Sending…'
+                            : '<i class="fas fa-spinner fa-spin"></i> Enviando…';
                         submitBtn.setAttribute('disabled', 'disabled');
                         form.setAttribute('aria-busy', 'true');
 
@@ -319,19 +325,34 @@
                                 okBanner.style.display = 'block';
                                 form.reset();
                                 restorePlaceholders();
+
+                                // Hide success message after 5 seconds
+                                setTimeout(() => {
+                                    okBanner.style.display = 'none';
+                                }, 5000);
+
                             } else {
                                 // Try to parse JSON error from FormSubmit; fallback to generic
                                 let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
                                 try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
                                 errBanner.textContent = errMsg;
                                 errBanner.style.display = 'block';
+
+                                setTimeout(() => {
+                                    errBanner.style.display = 'none';
+                                }, 5000);
                             }
                         } catch (err) {
                             console.error(err);
                             errBanner.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Network error. Please check your connection and try again.' : 'Error de red. Verifique su conexión e inténtelo nuevamente.';
                             errBanner.style.display = 'block';
+
+                            setTimeout(() => {
+                                errBanner.style.display = 'none';
+                            }, 5000);
+
                         } finally {
-                            submitBtn.textContent = originalText;
+                            submitBtn.innerHTML = originalText;  // restore original button content (with icons)
                             submitBtn.removeAttribute('disabled');
                             form.removeAttribute('aria-busy');
                         }

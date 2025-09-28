@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="./styles/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Contact | Divine Healthcare</title>
     <style>
@@ -51,7 +51,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="brand-logo">
-                    <img src="logo.png" alt="Divine Healthcare Logo">
+                    <img src="./assets/logo.png" alt="Divine Healthcare Logo">
                 </a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                     <span class="line"></span>
@@ -87,7 +87,7 @@
                         nuestros convenientes métodos de contacto a continuación</p>
                 </div>
                 <div class="hero-image">
-                    <img src="support-min.png" alt="Customer support illustration" class="hero-img">
+                    <img src="./assets/support-min.png" alt="Customer support illustration" class="hero-img">
                 </div>
             </div>
         </section>
@@ -154,9 +154,10 @@
                         dentro de las 24 horas</p>
                 </div>
                 <div class="form-container">
-                    <form id="contactForm" action="https://formsubmit.co/zzzzzaq291@gmail.com" method="POST">
+                    <form id="contactForm" action="https://formsubmit.co/gwscary@gmail.com" method="POST">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_subject" value="">
                         <input type="hidden" name="_replyto" value="">
                         <input type="hidden" name="_autoresponse"
@@ -176,9 +177,10 @@
                         <div class="form-group full-width">
                             <label for="phone" data-i18n="contact.form.label.phone">Número de teléfono*</label>
                             <div class="phone-input-wrapper">
-                                <input type="text" id="country-code" name="Country code" placeholder="+1"
+                                <input type="number" id="country-code" name="Country code" placeholder="+1"
                                     class="country-code" maxlength="4" required>
-                                <input type="tel" id="phone" name="WhatsApp Number" class="phone-number" minlength="10" required>
+                                <input type="tel" id="phone" name="WhatsApp Number" class="phone-number" minlength="10"
+                                    required>
                             </div>
                         </div>
 
@@ -394,7 +396,7 @@
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <img src="logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
+                    <img src="./assets/logo2.png" alt="Divine Healthcare Logo" class="footer-logo">
                     <p class="footer-description" data-i18n="footer.description">
                         Nuestra Visión es que nuestros productos posean certificación emitida por
                         las más altas agencias reguladoras manteniendo precios asequibles para las
@@ -440,7 +442,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formsubmit.co/zzzzzaq291@gmail.com" method="POST"
+                <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST"
                     id="contactFormFooter">
                     <!-- Form Inputs -->
                     <input type="text" id="footer-form-name" name="name" data-i18n="form.name"
@@ -565,6 +567,11 @@
                                         okBanner.style.display = 'block';
                                         form.reset();
                                         restorePlaceholdersFooter();
+
+                                        setTimeout(() => {
+                                            okBanner.style.display = 'none';
+                                        }, 5000);
+                                        
                                     } else {
                                         let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
                                         try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
