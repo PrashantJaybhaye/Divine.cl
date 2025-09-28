@@ -27,7 +27,6 @@
             padding: 10px 12px;
             border: 1px solid #f5c2c0;
             border-radius: 6px;
-            margin: 10px 0;
         }
 
         #footer-form-success {
@@ -36,7 +35,6 @@
             padding: 10px 12px;
             border: 1px solid #b7ebc6;
             border-radius: 6px;
-            margin: 10px 0;
         }
 
         .submit-btn[disabled] {
@@ -244,6 +242,7 @@
                 // Get references to form fields
                 const nameEl = form.querySelector('#name');
                 const emailEl = form.querySelector('#email');
+                const submitBtn = form.querySelector('.submit-btn');
 
                 // Dynamically set hidden fields if they exist
                 let replytoInput = form.querySelector('input[name="_replyto"]');
@@ -266,6 +265,14 @@
 
                 // Build form data
                 const formData = new FormData(form);
+
+                // Loading state
+                const originalText = submitBtn.innerHTML; // save current HTML
+                submitBtn.innerHTML = (document.documentElement.getAttribute('lang') === 'en')
+                    ? '<i class="fas fa-spinner fa-spin"></i> Sending…'
+                    : '<i class="fas fa-spinner fa-spin"></i> Enviando…';
+                submitBtn.setAttribute('disabled', 'disabled');
+                form.setAttribute('aria-busy', 'true');
 
                 // Send with fetch
                 fetch(form.action, {
@@ -298,6 +305,12 @@
                         // ❌ Show error div, hide success
                         document.getElementById('footer-form-error').style.display = 'block';
                         document.getElementById('footer-form-success').style.display = 'none';
+                    })
+                    .finally(() => {
+                        // Restore button state
+                        submitBtn.innerHTML = originalText;  // restore original button content
+                        submitBtn.removeAttribute('disabled');
+                        form.removeAttribute('aria-busy');
                     });
             });
         </script>
@@ -442,155 +455,6 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formsubmit.co/zzzzzaq291@gmail.com" method="POST"
-                    id="contactFormFooter">
-                    <!-- Form Inputs -->
-                    <input type="text" id="footer-form-name" name="name" data-i18n="form.name"
-                        data-i18n-attr="placeholder" placeholder="Nombre" required aria-describedby="footer-err-name">
-                    <div id="footer-err-name" class="field-error" data-i18n="form.error.name">Por favor ingrese su
-                        nombre.</div>
-                    <input type="email" id="footer-form-email" name="email" data-i18n="form.email"
-                        data-i18n-attr="placeholder" placeholder="Correo electrónico" required
-                        aria-describedby="footer-err-email">
-                    <div id="footer-err-email" class="field-error" data-i18n="form.error.email">Por favor ingrese un
-                        correo válido.</div>
-                    <textarea id="footer-form-message" name="message" data-i18n="form.message"
-                        data-i18n-attr="placeholder" placeholder="Tu mensaje" rows="4" required
-                        aria-describedby="footer-err-message"></textarea>
-                    <div id="footer-err-message" class="field-error" data-i18n="form.error.message">Por favor ingrese su
-                        mensaje.</div>
-
-                    <!-- Hidden FormSubmit Config -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - {{name}}">
-                    <input type="hidden" name="_replyto" value="">
-                    <input type="hidden" name="_autoresponse"
-                        value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
-
-                    <!-- Error/Success Messages -->
-                    <div id="footer-form-error" role="alert" aria-live="assertive" data-i18n="form.error.generic">No se
-                        pudo enviar el formulario. Inténtalo de nuevo.</div>
-                    <div id="footer-form-success" style="display: none;" role="status" aria-live="polite"
-                        data-i18n="form.success">¡Gracias! Su mensaje ha sido enviado exitosamente.</div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar mensaje</button>
-                        <button type="reset" class="reset-btn" data-i18n="form.reset">Reiniciar</button>
-                    </div>
-                </form>
-
-                <script>
-                    // Footer form logic (unique IDs to avoid conflicts with main form)
-                    (function () {
-                        function restorePlaceholdersFooter() {
-                            const ids = ['footer-form-name', 'footer-form-email', 'footer-form-message'];
-                            ids.forEach(id => {
-                                const el = document.getElementById(id);
-                                if (!el) return;
-                                const original = el.getAttribute('data-ph') || el.getAttribute('placeholder') || '';
-                                if (!el.value.trim()) {
-                                    el.placeholder = original;
-                                }
-                            });
-                        }
-
-                        const contactFormFooter = document.getElementById('contactFormFooter');
-                        if (contactFormFooter) {
-                            contactFormFooter.addEventListener('reset', () => {
-                                setTimeout(restorePlaceholdersFooter, 0);
-                            });
-
-                            contactFormFooter.addEventListener('submit', async function (e) {
-                                e.preventDefault();
-                                const form = this;
-                                const nameEl = document.getElementById('footer-form-name');
-                                const emailEl = document.getElementById('footer-form-email');
-                                const msgEl = document.getElementById('footer-form-message');
-                                const errBanner = document.getElementById('footer-form-error');
-                                const okBanner = document.getElementById('footer-form-success');
-                                const submitBtn = form.querySelector('.submit-btn');
-
-                                // Reset errors
-                                errBanner.style.display = 'none';
-                                okBanner.style.display = 'none';
-                                ['footer-err-name', 'footer-err-email', 'footer-err-message'].forEach(id => (document.getElementById(id).style.display = 'none'));
-                                [nameEl, emailEl, msgEl].forEach(el => el.classList.remove('field-invalid'));
-
-                                // Simple validation
-                                let valid = true;
-                                if (!nameEl.value.trim()) { document.getElementById('footer-err-name').style.display = 'block'; nameEl.classList.add('field-invalid'); valid = false; }
-                                const emailVal = emailEl.value.trim();
-                                const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
-                                if (!emailOk) { document.getElementById('footer-err-email').style.display = 'block'; emailEl.classList.add('field-invalid'); valid = false; }
-                                if (!msgEl.value.trim()) { document.getElementById('footer-err-message').style.display = 'block'; msgEl.classList.add('field-invalid'); valid = false; }
-                                if (!valid) { return; }
-
-                                // Set _replyto and _subject dynamically before building form data
-                                const replytoInput = form.querySelector('input[name="_replyto"]');
-                                if (replytoInput) replytoInput.value = emailEl.value;
-                                const subjectInput = form.querySelector('input[name="_subject"]');
-                                if (subjectInput) subjectInput.value = `New Contact Form Submission ${nameEl.value}`;
-
-                                const formData = new FormData(form);
-
-                                // Fetch IP and location (best-effort)
-                                let ip = "IP: Unknown";
-                                let location = "Location: Not available";
-                                try {
-                                    const res = await fetch('https://ipapi.co/json/');
-                                    const data = await res.json();
-                                    ip = `IP: ${data.ip}`;
-                                    location = `Location: ${data.city || 'Unknown'}, ${data.region || 'Unknown'}, ${data.country_name || 'Unknown'}`;
-                                } catch (error) {
-                                    console.warn('Failed to fetch IP/location');
-                                }
-
-                                const timestamp = `Time: ${new Date().toLocaleString()}`;
-                                const userDetails = `${ip} | ${location} | ${timestamp}`;
-                                formData.append('user_details', userDetails);
-
-                                // Loading state
-                                const originalText = submitBtn.textContent;
-                                submitBtn.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Sending…' : 'Enviando…';
-                                submitBtn.setAttribute('disabled', 'disabled');
-                                form.setAttribute('aria-busy', 'true');
-
-                                try {
-                                    const response = await fetch(form.action, {
-                                        method: 'POST',
-                                        body: formData,
-                                        headers: { 'Accept': 'application/json' }
-                                    });
-
-                                    if (response.ok) {
-                                        okBanner.style.display = 'block';
-                                        form.reset();
-                                        restorePlaceholdersFooter();
-
-                                        setTimeout(() => {
-                                            okBanner.style.display = 'none';
-                                        }, 5000);
-                                        
-                                    } else {
-                                        let errMsg = (document.documentElement.getAttribute('lang') === 'en') ? 'Form submission failed. Please try again.' : 'No se pudo enviar el formulario. Inténtalo de nuevo.';
-                                        try { const j = await response.json(); if (j && j.message) errMsg = j.message; } catch (_) { }
-                                        errBanner.textContent = errMsg;
-                                        errBanner.style.display = 'block';
-                                    }
-                                } catch (err) {
-                                    console.error(err);
-                                    errBanner.textContent = (document.documentElement.getAttribute('lang') === 'en') ? 'Network error. Please check your connection and try again.' : 'Error de red. Verifique su conexión e inténtelo nuevamente.';
-                                    errBanner.style.display = 'block';
-                                } finally {
-                                    submitBtn.textContent = originalText;
-                                    submitBtn.removeAttribute('disabled');
-                                    form.removeAttribute('aria-busy');
-                                }
-                            });
-                        }
-                    })();
-                </script>
 
 
                 <script>
