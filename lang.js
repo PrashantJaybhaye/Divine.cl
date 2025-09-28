@@ -52,6 +52,7 @@
       'form.submit': 'Enviar mensaje',
       'form.reset': 'Reiniciar',
       'form.success': '¡Gracias! Su mensaje ha sido enviado exitosamente.',
+      'form.error.generic': 'pudo enviar el formulario. Inténtalo de nuevo.',
       'form.autoresponse': '¡Gracias por contactarnos! Nos comunicaremos con usted pronto.',
 
       // About page
@@ -332,6 +333,7 @@
       'form.submit': 'Send Message',
       'form.reset': 'Reset',
       'form.success': 'Thank you! Your message has been sent successfully.',
+      'form.error.generic': 'Could not send the form. Please try again.',
       'form.autoresponse': 'Thanks for contacting us! We will reach out soon.',
 
       // About page
