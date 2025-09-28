@@ -154,11 +154,11 @@
                         dentro de las 24 horas</p>
                 </div>
                 <div class="form-container">
-                    <form id="contactForm" action="https://formsubmit.co/contacto@divine.cl" method="POST">
+                    <form id="contactForm" action="https://formsubmit.co/gwscary@gmail.com" method="POST">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="text" name="_honey" style="display:none">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                        <input type="hidden" name="_subject" value="Feedback Form Submission">
                         <input type="hidden" name="_autoresponse"
                             value="Thank you for your message. We'll contact you soon via WhatsApp.">
 
@@ -225,16 +225,36 @@
         <!-- Add this JavaScript to handle form submission -->
         <script>
             document.getElementById('contactForm').addEventListener('submit', function (e) {
-                e.preventDefault();
+                e.preventDefault(); // stop default submit
                 const form = e.target;
-                // Set _replyto and _subject dynamically before building form data
-                                const replytoInput = form.querySelector('input[name="_replyto"]');
-                                if (replytoInput) replytoInput.value = emailEl.value;
-                                const subjectInput = form.querySelector('input[name="_subject"]');
-                                if (subjectInput) subjectInput.value = `New Contact Form Submission ${nameEl.value}`;
 
-                                const formData = new FormData(form);
+                // Get references to form fields
+                const nameEl = form.querySelector('#name');
+                const emailEl = form.querySelector('#email');
 
+                // Dynamically set hidden fields if they exist
+                let replytoInput = form.querySelector('input[name="_replyto"]');
+                if (!replytoInput) {
+                    replytoInput = document.createElement('input');
+                    replytoInput.type = 'hidden';
+                    replytoInput.name = '_replyto';
+                    form.appendChild(replytoInput);
+                }
+                replytoInput.value = emailEl.value;
+
+                let subjectInput = form.querySelector('input[name="_subject"]');
+                if (!subjectInput) {
+                    subjectInput = document.createElement('input');
+                    subjectInput.type = 'hidden';
+                    subjectInput.name = '_subject';
+                    form.appendChild(subjectInput);
+                }
+                subjectInput.value = `Feedback Form Submission from ${nameEl.value}`;
+
+                // Build form data
+                const formData = new FormData(form);
+
+                // Send with fetch
                 fetch(form.action, {
                     method: 'POST',
                     body: formData,
@@ -244,18 +264,21 @@
                 })
                     .then(response => {
                         if (response.ok) {
-                            alert('Message sent successfully!');
+                            alert('✅ Message sent successfully!');
                             form.reset();
+                            // 👉 Redirect to WhatsApp if you want
+                            // window.location.href = "https://wa.me/56933990606";
                         } else {
-                            throw new Error('Network response was not ok');
+                            throw new Error('FormSubmit response not OK');
                         }
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        alert('There was a problem sending your message. Please try again or contact us via WhatsApp.');
+                        alert('❌ There was a problem sending your message. Please try again or contact us via WhatsApp.');
                     });
             });
         </script>
+
 
         <!-- Add this CSS -->
         <style>
@@ -395,7 +418,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formsubmit.co/zzzzzaq291@gmail.com" method="POST"
+                <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST"
                     id="contactFormFooter">
                     <!-- Form Inputs -->
                     <input type="text" id="footer-form-name" name="name" data-i18n="form.name"
