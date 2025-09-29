@@ -89,6 +89,7 @@
         <span class="line"></span>
         <span class="line"></span>
       </button>
+      <div class="nav-backdrop" id="navBackdrop"></div>
       <div class="nav-links" id="navLinks">
         <ul>
           <li><button onclick="window.location.href='import.html'" class="med-import-btn"
@@ -104,7 +105,6 @@
       </div>
     </div>
   </nav>
-  </header>
 
   <!--======================
          HERO SECTION
@@ -1537,7 +1537,7 @@ Message: ${formData.message || 'N/A'}`;
           </div>
         </div>
 
-        <form class="contact-form" action="https://formsubmit.co/zzzzzaq291@gmail.com" method="POST" id="contactForm">
+        <form class="contact-form" action="https://formsubmit.co/gwscary@gmail.com" method="POST" id="contactForm">
           <!-- Form Inputs -->
           <input type="text" id="form-name" name="name" data-i18n="form.name" data-i18n-attr="placeholder"
             placeholder="Nombre" required aria-describedby="err-name">
@@ -1805,10 +1805,25 @@ Message: ${formData.message || 'N/A'}`;
     // Toggle mobile navigation
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
+    const navBackdrop = document.getElementById('navBackdrop');
 
-    hamburger.addEventListener('click', () => {
+    function toggleNavigation() {
       navLinks.classList.toggle('active');
+      navBackdrop.classList.toggle('active');
       hamburger.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleNavigation);
+
+    // Close navigation when clicking backdrop
+    navBackdrop.addEventListener('click', toggleNavigation);
+
+    // Close navigation when clicking a nav link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        toggleNavigation();
+      }
     });
 
     // JavaScript to handle modal 4th 
