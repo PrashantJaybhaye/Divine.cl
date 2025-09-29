@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" type="image/png" href="./assets/favicon.png" id="favicon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Divine Healthcare</title>
     <style>
@@ -374,7 +375,7 @@
                             setTimeout(() => {
                                 errBanner.style.display = 'none';
                             }, 5000);
-                            
+
                         } finally {
                             submitBtn.innerHTML = originalText;  // restore original button content (with icons)
                             submitBtn.removeAttribute('disabled');
