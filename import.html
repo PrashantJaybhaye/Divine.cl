@@ -696,14 +696,14 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="nombrePaciente" name="nombrePaciente" placeholder=" " required>
-              <label for="nombrePaciente">1. Nombre y apellido del paciente*</label>
-              <div class="error-message">Por favor ingrese el nombre del paciente</div>
+              <label for="nombrePaciente" data-i18n="presc.form.patient_name.label">1. Nombre y apellido del paciente*</label>
+              <div class="error-message" data-i18n="presc.form.error.patient_name">Por favor ingrese el nombre del paciente</div>
             </div>
             <div class="form-group floating-label">
               <input type="text" id="rutPaciente" name="rutPaciente" placeholder=" " required>
-              <label for="rutPaciente">2. Rut del paciente* (00000000-0)
+              <label for="rutPaciente" data-i18n="presc.form.patient_rut.label">2. Rut del paciente* (00000000-0)
               </label>
-              <div class="error-message">El RUT ingresado es incorrecto</div>
+              <div class="error-message" data-i18n="presc.form.error.patient_rut">El RUT ingresado es incorrecto</div>
             </div>
           </div>
 
@@ -711,8 +711,8 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="nombreMedicamento" name="nombreMedicamento" placeholder=" " required>
-              <label for="nombreMedicamento">3. Nombre del medicamento (principio)*</label>
-              <div class="error-message">Por favor ingrese el nombre del medicamento</div>
+              <label for="nombreMedicamento" data-i18n="presc.form.med_name.label">3. Nombre del medicamento (principio)*</label>
+              <div class="error-message" data-i18n="presc.form.error.med_name">Por favor ingrese el nombre del medicamento</div>
             </div>
             <div class="form-group floating-label">
               <select id="prescripcionDiaria" name="prescripcionDiaria" required>
@@ -721,8 +721,8 @@ Message: ${formData.message || 'N/A'}`;
                 <option value="Twice in a day">dos veces en un dia</option>
                 <option value="Thrice in a day">tres veces en un dia</option>
               </select>
-              <label for="prescripcionDiaria">4. Duración del tratamiento en meses*</label>
-              <div class="error-message">Por favor seleccione la prescripción diaria</div>
+              <label for="prescripcionDiaria" data-i18n="presc.form.treatment_months.label">4. Duración del tratamiento en meses*</label>
+              <div class="error-message" data-i18n="presc.form.error.treatment_months">Por favor seleccione la prescripción diaria</div>
             </div>
           </div>
 
@@ -730,13 +730,13 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="duracionTratamiento" name="duracionTratamiento" placeholder=" " required>
-              <label for="duracionTratamiento">5. Duración del tratamiento*</label>
-              <div class="error-message">Por favor ingrese la duración del tratamiento</div>
+              <label for="duracionTratamiento" data-i18n="presc.form.treatment_duration.label">5. Duración del tratamiento*</label>
+              <div class="error-message" data-i18n="presc.form.error.treatment_duration">Por favor ingrese la duración del tratamiento</div>
             </div>
             <div class="form-group floating-label">
               <input type="text" id="cantidadTotal" name="cantidadTotal" placeholder=" " required>
-              <label for="cantidadTotal">6. Cantidad total solicitada*</label>
-              <div class="error-message">Por favor ingrese la cantidad total</div>
+              <label for="cantidadTotal" data-i18n="presc.form.total_qty.label">6. Cantidad total solicitada*</label>
+              <div class="error-message" data-i18n="presc.form.error.total_qty">Por favor ingrese la cantidad total</div>
             </div>
           </div>
 
@@ -744,13 +744,13 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <textarea id="diagnostico" name="diagnostico" placeholder=" " required></textarea>
-              <label for="diagnostico">7. Diagnóstico*</label>
-              <div class="error-message">Por favor ingrese el diagnóstico</div>
+              <label for="diagnostico" data-i18n="presc.form.diagnosis.label">7. Diagnóstico*</label>
+              <div class="error-message" data-i18n="presc.form.error.diagnosis">Por favor ingrese el diagnóstico</div>
             </div>
             <div class="form-group floating-label">
               <input type="date" id="fechaReceta" name="fechaReceta" placeholder=" " required>
-              <label for="fechaReceta">8. Fecha de la receta*</label>
-              <div class="error-message">Por favor seleccione una fecha</div>
+              <label for="fechaReceta" data-i18n="presc.form.rx_date.label">8. Fecha de la receta*</label>
+              <div class="error-message" data-i18n="presc.form.error.rx_date">Por favor seleccione una fecha</div>
             </div>
           </div>
 
@@ -758,13 +758,13 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="nombreMedico" name="nombreMedico" placeholder=" " required>
-              <label for="nombreMedico">9. Nombre y apellido del médico*</label>
-              <div class="error-message">Por favor ingrese su nombre</div>
+              <label for="nombreMedico" data-i18n="presc.form.doctor_name.label">9. Nombre y apellido del médico*</label>
+              <div class="error-message" data-i18n="presc.form.error.doctor_name">Por favor ingrese su nombre</div>
             </div>
             <div class="form-group floating-label">
               <input type="text" id="rutMedico" name="rutMedico" placeholder=" " required>
-              <label for="rutMedico">10. Rut del médico* (00000000-0)</label>
-              <div class="error-message">El RUT ingresado es incorrecto</div>
+              <label for="rutMedico" data-i18n="presc.form.doctor_rut.label">10. Rut del médico* (00000000-0)</label>
+              <div class="error-message" data-i18n="presc.form.error.doctor_rut">El RUT ingresado es incorrecto</div>
             </div>
           </div>
 
@@ -772,26 +772,26 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group">
               <div class="file-input-container">
-                <label for="firmaMedico">11. Cargar la receta del médico*</label>
+                <label for="firmaMedico" data-i18n="presc.form.upload_rx.label">11. Cargar la receta del médico*</label>
                 <div class="file-input-wrapper">
-                  <button type="button" class="file-input-button"
+                  <button type="button" class="file-input-button" data-i18n="presc.form.file.select"
                     onclick="document.getElementById('firmaMedico').click()">Seleccionar archivo</button>
                   <input type="file" id="firmaMedico" name="firmaMedico"
                     accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf,image/*" required>
-                  <span class="file-name" id="fileName1">No se ha seleccionado ningún archivo</span>
+                  <span class="file-name" id="fileName1" data-i18n="presc.form.file.none">No se ha seleccionado ningún archivo</span>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
               <div class="file-input-container">
-                <label for="poderSimple">12. Cargar poder simple firmado*</label>
+                <label for="poderSimple" data-i18n="presc.form.upload_poa.label">12. Cargar poder simple firmado*</label>
                 <div class="file-input-wrapper">
-                  <button type="button" class="file-input-button"
+                  <button type="button" class="file-input-button" data-i18n="presc.form.file.select"
                     onclick="document.getElementById('poderSimple').click()">Seleccionar archivo</button>
                   <input type="file" id="poderSimple" name="poderSimple"
                     accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf,image/*" required>
-                  <span class="file-name" id="fileName2">No se ha seleccionado ningún archivo</span>
+                  <span class="file-name" id="fileName2" data-i18n="presc.form.file.none">No se ha seleccionado ningún archivo</span>
                 </div>
               </div>
             </div>
@@ -802,15 +802,15 @@ Message: ${formData.message || 'N/A'}`;
             <!-- Email Field -->
             <div class="form-group floating-label">
               <input type="email" id="email" name="email" placeholder=" " required>
-              <label for="email">13. Correo electrónico*</label>
-              <div class="error-message">Por favor ingrese un email válido</div>
+              <label for="email" data-i18n="presc.form.email.label">13. Correo electrónico*</label>
+              <div class="error-message" data-i18n="presc.form.error.email">Por favor ingrese un email válido</div>
             </div>
 
             <!-- Phone Field -->
             <div class="form-group floating-label">
               <input type="tel" id="telefono" name="telefono" placeholder=" " required>
-              <label for="telefono">14. Número de teléfono*</label>
-              <div class="error-message">Introduce tu número de teléfono</div>
+              <label for="telefono" data-i18n="presc.form.phone.label">14. Número de teléfono*</label>
+              <div class="error-message" data-i18n="presc.form.error.phone">Introduce tu número de teléfono</div>
             </div>
           </div>
 
@@ -821,13 +821,13 @@ Message: ${formData.message || 'N/A'}`;
                 <h3>Divine</h3>
                 <p>Importación de Medicamentos</p>
               </span>
-              <span class="loading-spinner" style="display:none;">Enviando...</span>
+              <span class="loading-spinner" style="display:none;" data-i18n="presc.form.submit.loading">Enviando...</span>
             </button>
 
             <!-- Success message will appear here -->
             <div class="success-message" id="successMessage" style="display:none;">
-              <h3>¡Gracias!</h3>
-              <p>Hemos recibido su solicitud. Nos pondremos en contacto con usted pronto.</p>
+              <h3 data-i18n="presc.form.success.h3">¡Gracias!</h3>
+              <p data-i18n="presc.form.success.p">Hemos recibido su solicitud. Nos pondremos en contacto con usted pronto.</p>
             </div>
           </div>
         </form>
@@ -840,7 +840,7 @@ Message: ${formData.message || 'N/A'}`;
 
     <button id="openModalBtn" style="color: white; border: none; cursor: pointer;">
       <div class="doc-item" id="prescriptionBtn">
-        <div class="icon-circle"><img src="./assets/download.png" alt="" data-i18n="doc.info.upload.image"></div>
+        <div class="icon-circle"><img src="./assets/download.png" alt="" data-i18n="doc.info.upload.image" data-i18n-attr="alt"></div>
         <h4 data-i18n="doc.info.upload">Información de carga</h4>
         <p data-i18n="doc.info.subtitle">que la receta debe incluir</p>
     </button>
@@ -880,7 +880,7 @@ Message: ${formData.message || 'N/A'}`;
           });
 
           if (!isValid) {
-            alert('Por favor complete todos los campos requeridos');
+            alert(window.getI18n('presc.form.error.required_all', 'Por favor complete todos los campos requeridos'));
             document.querySelector('.loading-spinner').style.display = 'none';
             document.querySelector('.submit-text').style.display = 'block';
             return;
@@ -899,16 +899,18 @@ Message: ${formData.message || 'N/A'}`;
                 // Show success popup above the form
                 const successPopup = document.createElement('div');
                 successPopup.className = 'success-popup';
+                const h3 = window.getI18n('presc.form.success.h3', '¡Gracias!');
+                const p = window.getI18n('presc.form.success.p', 'Hemos recibido su solicitud. Nos pondremos en contacto con usted pronto.');
                 successPopup.innerHTML = `
-          <h3>¡¡Gracias!!</h3>
-          <p>Hemos recibido su solicitud. Nos comunicaremos contigo pronto.</p>
+          <h3>${h3}</h3>
+          <p>${p}</p>
         `;
                 form.parentNode.insertBefore(successPopup, form);
 
                 // Reset all form fields
                 form.reset();
-                document.getElementById('fileName1').textContent = 'No se ha seleccionado ningún archivo';
-                document.getElementById('fileName2').textContent = 'No se ha seleccionado ningún archivo';
+                document.getElementById('fileName1').textContent = window.getI18n('presc.form.file.none', 'No se ha seleccionado ningún archivo');
+                document.getElementById('fileName2').textContent = window.getI18n('presc.form.file.none', 'No se ha seleccionado ningún archivo');
 
                 // Hide popup after 5 seconds
                 setTimeout(() => {
@@ -916,12 +918,12 @@ Message: ${formData.message || 'N/A'}`;
                   setTimeout(() => successPopup.remove(), 500);
                 }, 5000);
               } else {
-                throw new Error('Error en la red');
+                throw new Error(window.getI18n('presc.form.error.network', 'Error en la red'));
               }
             })
             .catch(error => {
               console.error('Error:', error);
-              alert('Hubo un error al enviar el formulario. Por favor intente nuevamente.');
+              alert(window.getI18n('presc.form.error.generic_submit', 'Hubo un error al enviar el formulario. Por favor intente nuevamente.'));
             })
             .finally(() => {
               // Hide loading spinner
@@ -1862,7 +1864,7 @@ Message: ${formData.message || 'N/A'}`;
         if (this.files.length > 0) {
           fileName.textContent = this.files[0].name;
         } else {
-          fileName.textContent = 'No se ha seleccionado ningún archivo';
+          fileName.textContent = window.getI18n('presc.form.file.none', 'No se ha seleccionado ningún archivo');
         }
       });
 
@@ -1889,8 +1891,10 @@ Message: ${formData.message || 'N/A'}`;
           if (input.type === 'email' && input.value.trim()) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(input.value)) {
-              input.closest('.form-group').classList.add('error');
-              input.closest('.form-group').querySelector('.error-message').textContent = 'Por favor ingrese un email válido';
+              const group = input.closest('.form-group');
+              group.classList.add('error');
+              const err = group.querySelector('.error-message');
+              if (err) err.style.display = 'block';
               isValid = false;
             }
           }
@@ -1899,8 +1903,10 @@ Message: ${formData.message || 'N/A'}`;
           if ((input.id === 'rutPaciente' || input.id === 'rutMedico') && input.value.trim()) {
             const rutRegex = /^[0-9]{7,8}-[0-9kK]{1}$/;
             if (!rutRegex.test(input.value)) {
-              input.closest('.form-group').classList.add('error');
-              input.closest('.form-group').querySelector('.error-message').textContent = 'Por favor ingrese un RUT válido (ej: 12345678-9)';
+              const group = input.closest('.form-group');
+              group.classList.add('error');
+              const err = group.querySelector('.error-message');
+              if (err) err.style.display = 'block';
               isValid = false;
             }
           }
@@ -1929,7 +1935,7 @@ Message: ${formData.message || 'N/A'}`;
             setTimeout(function () {
               form.reset();
               document.getElementById('successMessage').classList.remove('show');
-              fileName.textContent = 'No se ha seleccionado ningún archivo';
+              fileName.textContent = window.getI18n('presc.form.file.none', 'No se ha seleccionado ningún archivo');
               modal.style.display = 'none';
               document.body.style.overflow = 'auto';
             }, 3000);

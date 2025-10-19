@@ -221,6 +221,7 @@
       'doc.footer.h2': '2.  Envíe su solicitud para iniciar el proceso',
       'doc.info.upload': 'Información de carga',
       'doc.info.subtitle': 'que la receta debe incluir',
+      'doc.info.upload.image': 'Icono de información de carga',
 
       // Power of Attorney (POA) modal & form
       'poa.modal.title': 'Solicite su documento',
@@ -237,6 +238,44 @@
       'poa.form.next': 'Continuar',
       'poa.form.prev': 'Atrás',
       'poa.form.submit': 'Enviar y descargar',
+
+      // Prescription (Medication Request) form labels/buttons (ES)
+      'presc.form.patient_name.label': '1. Nombre y apellido del paciente*',
+      'presc.form.patient_rut.label': '2. Rut del paciente* (00000000-0)',
+      'presc.form.med_name.label': '3. Nombre del medicamento (principio)*',
+      'presc.form.treatment_months.label': '4. Duración del tratamiento en meses*',
+      'presc.form.treatment_duration.label': '5. Duración del tratamiento*',
+      'presc.form.total_qty.label': '6. Cantidad total solicitada*',
+      'presc.form.diagnosis.label': '7. Diagnóstico*',
+      'presc.form.rx_date.label': '8. Fecha de la receta*',
+      'presc.form.doctor_name.label': '9. Nombre y apellido del médico*',
+      'presc.form.doctor_rut.label': '10. Rut del médico* (00000000-0)',
+      'presc.form.upload_rx.label': '11. Cargar la receta del médico*',
+      'presc.form.upload_poa.label': '12. Cargar poder simple firmado*',
+      'presc.form.email.label': '13. Correo electrónico*',
+      'presc.form.phone.label': '14. Número de teléfono*',
+      'presc.form.file.select': 'Seleccionar archivo',
+      'presc.form.file.none': 'No se ha seleccionado ningún archivo',
+      'presc.form.submit.loading': 'Enviando...',
+      'presc.form.success.h3': '¡Gracias!',
+      'presc.form.success.p': 'Hemos recibido su solicitud. Nos pondremos en contacto con usted pronto.',
+
+      // Prescription form errors (ES)
+      'presc.form.error.required_all': 'Por favor complete todos los campos requeridos',
+      'presc.form.error.patient_name': 'Por favor ingrese el nombre del paciente',
+      'presc.form.error.patient_rut': 'El RUT ingresado es incorrecto',
+      'presc.form.error.med_name': 'Por favor ingrese el nombre del medicamento',
+      'presc.form.error.treatment_months': 'Por favor seleccione la prescripción diaria',
+      'presc.form.error.treatment_duration': 'Por favor ingrese la duración del tratamiento',
+      'presc.form.error.total_qty': 'Por favor ingrese la cantidad total',
+      'presc.form.error.diagnosis': 'Por favor ingrese el diagnóstico',
+      'presc.form.error.rx_date': 'Por favor seleccione una fecha',
+      'presc.form.error.doctor_name': 'Por favor ingrese su nombre',
+      'presc.form.error.doctor_rut': 'El RUT ingresado es incorrecto',
+      'presc.form.error.email': 'Por favor ingrese un email válido',
+      'presc.form.error.phone': 'Introduce tu número de teléfono',
+      'presc.form.error.generic_submit': 'Hubo un error al enviar el formulario. Por favor intente nuevamente.',
+      'presc.form.error.network': 'Error de red. Por favor verifique su conexión e intente nuevamente.',
 
       // FAQ section
       'faq.header.title': 'Preguntas frecuentes',
@@ -502,6 +541,7 @@
       'doc.footer.h2': '2. Submit your request to start the process',
       'doc.info.upload': 'Upload information',
       'doc.info.subtitle': 'that the prescription must include',
+      'doc.info.upload.image': 'Upload information icon',
 
       // Power of Attorney (POA) modal & form
       'poa.modal.title': 'Request your document',
@@ -518,6 +558,44 @@
       'poa.form.next': 'Continue',
       'poa.form.prev': 'Back',
       'poa.form.submit': 'Submit and download',
+
+      // Prescription (Medication Request) form labels/buttons (EN)
+      'presc.form.patient_name.label': '1. Patient full name*',
+      'presc.form.patient_rut.label': '2. Patient RUT* (00000000-0)',
+      'presc.form.med_name.label': '3. Medicine name (active)*',
+      'presc.form.treatment_months.label': '4. Treatment duration in months*',
+      'presc.form.treatment_duration.label': '5. Treatment duration*',
+      'presc.form.total_qty.label': '6. Total quantity requested*',
+      'presc.form.diagnosis.label': '7. Diagnosis*',
+      'presc.form.rx_date.label': '8. Prescription date*',
+      'presc.form.doctor_name.label': '9. Doctor full name*',
+      'presc.form.doctor_rut.label': '10. Doctor RUT* (00000000-0)',
+      'presc.form.upload_rx.label': '11. Upload doctor prescription*',
+      'presc.form.upload_poa.label': '12. Upload signed simple POA*',
+      'presc.form.email.label': '13. Email*',
+      'presc.form.phone.label': '14. Phone number*',
+      'presc.form.file.select': 'Select file',
+      'presc.form.file.none': 'No file selected',
+      'presc.form.submit.loading': 'Sending...',
+      'presc.form.success.h3': 'Thank you!',
+      'presc.form.success.p': 'We have received your request. We will contact you soon.',
+
+      // Prescription form errors (EN)
+      'presc.form.error.required_all': 'Please complete all required fields',
+      'presc.form.error.patient_name': 'Please enter the patient name',
+      'presc.form.error.patient_rut': 'The entered RUT is incorrect',
+      'presc.form.error.med_name': 'Please enter the medicine name',
+      'presc.form.error.treatment_months': 'Please select the daily prescription',
+      'presc.form.error.treatment_duration': 'Please enter the treatment duration',
+      'presc.form.error.total_qty': 'Please enter the total quantity',
+      'presc.form.error.diagnosis': 'Please enter the diagnosis',
+      'presc.form.error.rx_date': 'Please select a date',
+      'presc.form.error.doctor_name': 'Please enter the doctor name',
+      'presc.form.error.doctor_rut': 'The entered RUT is incorrect',
+      'presc.form.error.email': 'Please enter a valid email',
+      'presc.form.error.phone': 'Please enter your phone number',
+      'presc.form.error.generic_submit': 'There was an error submitting the form. Please try again.',
+      'presc.form.error.network': 'Network error. Please check your connection and try again.',
 
       // FAQ section
       'faq.header.title': 'Frequently asked questions',
@@ -625,6 +703,17 @@
     applyTranslations(saved);
     initLanguageSelector();
   });
+ 
+  // Expose a simple runtime translation helper
+  window.getI18n = function (key, fallback) {
+    try {
+      const saved = localStorage.getItem('site_lang') || DEFAULT_LANG;
+      const dict = translations[saved] || translations[DEFAULT_LANG];
+      return dict[key] || fallback || key;
+    } catch (_) {
+      return fallback || key;
+    }
+  };
 })();
 
 
