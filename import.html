@@ -136,6 +136,16 @@
         </div>
 
         <form id="quoteForm">
+          <!-- Hidden FormSubmit Config -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_subject" value="New Contact Form Submission - {{name}}">
+          <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
+            value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
+          <input type="hidden" name="_replyto" value="">
+          <input type="hidden" name="_next" value="#successMessage">
+          <input type="hidden" name="_template" value="table">
+
           <div class="form-group">
             <label for="name" data-i18n="import.form.label.name">Nombre*</label>
             <input type="text" id="name" name="name" required>
@@ -224,6 +234,12 @@ Message: ${formData.message || 'N/A'}`;
 
                   // 1. Send to Email with HTML structure
                   const emailSubject = `New Quote Request from ${formData.name}`;
+                  // Also set hidden fields for consistency with non-AJAX workflow
+                  const qForm = document.getElementById('quoteForm');
+                  const qSub = qForm.querySelector('input[name="_subject"]');
+                  const qReply = qForm.querySelector('input[name="_replyto"]');
+                  if (qSub) qSub.value = emailSubject;
+                  if (qReply) qReply.value = formData.email || '';
 
                   fetch('https://formsubmit.co/ajax/gwscary@gmail.com', {
                     method: 'POST',
@@ -685,12 +701,13 @@ Message: ${formData.message || 'N/A'}`;
           enctype="multipart/form-data">
           <!-- FormSubmit Configuration -->
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="Nueva Solicitud de Medicamentos - {{nombrePaciente}}">
-          <input type="hidden" name="_autoresponse"
-            value="Hemos recibido su solicitud de medicamentos. Nos pondremos en contacto pronto.">
+          <input type="hidden" name="_subject" value="New Medication Request - {{nombrePaciente}}">
+          <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
+            value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
           <input type="hidden" name="_next" value="#successMessage">
           <input type="hidden" name="_captcha" value="false">
-
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_replyto" value="">
 
           <!-- Row 1 -->
           <div class="form-row">
@@ -902,6 +919,14 @@ Message: ${formData.message || 'N/A'}`;
             return;
           }
 
+          // Set dynamic subject and reply-to before building FormData
+          const subjInput = form.querySelector('input[name="_subject"]');
+          const replyInput = form.querySelector('input[name="_replyto"]');
+          const patientName = document.getElementById('nombrePaciente')?.value || '';
+          const patientEmail = document.getElementById('email')?.value || '';
+          if (subjInput) subjInput.value = `New Medication Request - ${patientName}`;
+          if (replyInput) replyInput.value = patientEmail;
+
           // Submit form to FormSubmit with file attachments
           fetch(form.action, {
             method: 'POST',
@@ -1093,9 +1118,12 @@ Message: ${formData.message || 'N/A'}`;
             <!-- Add these hidden fields for FormSubmit -->
             <input type="hidden" name="_subject" value="New POA Document Request">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_autoresponse" value="Thank you for your POA request. We'll process it shortly.">
+            <input type="hidden" name="_autoresponse" data-i18n="form.autoresponse" data-i18n-attr="value"
+              value="¡Gracias por contactarnos! Nos comunicaremos con usted pronto.">
             <input type="hidden" name="_next" value="#">
             <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_replyto" value="">
 
             <!-- Step 1 - Personal Info -->
             <div class="form-step active" data-step="1">
@@ -1197,6 +1225,14 @@ Message: ${formData.message || 'N/A'}`;
           const originalBtnText = submitBtn.textContent;
           submitBtn.disabled = true;
           submitBtn.textContent = 'Sending...';
+
+          // Set dynamic subject and reply-to before building FormData
+          const poaSub = form.querySelector('input[name="_subject"]');
+          const poaReply = form.querySelector('input[name="_replyto"]');
+          const poaName = form.querySelector('#name')?.value || '';
+          const poaEmail = form.querySelector('#email')?.value || '';
+          if (poaSub) poaSub.value = `New POA Document Request - ${poaName}`;
+          if (poaReply) poaReply.value = poaEmail;
 
           // Submit form to FormSubmit
           fetch(form.action, {
