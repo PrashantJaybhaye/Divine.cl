@@ -696,8 +696,10 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="nombrePaciente" name="nombrePaciente" placeholder=" " required>
-              <label for="nombrePaciente" data-i18n="presc.form.patient_name.label">1. Nombre y apellido del paciente*</label>
-              <div class="error-message" data-i18n="presc.form.error.patient_name">Por favor ingrese el nombre del paciente</div>
+              <label for="nombrePaciente" data-i18n="presc.form.patient_name.label">1. Nombre y apellido del
+                paciente*</label>
+              <div class="error-message" data-i18n="presc.form.error.patient_name">Por favor ingrese el nombre del
+                paciente</div>
             </div>
             <div class="form-group floating-label">
               <input type="text" id="rutPaciente" name="rutPaciente" placeholder=" " required>
@@ -711,8 +713,10 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="nombreMedicamento" name="nombreMedicamento" placeholder=" " required>
-              <label for="nombreMedicamento" data-i18n="presc.form.med_name.label">3. Nombre del medicamento (principio)*</label>
-              <div class="error-message" data-i18n="presc.form.error.med_name">Por favor ingrese el nombre del medicamento</div>
+              <label for="nombreMedicamento" data-i18n="presc.form.med_name.label">3. Nombre del medicamento
+                (principio)*</label>
+              <div class="error-message" data-i18n="presc.form.error.med_name">Por favor ingrese el nombre del
+                medicamento</div>
             </div>
             <div class="form-group floating-label">
               <select id="prescripcionDiaria" name="prescripcionDiaria" required>
@@ -721,8 +725,10 @@ Message: ${formData.message || 'N/A'}`;
                 <option value="Twice in a day">dos veces en un dia</option>
                 <option value="Thrice in a day">tres veces en un dia</option>
               </select>
-              <label for="prescripcionDiaria" data-i18n="presc.form.treatment_months.label">4. Duración del tratamiento en meses*</label>
-              <div class="error-message" data-i18n="presc.form.error.treatment_months">Por favor seleccione la prescripción diaria</div>
+              <label for="prescripcionDiaria" data-i18n="presc.form.treatment_months.label">4. Duración del tratamiento
+                en meses*</label>
+              <div class="error-message" data-i18n="presc.form.error.treatment_months">Por favor seleccione la
+                prescripción diaria</div>
             </div>
           </div>
 
@@ -730,13 +736,16 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="duracionTratamiento" name="duracionTratamiento" placeholder=" " required>
-              <label for="duracionTratamiento" data-i18n="presc.form.treatment_duration.label">5. Duración del tratamiento*</label>
-              <div class="error-message" data-i18n="presc.form.error.treatment_duration">Por favor ingrese la duración del tratamiento</div>
+              <label for="duracionTratamiento" data-i18n="presc.form.treatment_duration.label">5. Duración del
+                tratamiento*</label>
+              <div class="error-message" data-i18n="presc.form.error.treatment_duration">Por favor ingrese la duración
+                del tratamiento</div>
             </div>
             <div class="form-group floating-label">
               <input type="text" id="cantidadTotal" name="cantidadTotal" placeholder=" " required>
               <label for="cantidadTotal" data-i18n="presc.form.total_qty.label">6. Cantidad total solicitada*</label>
-              <div class="error-message" data-i18n="presc.form.error.total_qty">Por favor ingrese la cantidad total</div>
+              <div class="error-message" data-i18n="presc.form.error.total_qty">Por favor ingrese la cantidad total
+              </div>
             </div>
           </div>
 
@@ -758,7 +767,8 @@ Message: ${formData.message || 'N/A'}`;
           <div class="form-row">
             <div class="form-group floating-label">
               <input type="text" id="nombreMedico" name="nombreMedico" placeholder=" " required>
-              <label for="nombreMedico" data-i18n="presc.form.doctor_name.label">9. Nombre y apellido del médico*</label>
+              <label for="nombreMedico" data-i18n="presc.form.doctor_name.label">9. Nombre y apellido del
+                médico*</label>
               <div class="error-message" data-i18n="presc.form.error.doctor_name">Por favor ingrese su nombre</div>
             </div>
             <div class="form-group floating-label">
@@ -778,20 +788,23 @@ Message: ${formData.message || 'N/A'}`;
                     onclick="document.getElementById('firmaMedico').click()">Seleccionar archivo</button>
                   <input type="file" id="firmaMedico" name="firmaMedico"
                     accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf,image/*" required>
-                  <span class="file-name" id="fileName1" data-i18n="presc.form.file.none">No se ha seleccionado ningún archivo</span>
+                  <span class="file-name" id="fileName1" data-i18n="presc.form.file.none">No se ha seleccionado ningún
+                    archivo</span>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
               <div class="file-input-container">
-                <label for="poderSimple" data-i18n="presc.form.upload_poa.label">12. Cargar poder simple firmado*</label>
+                <label for="poderSimple" data-i18n="presc.form.upload_poa.label">12. Cargar poder simple
+                  firmado*</label>
                 <div class="file-input-wrapper">
                   <button type="button" class="file-input-button" data-i18n="presc.form.file.select"
                     onclick="document.getElementById('poderSimple').click()">Seleccionar archivo</button>
                   <input type="file" id="poderSimple" name="poderSimple"
                     accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf,image/*" required>
-                  <span class="file-name" id="fileName2" data-i18n="presc.form.file.none">No se ha seleccionado ningún archivo</span>
+                  <span class="file-name" id="fileName2" data-i18n="presc.form.file.none">No se ha seleccionado ningún
+                    archivo</span>
                 </div>
               </div>
             </div>
@@ -821,13 +834,15 @@ Message: ${formData.message || 'N/A'}`;
                 <h3>Divine</h3>
                 <p>Importación de Medicamentos</p>
               </span>
-              <span class="loading-spinner" style="display:none;" data-i18n="presc.form.submit.loading">Enviando...</span>
+              <span class="loading-spinner" style="display:none;"
+                data-i18n="presc.form.submit.loading">Enviando...</span>
             </button>
 
             <!-- Success message will appear here -->
             <div class="success-message" id="successMessage" style="display:none;">
               <h3 data-i18n="presc.form.success.h3">¡Gracias!</h3>
-              <p data-i18n="presc.form.success.p">Hemos recibido su solicitud. Nos pondremos en contacto con usted pronto.</p>
+              <p data-i18n="presc.form.success.p">Hemos recibido su solicitud. Nos pondremos en contacto con usted
+                pronto.</p>
             </div>
           </div>
         </form>
@@ -840,7 +855,8 @@ Message: ${formData.message || 'N/A'}`;
 
     <button id="openModalBtn" style="color: white; border: none; cursor: pointer;">
       <div class="doc-item" id="prescriptionBtn">
-        <div class="icon-circle"><img src="./assets/download.png" alt="" data-i18n="doc.info.upload.image" data-i18n-attr="alt"></div>
+        <div class="icon-circle"><img src="./assets/download.png" alt="" data-i18n="doc.info.upload.image"
+            data-i18n-attr="alt"></div>
         <h4 data-i18n="doc.info.upload">Información de carga</h4>
         <p data-i18n="doc.info.subtitle">que la receta debe incluir</p>
     </button>
@@ -1084,8 +1100,7 @@ Message: ${formData.message || 'N/A'}`;
             <!-- Step 1 - Personal Info -->
             <div class="form-step active" data-step="1">
               <div class="floating-input">
-                <input type="text" id="name" name="name" required data-i18n="poa.form.name"
-                  data-i18n-attr="placeholder">
+                <input type="text" id="name" name="name" required data-i18n="poa.form.name" data-i18n-attr="aria-label">
                 <label for="name" data-i18n="poa.form.name.label">Nombre completo*</label>
                 <span class="input-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -1097,7 +1112,7 @@ Message: ${formData.message || 'N/A'}`;
 
               <div class="floating-input">
                 <input type="email" id="email" name="email" required data-i18n="poa.form.email"
-                  data-i18n-attr="placeholder">
+                  data-i18n-attr="aria-label">
                 <label for="email" data-i18n="poa.form.email.label">Correo electrónico*</label>
                 <span class="input-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -1116,7 +1131,7 @@ Message: ${formData.message || 'N/A'}`;
             <div class="form-step" data-step="2">
               <div class="floating-input">
                 <input type="tel" id="phone" name="phone" required data-i18n="poa.form.phone"
-                  data-i18n-attr="placeholder">
+                  data-i18n-attr="aria-label">
                 <label for="phone" data-i18n="poa.form.phone.label">Número de teléfono*</label>
                 <span class="input-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -1127,14 +1142,15 @@ Message: ${formData.message || 'N/A'}`;
               </div>
 
               <div class="floating-input">
-                <select id="purpose" name="purpose" required>
-                  <option value="" disabled selected></option>
-                  <option value="Paciente">Paciente</option>
-                  <option value="Padre o madre">Padre o madre</option>
-                  <option value="Hijo o hija">Hijo o hija</option>
-                  <option value="Cónyuge">Cónyuge</option>
-                  <option value="Hermano o hermana">Hermano o hermana</option>
-                  <option value="Otro (Especificar)">Otro (Especificar)</option>
+                <select id="purpose" name="purpose" required data-i18n="poa.form.purpose.label"
+                  data-i18n-attr="aria-label">
+                  <option value="" disabled selected data-i18n="poa.form.purpose.option.placeholder"></option>
+                  <option value="Paciente" data-i18n="poa.form.purpose.option.patient"></option>
+                  <option value="Padre o madre" data-i18n="poa.form.purpose.option.parent"></option>
+                  <option value="Hijo o hija" data-i18n="poa.form.purpose.option.child"></option>
+                  <option value="Cónyuge" data-i18n="poa.form.purpose.option.spouse"></option>
+                  <option value="Hermano o hermana" data-i18n="poa.form.purpose.option.sibling"></option>
+                  <option value="Otro (Especificar)" data-i18n="poa.form.purpose.option.other"></option>
                 </select>
                 <label for="purpose" data-i18n="poa.form.purpose.label">Poder legal*</label>
                 <span class="input-icon">
@@ -1155,7 +1171,7 @@ Message: ${formData.message || 'N/A'}`;
             <div class="form-step" data-step="3">
               <div class="floating-input">
                 <textarea id="message" name="message" rows="3" data-i18n="poa.form.notes"
-                  data-i18n-attr="placeholder"></textarea>
+                  data-i18n-attr="aria-label"></textarea>
                 <label for="message" data-i18n="poa.form.notes.label">Notas adicionales</label>
               </div>
 

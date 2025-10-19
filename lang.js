@@ -321,7 +321,15 @@
       'chatbot.a.services': 'Somos una empresa farmacéutica ubicada en Santiago y bodega cercana al Aeropuerto Internacional de Chile, con un equipo de profesionales con amplia experiencia en la industria. Hoy cubrimos las líneas de productos para Bio Similares, Medicamento Huérfano, Sistema Nervioso Central, Oncología, Cardiología, Antiinfecciosos y Medicina Gástrica.',
       'chatbot.a.specialization': 'Nuestros productos terminados son fabricados por instalaciones de fabricación aprobadas por WHO GMP, EU GMP, USFDA y PIC; estas instalaciones son una de las instalaciones farmacéuticas más grandes de la India en su segmento particular. Los productos fabricados y suministrados para Chile son los mismos productos de alta calidad que se suministran en 170 países y más, esto asegura calidad y experiencia en el suministro continuo de medicamentos de alto estándar.',
       'chatbot.a.contact': 'Puedes comunicarte con nosotros en:\nTeléfono: +56 9 3399 0606\nEmail de soporte: contacto@divine.cl',
-      'chatbot.default': 'Gracias por tu mensaje. Nuestro equipo se comunicará con usted en breve. Para asistencia inmediata, puede llamarnos al +56 9 3399 0606.'
+      'chatbot.default': 'Gracias por tu mensaje. Nuestro equipo se comunicará con usted en breve. Para asistencia inmediata, puede llamarnos al +56 9 3399 0606.',
+
+      'poa.form.purpose.option.placeholder': 'Seleccione una opción',
+      'poa.form.purpose.option.patient': 'Paciente',
+      'poa.form.purpose.option.parent': 'Padre o madre',
+      'poa.form.purpose.option.child': 'Hijo o hija',
+      'poa.form.purpose.option.spouse': 'Cónyuge',
+      'poa.form.purpose.option.sibling': 'Hermano o hermana',
+      'poa.form.purpose.option.other': 'Otro (Especificar)',
     },
     en: {
       'nav.import_personal': 'Personal-use Import',
@@ -641,7 +649,15 @@
       'chatbot.a.services': 'We are a pharmaceutical company in Santiago with a warehouse near Chile International Airport, and a team with broad industry experience. We currently cover product lines for Biosimilars, Orphan Drugs, CNS, Oncology, Cardiology, Anti-infectives and Gastric medicines.',
       'chatbot.a.specialization': 'Our finished products are manufactured by facilities approved by WHO GMP, EU GMP, USFDA and PICs; these are among the largest pharmaceutical facilities in India in their segment. Products supplied for Chile are the same high quality supplied to 170+ countries, ensuring quality and expertise in continuous supply.',
       'chatbot.a.contact': 'You can reach us at:\nPhone: +56 9 3399 0606\nSupport Email: contacto@divine.cl',
-      'chatbot.default': 'Thank you for your message. Our team will get back to you shortly. For immediate help, call +56 9 3399 0606.'
+      'chatbot.default': 'Thank you for your message. Our team will get back to you shortly. For immediate help, call +56 9 3399 0606.',
+
+      'poa.form.purpose.option.placeholder': 'Select an option',
+      'poa.form.purpose.option.patient': 'Patient',
+      'poa.form.purpose.option.parent': 'Parent',
+      'poa.form.purpose.option.child': 'Child',
+      'poa.form.purpose.option.spouse': 'Spouse',
+      'poa.form.purpose.option.sibling': 'Sibling',
+      'poa.form.purpose.option.other': 'Other (Specify)',
     }
   };
 
@@ -703,7 +719,7 @@
     applyTranslations(saved);
     initLanguageSelector();
   });
- 
+
   // Expose a simple runtime translation helper
   window.getI18n = function (key, fallback) {
     try {
