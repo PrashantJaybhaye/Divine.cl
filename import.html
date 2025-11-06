@@ -660,12 +660,12 @@ Message: ${formData.message || 'N/A'}`;
     </div>
     <!-- 1st card-->
     <div class="doc-grid">
-      <div class="doc-item">
+      <div id="prescriptionCardBtn" class="doc-item" style="cursor: pointer;">
         <div class="icon-circle"><img src="./assets/prescription.png" alt=""></div>
         <h4 data-i18n="doc.item.prescription">1. Receta médica</h4>
       </div>
       <!-- 2nd card-->
-      <div class="doc-item">
+      <div id="idCardBtn" class="doc-item" style="cursor: pointer;">
         <div class="icon-circle"><img src="./assets/id.png" alt=""></div>
         <h4 data-i18n="doc.item.id_copy">2. Fotocopia del documento de identidad</h4>
       </div>
@@ -1096,6 +1096,54 @@ Message: ${formData.message || 'N/A'}`;
         }
       }
     </style>
+
+    <!--============================
+    PRESCRIPTION PDF MODAL (1st card)
+   ============================-->
+    <div id="prescriptionPdfModal" class="poa-modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3 data-i18n="prescription.modal.title">Receta Médica</h3>
+          <p data-i18n="prescription.modal.subtitle">Vista previa del formato de receta médica</p>
+          <button class="close-modal" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body protected-image-container" style="padding: 0; position: relative;">
+          <div class="image-protection-overlay"></div>
+          <img src="./assets/prescription-format.jpg" class="protected-image" style="width: 100%; height: 100%; border: none; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"/>
+          <div class="watermark-overlay">PROTECTED</div>
+        </div>
+      </div>
+    </div>
+
+    <!--============================
+    ID CARD PDF MODAL (2nd card)
+   ============================-->
+    <div id="idCardPdfModal" class="poa-modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3 data-i18n="id.modal.title">Fotocopia del documento de identidad</h3>
+          <p data-i18n="id.modal.subtitle">Vista previa del formato de la fotocopia del documento de identidad</p>
+          <button class="close-modal" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body protected-image-container" style="padding: 0; position: relative;">
+          <div class="image-protection-overlay"></div>
+          <img src="./assets/identity-proof.jpeg" class="protected-image" style="width: 100%; height: 100%; border: none; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"/>
+          <div class="watermark-overlay">PROTECTED</div>
+        </div>
+      </div>
+    </div>
 
     <!--============================
     POWER OF ATTORNEY (4th card)
@@ -2051,11 +2099,399 @@ Message: ${formData.message || 'N/A'}`;
     });
 
 
+    // JavaScript for Prescription PDF Modal (1st card)
+    document.addEventListener('DOMContentLoaded', function () {
+      const prescriptionCardBtn = document.getElementById('prescriptionCardBtn');
+      const prescriptionModal = document.getElementById('prescriptionPdfModal');
+      const prescriptionCloseBtn = prescriptionModal.querySelector('.close-modal');
+
+      // Global protection when modal is open
+      function addGlobalProtection() {
+        // Prevent right-click on entire document
+        document.addEventListener('contextmenu', preventContextMenu, true);
+        // Prevent keyboard shortcuts globally
+        document.addEventListener('keydown', preventKeyboardShortcuts, true);
+        // Prevent drag and drop globally
+        document.addEventListener('dragstart', preventDrag, true);
+        document.addEventListener('drop', preventDrop, true);
+        document.addEventListener('dragover', preventDragOver, true);
+      }
+
+      function removeGlobalProtection() {
+        document.removeEventListener('contextmenu', preventContextMenu, true);
+        document.removeEventListener('keydown', preventKeyboardShortcuts, true);
+        document.removeEventListener('dragstart', preventDrag, true);
+        document.removeEventListener('drop', preventDrop, true);
+        document.removeEventListener('dragover', preventDragOver, true);
+      }
+
+      function preventContextMenu(e) {
+        if (prescriptionModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventKeyboardShortcuts(e) {
+        if (prescriptionModal.classList.contains('active')) {
+          // Prevent Ctrl+S, Ctrl+P, F12, Print Screen, etc.
+          if ((e.ctrlKey && (e.key === 's' || e.key === 'p')) ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+            e.key === 'F12' || e.key === 'PrintScreen') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }
+      }
+
+      function preventDrag(e) {
+        if (prescriptionModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventDrop(e) {
+        if (prescriptionModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventDragOver(e) {
+        if (prescriptionModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      // Open modal when 1st card is clicked
+      prescriptionCardBtn.addEventListener('click', function () {
+        prescriptionModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        addGlobalProtection();
+        // Add protection when modal opens
+        setTimeout(() => {
+          addImageProtection(prescriptionModal);
+        }, 100);
+      });
+
+      // Close modal
+      function closePrescriptionModal() {
+        prescriptionModal.classList.remove('active');
+        document.body.style.overflow = '';
+        removeGlobalProtection();
+      }
+
+      prescriptionCloseBtn.addEventListener('click', closePrescriptionModal);
+
+      // Close when clicking outside
+      prescriptionModal.addEventListener('click', function (e) {
+        if (e.target === prescriptionModal) {
+          closePrescriptionModal();
+        }
+      });
+
+      // Image Protection - Prevent right-click, drag, and keyboard shortcuts
+      function addImageProtection(modal) {
+        const protectedContainer = modal.querySelector('.protected-image-container');
+        if (!protectedContainer) return;
+
+        // Prevent right-click context menu
+        protectedContainer.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        // Prevent drag and drop
+        protectedContainer.addEventListener('dragstart', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        protectedContainer.addEventListener('drop', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        protectedContainer.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        // Prevent keyboard shortcuts (Ctrl+S, Ctrl+P, Print Screen, etc.)
+        protectedContainer.addEventListener('keydown', function (e) {
+          // Prevent Ctrl+S (Save)
+          if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Ctrl+P (Print)
+          if (e.ctrlKey && e.key === 'p') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Ctrl+Shift+I (Developer Tools)
+          if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Ctrl+Shift+J (Console)
+          if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent F12 (Developer Tools)
+          if (e.key === 'F12') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Print Screen (not fully preventable but we try)
+          if (e.key === 'PrintScreen') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        });
+
+        // Prevent text selection
+        protectedContainer.addEventListener('selectstart', function (e) {
+          e.preventDefault();
+          return false;
+        });
+
+        // Prevent image copy
+        protectedContainer.addEventListener('copy', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        // Prevent cut
+        protectedContainer.addEventListener('cut', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+      }
+
+      // Also add protection on modal load
+      addImageProtection(prescriptionModal);
+    });
+
+    // JavaScript for ID Card Modal (2nd card)
+    document.addEventListener('DOMContentLoaded', function () {
+      const idCardBtn = document.getElementById('idCardBtn');
+      const idCardModal = document.getElementById('idCardPdfModal');
+      const idCardCloseBtn = idCardModal.querySelector('.close-modal');
+
+      // Global protection when modal is open
+      function addGlobalProtection() {
+        // Prevent right-click on entire document
+        document.addEventListener('contextmenu', preventContextMenu, true);
+        // Prevent keyboard shortcuts globally
+        document.addEventListener('keydown', preventKeyboardShortcuts, true);
+        // Prevent drag and drop globally
+        document.addEventListener('dragstart', preventDrag, true);
+        document.addEventListener('drop', preventDrop, true);
+        document.addEventListener('dragover', preventDragOver, true);
+      }
+
+      function removeGlobalProtection() {
+        document.removeEventListener('contextmenu', preventContextMenu, true);
+        document.removeEventListener('keydown', preventKeyboardShortcuts, true);
+        document.removeEventListener('dragstart', preventDrag, true);
+        document.removeEventListener('drop', preventDrop, true);
+        document.removeEventListener('dragover', preventDragOver, true);
+      }
+
+      function preventContextMenu(e) {
+        if (idCardModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventKeyboardShortcuts(e) {
+        if (idCardModal.classList.contains('active')) {
+          // Prevent Ctrl+S, Ctrl+P, F12, Print Screen, etc.
+          if ((e.ctrlKey && (e.key === 's' || e.key === 'p')) ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+            e.key === 'F12' || e.key === 'PrintScreen') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }
+      }
+
+      function preventDrag(e) {
+        if (idCardModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventDrop(e) {
+        if (idCardModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventDragOver(e) {
+        if (idCardModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      // Open modal when 2nd card is clicked
+      idCardBtn.addEventListener('click', function () {
+        idCardModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        addGlobalProtection();
+        // Add protection when modal opens
+        setTimeout(() => {
+          addImageProtection(idCardModal);
+        }, 100);
+      });
+
+      // Close modal
+      function closeIdCardModal() {
+        idCardModal.classList.remove('active');
+        document.body.style.overflow = '';
+        removeGlobalProtection();
+      }
+
+      idCardCloseBtn.addEventListener('click', closeIdCardModal);
+
+      // Close when clicking outside
+      idCardModal.addEventListener('click', function (e) {
+        if (e.target === idCardModal) {
+          closeIdCardModal();
+        }
+      });
+
+      // Image Protection - Prevent right-click, drag, and keyboard shortcuts
+      function addImageProtection(modal) {
+        const protectedContainer = modal.querySelector('.protected-image-container');
+        if (!protectedContainer) return;
+
+        // Prevent right-click context menu
+        protectedContainer.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        // Prevent drag and drop
+        protectedContainer.addEventListener('dragstart', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        protectedContainer.addEventListener('drop', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        protectedContainer.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        // Prevent keyboard shortcuts (Ctrl+S, Ctrl+P, Print Screen, etc.)
+        protectedContainer.addEventListener('keydown', function (e) {
+          // Prevent Ctrl+S (Save)
+          if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Ctrl+P (Print)
+          if (e.ctrlKey && e.key === 'p') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Ctrl+Shift+I (Developer Tools)
+          if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Ctrl+Shift+J (Console)
+          if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent F12 (Developer Tools)
+          if (e.key === 'F12') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Prevent Print Screen (not fully preventable but we try)
+          if (e.key === 'PrintScreen') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        });
+
+        // Prevent text selection
+        protectedContainer.addEventListener('selectstart', function (e) {
+          e.preventDefault();
+          return false;
+        });
+
+        // Prevent image copy
+        protectedContainer.addEventListener('copy', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+
+        // Prevent cut
+        protectedContainer.addEventListener('cut', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
+      }
+
+      // Also add protection on modal load
+      addImageProtection(idCardModal);
+    });
+
     // JavaScript 5th
     document.addEventListener('DOMContentLoaded', function () {
       const downloadBtn = document.getElementById('downloadPoaBtn');
       const modal = document.getElementById('poaFormModal');
-      const closeBtn = document.querySelector('.close-modal');
+      const closeBtn = modal.querySelector('.close-modal');
       const poaForm = document.getElementById('poaForm');
       const formSteps = document.querySelectorAll('.form-step');
       const progressSteps = document.querySelectorAll('.progress-step');
