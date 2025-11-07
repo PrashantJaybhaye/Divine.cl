@@ -670,7 +670,7 @@ Message: ${formData.message || 'N/A'}`;
         <h4 data-i18n="doc.item.id_copy">2. Fotocopia del documento de identidad</h4>
       </div>
       <!-- 3rd card-->
-      <div class="doc-item">
+      <div id="poaCardBtn" class="doc-item" style="cursor: pointer;">
         <div class="icon-circle"><img src="./assets/agreement.png" alt=""></div>
         <h4 data-i18n="doc.item.poa">3. Poder notarial simple</h4>
         <p data-i18n="doc.item.poa_note">Firmado por el paciente o un miembro de la familia</p>
@@ -1146,6 +1146,39 @@ Message: ${formData.message || 'N/A'}`;
     </div>
 
     <!--============================
+    POA PREVIEW MODAL (3rd card)
+   ============================-->
+    <div id="poaPreviewModal" class="poa-modal">
+      <div class="modal-container modal-container--wide">
+        <div class="modal-header">
+          <h3 data-i18n="poa.preview.modal.title">Poder notarial simple</h3>
+          <p data-i18n="poa.preview.modal.subtitle">Vista previa del formato de poder notarial simple en dos páginas</p>
+          <button class="close-modal" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body poa-preview-body">
+          <div class="poa-preview-grid">
+            <div class="protected-image-container">
+              <div class="image-protection-overlay"></div>
+              <img src="./assets/simple-poa-1.jpg" class="protected-image" style="width: 100%; height: 100%; border: none; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"/>
+              <div class="watermark-overlay">Formato del borrador</div>
+            </div>
+            <div class="protected-image-container">
+              <div class="image-protection-overlay"></div>
+              <img src="./assets/simple-poa-2.jpg" class="protected-image" style="width: 100%; height: 100%; border: none; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"/>
+              <div class="watermark-overlay">Formato del borrador</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--============================
     POWER OF ATTORNEY (4th card)
    ============================-->
     <div id="poaFormModal" class="poa-modal">
@@ -1339,6 +1372,10 @@ Message: ${formData.message || 'N/A'}`;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       }
 
+      .modal-container--wide {
+        max-width: 760px;
+      }
+
       .modal-header {
         padding: 20px;
         border-bottom: 1px solid #eee;
@@ -1376,6 +1413,29 @@ Message: ${formData.message || 'N/A'}`;
       .floating-input textarea {
         padding-left: 15px;
         min-height: 100px;
+      }
+
+      .poa-preview-body {
+        padding: 20px;
+      }
+
+      .poa-preview-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+      }
+
+      .poa-preview-grid .protected-image-container {
+        background: #f9f9f9;
+        border-radius: 8px;
+        padding: 0;
+        min-height: 320px;
+      }
+
+      @media (min-width: 768px) {
+        .poa-preview-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
 
       .floating-input label {
@@ -2199,93 +2259,95 @@ Message: ${formData.message || 'N/A'}`;
 
       // Image Protection - Prevent right-click, drag, and keyboard shortcuts
       function addImageProtection(modal) {
-        const protectedContainer = modal.querySelector('.protected-image-container');
-        if (!protectedContainer) return;
+        const protectedContainers = modal.querySelectorAll('.protected-image-container');
+        if (!protectedContainers.length) return;
 
-        // Prevent right-click context menu
-        protectedContainer.addEventListener('contextmenu', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        // Prevent drag and drop
-        protectedContainer.addEventListener('dragstart', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        protectedContainer.addEventListener('drop', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        protectedContainer.addEventListener('dragover', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        // Prevent keyboard shortcuts (Ctrl+S, Ctrl+P, Print Screen, etc.)
-        protectedContainer.addEventListener('keydown', function (e) {
-          // Prevent Ctrl+S (Save)
-          if (e.ctrlKey && e.key === 's') {
+        protectedContainers.forEach((protectedContainer) => {
+          // Prevent right-click context menu
+          protectedContainer.addEventListener('contextmenu', function (e) {
             e.preventDefault();
             e.stopPropagation();
             return false;
-          }
-          // Prevent Ctrl+P (Print)
-          if (e.ctrlKey && e.key === 'p') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent Ctrl+Shift+I (Developer Tools)
-          if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent Ctrl+Shift+J (Console)
-          if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent F12 (Developer Tools)
-          if (e.key === 'F12') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent Print Screen (not fully preventable but we try)
-          if (e.key === 'PrintScreen') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-        });
+          });
 
-        // Prevent text selection
-        protectedContainer.addEventListener('selectstart', function (e) {
-          e.preventDefault();
-          return false;
-        });
+          // Prevent drag and drop
+          protectedContainer.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
 
-        // Prevent image copy
-        protectedContainer.addEventListener('copy', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
+          protectedContainer.addEventListener('drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
 
-        // Prevent cut
-        protectedContainer.addEventListener('cut', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
+          protectedContainer.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          // Prevent keyboard shortcuts (Ctrl+S, Ctrl+P, Print Screen, etc.)
+          protectedContainer.addEventListener('keydown', function (e) {
+            // Prevent Ctrl+S (Save)
+            if (e.ctrlKey && e.key === 's') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Ctrl+P (Print)
+            if (e.ctrlKey && e.key === 'p') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Ctrl+Shift+I (Developer Tools)
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent F12 (Developer Tools)
+            if (e.key === 'F12') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Print Screen (not fully preventable but we try)
+            if (e.key === 'PrintScreen') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+          });
+
+          // Prevent text selection
+          protectedContainer.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+            return false;
+          });
+
+          // Prevent image copy
+          protectedContainer.addEventListener('copy', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          // Prevent cut
+          protectedContainer.addEventListener('cut', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
         });
       }
 
@@ -2393,98 +2455,272 @@ Message: ${formData.message || 'N/A'}`;
 
       // Image Protection - Prevent right-click, drag, and keyboard shortcuts
       function addImageProtection(modal) {
-        const protectedContainer = modal.querySelector('.protected-image-container');
-        if (!protectedContainer) return;
+        const protectedContainers = modal.querySelectorAll('.protected-image-container');
+        if (!protectedContainers.length) return;
 
-        // Prevent right-click context menu
-        protectedContainer.addEventListener('contextmenu', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        // Prevent drag and drop
-        protectedContainer.addEventListener('dragstart', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        protectedContainer.addEventListener('drop', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        protectedContainer.addEventListener('dragover', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-
-        // Prevent keyboard shortcuts (Ctrl+S, Ctrl+P, Print Screen, etc.)
-        protectedContainer.addEventListener('keydown', function (e) {
-          // Prevent Ctrl+S (Save)
-          if (e.ctrlKey && e.key === 's') {
+        protectedContainers.forEach((protectedContainer) => {
+          // Prevent right-click context menu
+          protectedContainer.addEventListener('contextmenu', function (e) {
             e.preventDefault();
             e.stopPropagation();
             return false;
-          }
-          // Prevent Ctrl+P (Print)
-          if (e.ctrlKey && e.key === 'p') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent Ctrl+Shift+I (Developer Tools)
-          if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent Ctrl+Shift+J (Console)
-          if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent F12 (Developer Tools)
-          if (e.key === 'F12') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          // Prevent Print Screen (not fully preventable but we try)
-          if (e.key === 'PrintScreen') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-        });
+          });
 
-        // Prevent text selection
-        protectedContainer.addEventListener('selectstart', function (e) {
-          e.preventDefault();
-          return false;
-        });
+          // Prevent drag and drop
+          protectedContainer.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
 
-        // Prevent image copy
-        protectedContainer.addEventListener('copy', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
+          protectedContainer.addEventListener('drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
 
-        // Prevent cut
-        protectedContainer.addEventListener('cut', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
+          protectedContainer.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          // Prevent keyboard shortcuts (Ctrl+S, Ctrl+P, Print Screen, etc.)
+          protectedContainer.addEventListener('keydown', function (e) {
+            // Prevent Ctrl+S (Save)
+            if (e.ctrlKey && e.key === 's') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Ctrl+P (Print)
+            if (e.ctrlKey && e.key === 'p') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Ctrl+Shift+I (Developer Tools)
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent F12 (Developer Tools)
+            if (e.key === 'F12') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+            // Prevent Print Screen (not fully preventable but we try)
+            if (e.key === 'PrintScreen') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+          });
+
+          // Prevent text selection
+          protectedContainer.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+            return false;
+          });
+
+          // Prevent image copy
+          protectedContainer.addEventListener('copy', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          // Prevent cut
+          protectedContainer.addEventListener('cut', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
         });
       }
 
       // Also add protection on modal load
       addImageProtection(idCardModal);
+    });
+
+    // JavaScript for POA Preview Modal (3rd card)
+    document.addEventListener('DOMContentLoaded', function () {
+      const poaCardBtn = document.getElementById('poaCardBtn');
+      const poaPreviewModal = document.getElementById('poaPreviewModal');
+
+      if (!poaCardBtn || !poaPreviewModal) {
+        return;
+      }
+
+      const poaPreviewCloseBtn = poaPreviewModal.querySelector('.close-modal');
+
+      // Global protection when modal is open
+      function addGlobalProtection() {
+        document.addEventListener('contextmenu', preventContextMenu, true);
+        document.addEventListener('keydown', preventKeyboardShortcuts, true);
+        document.addEventListener('dragstart', preventDrag, true);
+        document.addEventListener('drop', preventDrop, true);
+        document.addEventListener('dragover', preventDragOver, true);
+      }
+
+      function removeGlobalProtection() {
+        document.removeEventListener('contextmenu', preventContextMenu, true);
+        document.removeEventListener('keydown', preventKeyboardShortcuts, true);
+        document.removeEventListener('dragstart', preventDrag, true);
+        document.removeEventListener('drop', preventDrop, true);
+        document.removeEventListener('dragover', preventDragOver, true);
+      }
+
+      function preventContextMenu(e) {
+        if (poaPreviewModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventKeyboardShortcuts(e) {
+        if (poaPreviewModal.classList.contains('active')) {
+          if ((e.ctrlKey && (e.key === 's' || e.key === 'p')) ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+            e.key === 'F12' || e.key === 'PrintScreen') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }
+      }
+
+      function preventDrag(e) {
+        if (poaPreviewModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventDrop(e) {
+        if (poaPreviewModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      function preventDragOver(e) {
+        if (poaPreviewModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }
+
+      // Open modal when 3rd card is clicked
+      poaCardBtn.addEventListener('click', function () {
+        poaPreviewModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        addGlobalProtection();
+        setTimeout(() => {
+          addImageProtection(poaPreviewModal);
+        }, 100);
+      });
+
+      // Close modal
+      function closePoaPreviewModal() {
+        poaPreviewModal.classList.remove('active');
+        document.body.style.overflow = '';
+        removeGlobalProtection();
+      }
+
+      if (poaPreviewCloseBtn) {
+        poaPreviewCloseBtn.addEventListener('click', closePoaPreviewModal);
+      }
+
+      // Close when clicking outside content
+      poaPreviewModal.addEventListener('click', function (e) {
+        if (e.target === poaPreviewModal) {
+          closePoaPreviewModal();
+        }
+      });
+
+      function addImageProtection(modal) {
+        const protectedContainers = modal.querySelectorAll('.protected-image-container');
+        if (!protectedContainers.length) return;
+
+        protectedContainers.forEach((protectedContainer) => {
+          protectedContainer.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          protectedContainer.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          protectedContainer.addEventListener('drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          protectedContainer.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          protectedContainer.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'p')) {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+
+            if (e.key === 'F12' || e.key === 'PrintScreen') {
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+          });
+
+          protectedContainer.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+            return false;
+          });
+
+          protectedContainer.addEventListener('copy', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+
+          protectedContainer.addEventListener('cut', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+        });
+      }
+
+      // Ensure protection on load as well
+      addImageProtection(poaPreviewModal);
     });
 
     // JavaScript 5th
