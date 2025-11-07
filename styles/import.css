@@ -814,6 +814,56 @@ body {
   line-height: 1.4;
 }
 
+/* Responsive layout for Who We Serve cards */
+.serve-section .serve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .serve-section .serve-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .serve-section .serve-card {
+    padding: 26px 18px;
+  }
+
+  .serve-section .serve-card img {
+    width: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serve-section .serve-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-section .serve-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .serve-section .serve-card {
+    padding: 20px 14px;
+  }
+
+  .serve-section .serve-card img {
+    width: 52px;
+  }
+
+  .serve-section .serve-card p {
+    font-size: 0.9rem;
+  }
+}
+
 /*======================
        IMPORT PROCESS
     ====================== */
@@ -936,6 +986,48 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+  .doc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+    gap: 24px;
+  }
+
+  .doc-item {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .doc-grid {
+    gap: 16px;
+  }
+
+  .doc-item {
+    padding: 16px;
+  }
+
+  .icon-circle {
+    width: 54px;
+    height: 54px;
+  }
+
+  .icon-circle img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .doc-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .doc-item p {
+    font-size: 0.8rem;
+  }
+}
+
 .icon-circle img {
   width: 30px;
   height: 30px;
@@ -953,6 +1045,48 @@ body {
   font-size: 0.85rem;
   color: #777;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .doc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+    gap: 24px;
+  }
+
+  .doc-item {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .doc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .doc-item {
+    padding: 16px;
+  }
+
+  .icon-circle {
+    width: 54px;
+    height: 54px;
+  }
+
+  .icon-circle img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .doc-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .doc-item p {
+    font-size: 0.8rem;
+  }
 }
 
 /*======================
