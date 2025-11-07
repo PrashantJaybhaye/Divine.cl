@@ -944,7 +944,7 @@ body {
 
 .doc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
@@ -963,6 +963,8 @@ body {
   max-width: 200px;
   margin: 0 auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .doc-item:hover {
@@ -988,43 +990,55 @@ body {
 
 @media (max-width: 768px) {
   .doc-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
-    gap: 24px;
+    gap: 16px;
+    padding: 0 15px;
   }
 
   .doc-item {
-    max-width: none;
+    max-width: 100%;
     width: 100%;
     margin: 0;
+    padding: 18px 12px;
+    min-width: 0;
   }
 }
 
 @media (max-width: 480px) {
   .doc-grid {
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 100%;
+    padding: 0 10px;
   }
 
   .doc-item {
-    padding: 16px;
+    padding: 12px 8px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    min-width: 0;
   }
 
   .icon-circle {
-    width: 54px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
   }
 
   .icon-circle img {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 
   .doc-item h4 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
   }
 
   .doc-item p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -1041,53 +1055,12 @@ body {
   margin-bottom: 5px;
 }
 
-.doc-item p {
-  font-size: 0.85rem;
-  color: #777;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .doc-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 100%;
-    gap: 24px;
-  }
-
-  .doc-item {
-    max-width: none;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .doc-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .doc-item {
-    padding: 16px;
-  }
-
-  .icon-circle {
-    width: 54px;
-    height: 54px;
-  }
-
-  .icon-circle img {
-    width: 26px;
-    height: 26px;
-  }
-
-  .doc-item h4 {
-    font-size: 0.95rem;
-  }
-
   .doc-item p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
   }
-}
+
 
 /*======================
           FAQ
@@ -2582,10 +2555,64 @@ body {
 
 .doc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .doc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 16px;
+    padding: 0 15px;
+  }
+
+  .doc-item {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 18px 12px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .doc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .doc-item {
+    padding: 12px 8px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .icon-circle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .doc-item h4 {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .doc-item p {
+    font-size: 0.75rem;
+  }
 }
 
 .doc-item {
